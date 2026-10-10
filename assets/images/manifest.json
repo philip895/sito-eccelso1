@@ -1,0 +1,680 @@
+{
+ "livingWall": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/living-wall-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/home/web/living-wall-1024.jpg"
+   }
+  ]
+ },
+ "facade": {
+  "w": 1600,
+  "h": 2400,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/facade-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/facade-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/home/web/facade-1600.jpg"
+   }
+  ]
+ },
+ "corridor": {
+  "w": 1800,
+  "h": 2400,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/corridor-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/corridor-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/home/web/corridor-1600.jpg"
+   },
+   {
+    "w": 1800,
+    "path": "assets/images/home/web/corridor-1800.jpg"
+   }
+  ]
+ },
+ "linen": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/linen-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/linen-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/home/web/linen-1080.jpg"
+   }
+  ]
+ },
+ "prosecco": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/prosecco-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/prosecco-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/home/web/prosecco-1080.jpg"
+   }
+  ]
+ },
+ "roomSuperior": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/room-superior-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/room-superior-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/home/web/room-superior-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/home/web/room-superior-2400.jpg"
+   }
+  ]
+ },
+ "roomDeluxe": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/room-deluxe-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/room-deluxe-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/home/web/room-deluxe-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/home/web/room-deluxe-2400.jpg"
+   }
+  ]
+ },
+ "roomJunior": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/room-junior-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/room-junior-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/home/web/room-junior-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/home/web/room-junior-2400.jpg"
+   }
+  ]
+ },
+ "roomSenior": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/room-senior-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/home/web/room-senior-1024.jpg"
+   }
+  ]
+ },
+ "roomDeluxeSuite": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/room-deluxe-suite-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/home/web/room-deluxe-suite-1024.jpg"
+   }
+  ]
+ },
+ "roomGrand": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/room-grand-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/home/web/room-grand-1024.jpg"
+   }
+  ]
+ },
+ "tub": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/tub-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/tub-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/home/web/tub-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/home/web/tub-2400.jpg"
+   }
+  ]
+ },
+ "lobby": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/lobby-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/home/web/lobby-1024.jpg"
+   }
+  ]
+ },
+ "terrace": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/terrace-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/home/web/terrace-1024.jpg"
+   }
+  ]
+ },
+ "cathedral": {
+  "w": 3000,
+  "h": 4000,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/home/web/cathedral-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/home/web/cathedral-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/home/web/cathedral-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/home/web/cathedral-2400.jpg"
+   }
+  ]
+ },
+ "aboutOpening": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/about-us/web/about-opening-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/about-us/web/about-opening-1024.jpg"
+   }
+  ]
+ },
+ "breakfast": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/about-us/web/breakfast-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/about-us/web/breakfast-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/about-us/web/breakfast-1080.jpg"
+   }
+  ]
+ },
+ "suiteLiving": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/about-us/web/suite-living-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/about-us/web/suite-living-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/about-us/web/suite-living-1080.jpg"
+   }
+  ]
+ },
+ "niche": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/about-us/web/niche-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/about-us/web/niche-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/about-us/web/niche-1080.jpg"
+   }
+  ]
+ },
+ "kitchenette": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/about-us/web/kitchenette-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/about-us/web/kitchenette-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/about-us/web/kitchenette-1080.jpg"
+   }
+  ]
+ },
+ "mondello": {
+  "w": 768,
+  "h": 960,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/about-us/web/mondello-480.jpg"
+   },
+   {
+    "w": 768,
+    "path": "assets/images/about-us/web/mondello-768.jpg"
+   }
+  ]
+ },
+ "roomSuperiorDetail": {
+  "w": 3009,
+  "h": 2006,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/rooms/web/room-superior-detail-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/rooms/web/room-superior-detail-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/rooms/web/room-superior-detail-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/rooms/web/room-superior-detail-2400.jpg"
+   }
+  ]
+ },
+ "roomsOpening": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/rooms/web/rooms-opening-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/rooms/web/rooms-opening-1024.jpg"
+   }
+  ]
+ },
+ "g1": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g1-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g1-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/gallery/web/g1-1080.jpg"
+   }
+  ]
+ },
+ "g2": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g2-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g2-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/gallery/web/g2-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/gallery/web/g2-2400.jpg"
+   }
+  ]
+ },
+ "g3": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g3-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g3-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/gallery/web/g3-1080.jpg"
+   }
+  ]
+ },
+ "g4": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g4-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g4-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/gallery/web/g4-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/gallery/web/g4-2400.jpg"
+   }
+  ]
+ },
+ "g5": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g5-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g5-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/gallery/web/g5-1080.jpg"
+   }
+  ]
+ },
+ "g6": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g6-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g6-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/gallery/web/g6-1080.jpg"
+   }
+  ]
+ },
+ "g7": {
+  "w": 1080,
+  "h": 1350,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g7-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g7-960.jpg"
+   },
+   {
+    "w": 1080,
+    "path": "assets/images/gallery/web/g7-1080.jpg"
+   }
+  ]
+ },
+ "g8": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/g8-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/gallery/web/g8-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/gallery/web/g8-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/gallery/web/g8-2400.jpg"
+   }
+  ]
+ },
+ "galleryOpening": {
+  "w": 1024,
+  "h": 683,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/gallery/web/gallery-opening-480.jpg"
+   },
+   {
+    "w": 1024,
+    "path": "assets/images/gallery/web/gallery-opening-1024.jpg"
+   }
+  ]
+ },
+ "locOpening": {
+  "w": 5472,
+  "h": 3648,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/location/web/loc-opening-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/location/web/loc-opening-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/location/web/loc-opening-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/location/web/loc-opening-2400.jpg"
+   }
+  ]
+ },
+ "sauna": {
+  "w": 2400,
+  "h": 1600,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/location/web/sauna-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/location/web/sauna-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/location/web/sauna-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/location/web/sauna-2400.jpg"
+   }
+  ]
+ },
+ "hammam": {
+  "w": 1600,
+  "h": 2400,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/location/web/hammam-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/location/web/hammam-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/location/web/hammam-1600.jpg"
+   }
+  ]
+ },
+ "robes": {
+  "w": 1600,
+  "h": 2400,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/location/web/robes-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/location/web/robes-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/location/web/robes-1600.jpg"
+   }
+  ]
+ },
+ "host": {
+  "w": 2400,
+  "h": 2012,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/contact/web/host-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/contact/web/host-960.jpg"
+   },
+   {
+    "w": 1600,
+    "path": "assets/images/contact/web/host-1600.jpg"
+   },
+   {
+    "w": 2400,
+    "path": "assets/images/contact/web/host-2400.jpg"
+   }
+  ]
+ }
+}
