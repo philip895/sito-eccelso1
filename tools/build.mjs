@@ -497,7 +497,8 @@ ${R.map((r, i) => `${r.kind === 'suite' && R[i - 1]?.kind !== 'suite' && suitesI
       <p class="room__line" data-reveal>${r.kind === 'apartment' ? r.name : r.line}</p>
       <p class="body" data-reveal style="margin-top:1.5rem">${r.text}</p>
       ${specs(r).length ? `<dl class="specs" data-reveal>${specs(r).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(loc(v))}</dd></div>`).join('')}</dl>` : ''}
-      ${r.features.length ? `<ul class="features" data-reveal>${r.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : `<p class="body small" data-reveal style="margin-top:1.25rem">${link('#amenities', t('What every apartment includes', 'Le dotazioni di ogni appartamento'))}</p>`}
+      ${r.features.length ? `<ul class="features" data-reveal>${r.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
+      ${r.kind === 'apartment' ? `<p class="body small" data-reveal style="margin-top:1.25rem">${link('#amenities', t('What every apartment includes', 'Le dotazioni di ogni appartamento'))}</p>` : ''}
       <div class="room__actions" data-reveal><a class="btn btn--solid" href="booking.html?room=${r.slug}">${r.kind === 'suite' ? t('Request this suite', 'Richiedi questa suite') : t('Request this apartment', 'Richiedi questo appartamento')}</a>${link('gallery.html?f=rooms', t('Gallery', 'Galleria'))}</div>
     </div>
   </div>

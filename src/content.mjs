@@ -123,7 +123,8 @@ export const rooms = [
     line: 'Elegant, functional open-plan spaces.',
     text: 'Elegant, functional open-plan spaces, ideal for couples, solo travellers and small families. Carefully finished interiors designed to offer you comfort and privacy.',
     size: '', guests: '', bed: '', maxGuests: null,
-    features: [],
+    // features: from the real Superior photo (superior2) + the client's "open space" description
+    features: ['Open-plan layout', 'Oak-effect floor', 'Smart TV', 'Floor-length curtains'],
   },
   {
     slug: 'deluxe', name: 'Deluxe', image: 'roomDeluxe', kind: 'apartment',
@@ -131,7 +132,8 @@ export const rooms = [
     line: 'Spacious layouts with a double bedroom and a full living area.',
     text: 'Spacious layouts with a double bedroom and a full living area. Perfect for couples or friends who want to experience Palermo in total relaxation.',
     size: '', guests: '', bed: '', maxGuests: null,
-    features: [],
+    // features: client's layout description + the real Deluxe photo (beams, luggage rack)
+    features: ['Separate double bedroom', 'Full living area', 'Exposed wooden-beam ceiling', 'Luggage rack'],
   },
   {
     slug: 'junior-suite', name: 'Junior Suite', image: 'roomJunior', kind: 'apartment',
@@ -139,14 +141,15 @@ export const rooms = [
     line: 'Generous layouts ideal for families and groups of friends.',
     text: 'Generous layouts ideal for families and groups of friends, with one or two double bedrooms and a fully equipped living area.',
     size: '', guests: '', bed: '', maxGuests: null,
-    features: [],
+    // features: client's layout description + the real Junior Suite photo (sofa, kitchenette, beams)
+    features: ['One or two double bedrooms', 'Living area with sofa', 'Kitchenette', 'Exposed wooden-beam ceiling'],
   },
   {
     slug: 'senior-suite', kind: 'suite', name: 'Senior Suite', image: 'roomSenior',
     line: 'Linen, terracotta and green.',
     text: 'Soft linen upholstery, a terracotta table, an agave in a white pot. A suite of quiet, well-chosen details where the afternoons pass slowly.',
     size: '', guests: '', bed: '', maxGuests: null,
-    features: ['Separate lounge corner', 'Linen sofa', 'Oak-tone wooden floor'],
+    features: ['Separate lounge corner', 'Linen sofa', 'Oak-effect floor'],
   },
   {
     slug: 'deluxe-suite', kind: 'suite', name: 'Deluxe Suite', image: 'roomDeluxeSuite',
@@ -268,9 +271,9 @@ export const it = {
     host: 'L’host alla reception',
   },
   rooms: {
-    'superior': { cardName: 'Monolocali Superior', pageTitle: 'Monolocali a Palermo', bookingName: 'Monolocale Superior', line: 'Open space eleganti e funzionali.', text: 'Open space eleganti e funzionali, ideali per coppie, viaggiatori singoli e piccoli nuclei familiari. Ambienti curati nei minimi dettagli, pensati per offrirti comfort e privacy.', features: [] },
-    'deluxe': { cardName: 'Bilocali Deluxe', pageTitle: 'Bilocali nel Centro Storico di Palermo', bookingName: 'Bilocale Deluxe', line: 'Soluzioni spaziose con camera matrimoniale e zona living completa.', text: 'Soluzioni spaziose con camera matrimoniale e zona living completa. Perfette per coppie o amici che desiderano vivere Palermo in totale relax.', features: [] },
-    'junior-suite': { cardName: 'Trilocali Junior Suite', pageTitle: 'Trilocali per Famiglie e Gruppi', bookingName: 'Trilocale Junior Suite', line: 'Ampie soluzioni ideali per famiglie e gruppi di amici.', text: 'Ampie soluzioni ideali per famiglie e gruppi di amici, con una o due camere matrimoniali e zona giorno completamente attrezzata.', features: [] },
+    'superior': { cardName: 'Monolocali Superior', pageTitle: 'Monolocali a Palermo', bookingName: 'Monolocale Superior', line: 'Open space eleganti e funzionali.', text: 'Open space eleganti e funzionali, ideali per coppie, viaggiatori singoli e piccoli nuclei familiari. Ambienti curati nei minimi dettagli, pensati per offrirti comfort e privacy.', features: ['Open space', 'Pavimento effetto rovere', 'Smart TV', 'Tende a tutta altezza'] },
+    'deluxe': { cardName: 'Bilocali Deluxe', pageTitle: 'Bilocali nel Centro Storico di Palermo', bookingName: 'Bilocale Deluxe', line: 'Soluzioni spaziose con camera matrimoniale e zona living completa.', text: 'Soluzioni spaziose con camera matrimoniale e zona living completa. Perfette per coppie o amici che desiderano vivere Palermo in totale relax.', features: ['Camera matrimoniale separata', 'Zona living completa', 'Soffitto con travi in legno a vista', 'Portabagagli'] },
+    'junior-suite': { cardName: 'Trilocali Junior Suite', pageTitle: 'Trilocali per Famiglie e Gruppi', bookingName: 'Trilocale Junior Suite', line: 'Ampie soluzioni ideali per famiglie e gruppi di amici.', text: 'Ampie soluzioni ideali per famiglie e gruppi di amici, con una o due camere matrimoniali e zona giorno completamente attrezzata.', features: ['Una o due camere matrimoniali', 'Zona giorno con divano', 'Angolo cottura', 'Soffitto con travi in legno a vista'] },
     'senior-suite': { line: 'Lino, terracotta e verde.', text: 'Imbottiture in lino, un tavolino color terracotta, un’agave in un vaso bianco. Una suite di dettagli scelti con cura, dove i pomeriggi scorrono lenti.', features: ['Angolo salotto separato', 'Divano in lino', 'Pavimento effetto rovere'] },
     'deluxe-suite': { line: 'Due ambienti, un’unica prospettiva.', text: 'Un soggiorno che si apre sulla camera da letto, così la luce attraversa la suite da un capo all’altro. Il colore arriva dalle opere alle pareti.', features: ['Soggiorno separato', 'Opere d’arte originali', 'Smart TV'] },
     'grand-suite': { line: 'La casa nella sua versione più generosa.', text: 'Lampade in ottone sospese sopra un letto ampio e basso. Colori intensi alle pareti e toni neutri tutto intorno: una suite in cui tornare.', features: ['Lampade a sospensione in ottone', 'Opere d’arte originali', 'Testiera imbottita'] },
