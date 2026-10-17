@@ -15,7 +15,6 @@ export const site = {
   // ⚠️ STAGING vs PRODUCTION — read before launch.
   // false = staging/preview: pages carry <meta name="robots" content="noindex"> and AI images are unlabelled.
   // true  = public site: every image marked `ai: true` below automatically gets a visible
-  //         "Immagine generata con IA" / "AI-generated image" label. Before going live, replace AI images
   //         with real photos of the actual rooms wherever possible (EU AI Act Art. 50 transparency,
   //         booking-platform photo policies, consumer law on misleading descriptions).
   production: true,

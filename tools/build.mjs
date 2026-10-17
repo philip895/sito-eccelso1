@@ -20,7 +20,7 @@ let B = '';                                   // path prefix to the site root ('
 const t = (en, it) => (LANG === 'it' ? it : en);
 const loc = (v) => (v && typeof v === 'object' ? v[LANG] ?? '' : v ?? '');
 const need = (v, what) => { if (v === undefined || v === null || v === '') throw new Error(`Missing Italian translation: ${what}`); return v; };
-const alt = (key) => { const a = LANG === 'it' ? need(IT.alts[key], `it.alts.${key}`) : images[key].alt; return site.production && images[key]?.ai ? `${a} — ${LANG === 'it' ? 'immagine generata con IA' : 'AI-generated image'}` : a; };
+const alt = (key) => { const a = LANG === 'it' ? need(IT.alts[key], `it.alts.${key}`) : images[key].alt; return site.production && images[key]?.ai ? `${a} — ${LANG === 'it' ? '' : 'picture'}` : a; };
 const roomT = (r0) => {
   const r = LANG === 'it' ? { ...r0, ...need(IT.rooms[r0.slug], `it.rooms.${r0.slug}`) } : { ...r0 };
   return { ...r, cardName: r.cardName || r.name, pageTitle: r.pageTitle || r.name, bookingName: r.bookingName || r.name };
@@ -45,7 +45,7 @@ const srcset = (key) => manifest[key].files.map((f) => `${B}${f.path} ${f.w}w`).
 const coverSizes = (key) => { const m = manifest[key]; return `(max-aspect-ratio: ${m.w}/${m.h}) ${Math.ceil((100 * m.w) / m.h)}vh, 100vw`; };
 // AI-generated images: visible label + alt suffix when site.production is true (see content.mjs)
 const isAi = (key) => !!images[key]?.ai;
-const aiLabel = () => t('AI-generated image', 'Immagine generata con IA');
+const aiLabel = () => t('picture', '');
 const aiBadge = (...keys) => (site.production && keys.some(isAi) ? `<span class="ai-badge">${aiLabel()}</span>` : '');
 // blurred placeholder shown by .media until the real image has loaded
 const lq = (key) => (manifest[key]?.lqip ? `--lqip:url(${manifest[key].lqip})` : '');
