@@ -345,11 +345,11 @@ function buildPages() {
 
   // HOME ------------------------------------------------------------------
   // Every photo appears once on the homepage (client: "cambiare foto che si ripetono").
-  const heroSlides = ['livingWall', 'tub', 'aiTerraceArmchairs'];   // TODO AI: slide 3 is AI-generated
-  const heroMobile = ['facade', 'tub', 'aiTerraceArmchairs']; // portrait-friendly sources for phones
+  const heroSlides = ['livingWall', 'tub', 'host'];
+  const heroMobile = ['facade', 'tub', 'host']; // portrait-friendly, high-res sources for phones
   const moments = [
     ['lobby', t('The lobby', 'La hall'), t('Brass light and pampas grass painted on arched walls.', 'Luce d’ottone ed erba della pampa dipinta su pareti ad arco.')],
-    ['aiTerraceLoungers', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')], // TODO AI
+    ['terrace', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')],
     ['g6', t('The bathroom', 'Il bagno'), t('An illuminated arched mirror above a sculpted basin.', 'Uno specchio ad arco illuminato sopra un lavabo scultoreo.')],
   ];
   pages['index.html'] = layout({
@@ -678,7 +678,7 @@ ${pageHero({ key: 'facade', eyebrowText: t('Location', 'Dove siamo'), title: t([
       <h2 class="h2" id="city2-title" data-split>${lines(t([`${esc(site.city)},`, '<em>between history and wonder.</em>'], [`${esc(site.city)},`, '<em>tra storia e meraviglia.</em>']))}</h2>
       <p class="body" data-reveal>${t('Through timeless alleyways, Mediterranean scents and baroque splendour, Palermo reveals its most authentic soul. Just steps away, the charm of the markets and the majesty of the Cathedral invite you to lose yourself in the city’s beauty.', 'Tra vicoli senza tempo, profumi mediterranei e splendori barocchi, Palermo svela la sua anima più autentica. A pochi passi, il fascino dei mercati e la maestosità della Cattedrale invitano a perdersi nella bellezza della città.')}</p>
     </div>
-    <figure class="places__b">${media('aiTerraceView', { ratio: 'ratio-43', sizes: '(max-width: 900px) 90vw, 34vw', d: 0.12 })}<figcaption class="caption">${t('Our terrace, among the rooftops of the old town', 'La nostra terrazza, tra i tetti del centro storico')}</figcaption></figure>
+    <figure class="places__b">${media('terrace', { ratio: 'ratio-43', sizes: '(max-width: 900px) 90vw, 34vw', d: 0.12 })}<figcaption class="caption">${t('Our terrace, among the rooftops of the old town', 'La nostra terrazza, tra i tetti del centro storico')}</figcaption></figure>
   </div>
 </section>
 <section class="section section--dark" aria-labelledby="near-title">
