@@ -34,8 +34,9 @@ Any value left empty (`''`) is simply not shown: its row or line is hidden until
 Both forms POST JSON to `bookingEndpoint` / `contactEndpoint` in `src/content.mjs`. Formspree, a Make or Zapier webhook, or your own script all work. While these are empty the forms run in **demo mode**: the full flow works but nothing is sent, and the confirmation screen says so.
 
 ## Before going live
-- Fill the remaining placeholders: email, WhatsApp, CIN, P.IVA, socials, room sizes and beds per type, reply time, reception hours, wellness hours and prices, the owners' story.
-- Set the exact map pin (`site.map`; currently the OpenStreetMap street-level point for Via del Celso).
+- Fill the remaining empty fields: CIN, P.IVA, socials, apartment sizes and beds per type, reply time, reception hours, wellness hours and prices; WhatsApp only if the mobile number is on WhatsApp.
+- Confirm the suites (see `suitesIntro` in `src/content.mjs`, currently switched off) and that photo `g8` really shows a Superior studio.
+- Update the Google Business listing if its phone number should match the site (it still shows the old mobile).
 - Privacy and cookie policy text (GDPR). Self-host the Google Fonts or add a consent banner.
 - Configure the form endpoints.
 - Supply higher-resolution versions of the 1024px photos (living wall, the Senior, Deluxe and Grand Suite images, lobby, terrace, page openers).

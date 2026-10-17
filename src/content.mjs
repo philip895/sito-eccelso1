@@ -20,11 +20,15 @@ export const site = {
   quarter: 'Il Capo',                    // OpenStreetMap: Via del Celso, Il Capo, 90134
   address: 'Via del Celso, 101/119',
   postcode: '90134 Palermo (PA), Italia',
-  phone: '+39 346 384 2111',
-  phoneHref: '+393463842111',
-  whatsapp: '',                          // e.g. '+39 346 384 2111' — empty = hidden
-  email: '',                             // e.g. 'info@eccelso.it' — empty = hidden
-  emailHref: '',                         // e.g. 'info@domain.it'
+  // Contacts from the client's change notes (Oct 2026). NB the Google Business listing still shows
+  // the old mobile +39 346 384 2111 — update it there too if it should match.
+  phone: '+39 091 6254283',
+  phoneHref: '+390916254283',
+  mobile: '+39 375 1489153',             // shown as "Cellulare / Mobile" with a tel: link
+  mobileHref: '+393751489153',
+  whatsapp: '',                          // only if the mobile is confirmed on WhatsApp — empty = hidden
+  email: 'eccelso.info@gmail.com',
+  emailHref: '',
   cin: '',                               // CIN — legally required for Italian case vacanza
   vat: '',                               // e.g. 'P.IVA 01234567890'
   instagram: '',                         // full URL, '' hides the link
@@ -37,9 +41,10 @@ export const site = {
   // From the property's Booking.com listing (as syndicated on casai.com) — verify
   checkInTime: '16:00',
   checkOutTime: '10:00',
-  // Map: OpenStreetMap geocode of Via del Celso (street level, not house number).
-  // Nudge to the exact door and set exact: true.
-  map: { lat: 38.11620, lng: 13.35854, zoom: 17, exact: false },
+  // Map: exact position of the property from its Google Business listing.
+  map: { lat: 38.1161605, lng: 13.3575479, zoom: 17, exact: true },
+  // Google Business / Maps listing for "Eccelso - Case Vacanza" (4.9★, 50 reviews).
+  googleUrl: 'https://www.google.com/maps?cid=7825399527972135495',
 
   // Google rating supplied by the owner.
   rating: { score: '4.9', count: 50, source: 'Google' },
@@ -63,16 +68,16 @@ export const images = {
   corridor:       { src: 'home/3 foto home rettangolare a destra.jpg', alt: 'Reception and corridor with brass pendant lights and botanical murals' },
   linen:          { src: 'home/4 foto home sinistra.png',              alt: 'Folded white towels on a freshly made bed' },
   prosecco:       { src: 'home/5 foto home destra.png',                alt: 'Prosecco and two glasses beside the hot tub, with soft white bathrobes' },
-  roomSuperior:   { src: 'home/superior2.png',                         alt: 'Superior room with a sage-green sideboard and oak-tone floor' },
-  roomDeluxe:     { src: 'home/deluxe.png',                            alt: 'Deluxe room under a beamed wooden ceiling' },
-  roomJunior:     { src: 'home/junior suite.png',                      alt: 'Junior Suite living area with sofa, beamed ceiling and kitchenette' },
+  roomSuperior:   { src: 'home/superior2.jpg',                         alt: 'Superior apartment with a sage-green sideboard and oak-effect floor' },
+  roomDeluxe:     { src: 'home/deluxe.jpg',                            alt: 'Deluxe apartment: bedroom under a beamed wooden ceiling' },
+  roomJunior:     { src: 'home/junior suite.jpg',                      alt: 'Junior Suite living area with sofa, beamed ceiling and kitchenette' },
   roomSenior:     { src: 'home/9 senior suite.jpg',                    alt: 'Senior Suite: linen sofa, an agave and a terracotta side table' },
   roomDeluxeSuite:{ src: 'home/10 deluxe suite.jpg',                   alt: 'Deluxe Suite living room opening onto the bedroom' },
   roomGrand:      { src: 'home/11 grand suite.jpg',                    alt: 'Grand Suite bedroom with brass pendant lights and an abstract painting' },
-  tub:            { src: 'home/12 slide show finale.png',              alt: 'The sage-green hot tub raised on steps, beside a painted botanical wall' },
+  tub:            { src: 'home/12 slide show finale.jpg',              alt: 'The sage-green hot tub raised on steps, beside a painted botanical wall' },
   lobby:          { src: 'home/13 slide show finale.jpg',              alt: 'Brass pendant lights over the lobby, arched panels and pampas murals' },
   terrace:        { src: 'home/14 slide show finale.jpg',              alt: 'The terrace with patterned blue tiles, yellow chairs and loungers' },
-  cathedral:      { src: 'home/al posto di londra.jpeg',               alt: 'Palermo Cathedral framed between stone balusters' },
+  cathedral:      { src: 'home/al posto di londra.jpg',               alt: 'Palermo Cathedral framed between stone balusters' },
   // about us
   aboutOpening:   { src: 'about-us/foto orizzontale apertura about us.jpg', alt: 'A ceramic vase of dried flowers in the bright reception' },
   breakfast:      { src: 'about-us/foto verticale destra.png',         alt: 'A breakfast table set with white porcelain and a tulip' },
@@ -83,20 +88,20 @@ export const images = {
   // rooms
   // Superior lead image: a 3:2 crop of home/superior2.png (x 45%→100%, y 45%→100%) that leaves out
   // the TV. Replace with a new photo of the room (bed / whole room) when one is available.
-  roomSuperiorDetail: { src: 'rooms/superior-detail.jpg', alt: 'Superior room detail: sage-green sideboard, oak-effect floor and floor-length curtains' },
+  roomSuperiorDetail: { src: 'rooms/superior-detail.jpg', alt: 'Superior apartment detail: sage-green sideboard, oak-effect floor and floor-length curtains' },
   roomsOpening:   { src: 'rooms/foto orizzontale apertura.jpg',        alt: 'A bedroom with brass lamps, crimson and green cushions and an abstract canvas' },
   // gallery
   g1: { src: 'gallery/gallery 1.png',               alt: 'Botanical-print bed linen and a brass lamp' },
-  g2: { src: 'gallery/gallery 2.png',               alt: 'A round mirror and luggage rack beneath the beams' },
+  g2: { src: 'gallery/gallery 2.jpg',               alt: 'A round mirror and luggage rack beneath the beams' },
   g3: { src: 'gallery/gallery 3.png',               alt: 'A brass ring light against a white ceiling' },
-  g4: { src: 'gallery/gallery 4.png',               alt: 'Kitchenette with burgundy chairs' },
+  g4: { src: 'gallery/gallery 4.jpg',               alt: 'Kitchenette with burgundy chairs' },
   g5: { src: 'gallery/gallery 5.png',               alt: 'A round dining table with dried flowers' },
   g6: { src: 'gallery/gallery 6.png',               alt: 'Arched illuminated mirror over a sculpted basin' },
   g7: { src: 'gallery/gallery 7.png',               alt: 'A slate-blue conical pendant lamp' },
-  g8: { src: 'gallery/gallery 8.png',               alt: 'Bedroom with blue headboard, crimson cushions and an abstract canvas' },
+  g8: { src: 'gallery/gallery 8.jpg',               alt: 'Bedroom with blue headboard, crimson cushions and an abstract canvas' },
   galleryOpening: { src: 'gallery/orizzontale apertura pag.jpg', alt: 'Bedroom with blue linen under a brass ring light' },
   // location (the venue's own spaces — wellness)
-  locOpening:     { src: 'location/orizzontale apertura pagina.png', alt: 'The sage-green hot tub raised on steps, beside a painted botanical wall' },
+  locOpening:     { src: 'location/orizzontale apertura pagina.jpg', alt: 'The sage-green hot tub raised on steps, beside a painted botanical wall' },
   sauna:          { src: 'location/orizzontale ultima.JPG',          alt: 'The wooden sauna with its bucket and ladle' },
   hammam:         { src: 'location/verticale destra.JPG',            alt: 'The steam room, lit in deep blue' },
   robes:          { src: 'location/verticale sinistra1.JPG',         alt: 'Bathrobes, slippers and two glasses of prosecco' },
@@ -104,53 +109,82 @@ export const images = {
   host:           { src: 'contact/orizzontale apertura pagina.jpg',  alt: 'Your host at the reception desk' },
 };
 
-// Room types — names taken from the photography file names supplied.
-// size / guests / bed are PLACEHOLDERS until confirmed by the owner.
-// "features" lists only what is visible in each room's photograph.
+// Apartment types. `name` = type (Superior…); `cardName` = homepage card; `pageTitle` = heading on
+// rooms.html; `bookingName` = label in the booking flow. Defaults to `name` when omitted.
+// Copy for the three apartment categories is the client's (change notes, Oct 2026); their amenities
+// are listed once in `amenities` below ("Ogni appartamento è dotato di").
+// size / guests / bed stay empty (hidden) until confirmed by the owner.
 export const rooms = [
   {
-    slug: 'superior', name: 'Superior', image: 'roomSuperiorDetail',
-    line: 'Simple, bright and very calm.',
-    text: 'Sage-green woods, oak-tone floors and long curtains that soften the Sicilian light. A room that keeps things simple and gets the essentials right.',
+    // Photo: client asked to replace the sideboard crop; g8 (blue-headboard bedroom) is the best
+    // full-room shot not tied to another type — CLIENT TO CONFIRM it shows a Superior studio.
+    slug: 'superior', name: 'Superior', image: 'g8', kind: 'apartment',
+    cardName: 'Superior Studios', pageTitle: 'Studios in Palermo', bookingName: 'Superior Studio',
+    line: 'Elegant, functional open-plan spaces.',
+    text: 'Elegant, functional open-plan spaces, ideal for couples, solo travellers and small families. Carefully finished interiors designed to offer you comfort and privacy.',
     size: '', guests: '', bed: '', maxGuests: null,
-    features: ['Oak-tone wooden floor', 'Smart TV', 'Floor-length curtains'],
+    features: [],
   },
   {
-    slug: 'deluxe', name: 'Deluxe', image: 'roomDeluxe',
-    line: 'Under the old wooden beams.',
-    text: 'Warm timber beams overhead, crisp linen below. Deep green, crimson and a touch of gold, with a round mirror catching the afternoon light.',
+    slug: 'deluxe', name: 'Deluxe', image: 'roomDeluxe', kind: 'apartment',
+    cardName: 'Deluxe One-Bedrooms', pageTitle: 'One-Bedroom Apartments in Palermo’s Historic Centre', bookingName: 'Deluxe One-Bedroom',
+    line: 'Spacious layouts with a double bedroom and a full living area.',
+    text: 'Spacious layouts with a double bedroom and a full living area. Perfect for couples or friends who want to experience Palermo in total relaxation.',
     size: '', guests: '', bed: '', maxGuests: null,
-    features: ['Exposed wooden-beam ceiling', 'Round mirror', 'Luggage rack'],
+    features: [],
   },
   {
-    slug: 'junior-suite', name: 'Junior Suite', image: 'roomJunior',
-    line: 'Room to live, not only to sleep.',
-    text: 'A generous living space under the beams, with a deep sofa and a kitchenette of your own. Made for longer stays and slow mornings.',
+    slug: 'junior-suite', name: 'Junior Suite', image: 'roomJunior', kind: 'apartment',
+    cardName: 'Junior Suite Family Apartments', pageTitle: 'Apartments for Families and Groups', bookingName: 'Junior Suite Family Apartment',
+    line: 'Generous layouts ideal for families and groups of friends.',
+    text: 'Generous layouts ideal for families and groups of friends, with one or two double bedrooms and a fully equipped living area.',
     size: '', guests: '', bed: '', maxGuests: null,
-    features: ['Living area with sofa', 'Kitchenette', 'Exposed wooden-beam ceiling'],
+    features: [],
   },
   {
-    slug: 'senior-suite', name: 'Senior Suite', image: 'roomSenior',
+    slug: 'senior-suite', kind: 'suite', name: 'Senior Suite', image: 'roomSenior',
     line: 'Linen, terracotta and green.',
     text: 'Soft linen upholstery, a terracotta table, an agave in a white pot. A suite of quiet, well-chosen details where the afternoons pass slowly.',
     size: '', guests: '', bed: '', maxGuests: null,
     features: ['Separate lounge corner', 'Linen sofa', 'Oak-tone wooden floor'],
   },
   {
-    slug: 'deluxe-suite', name: 'Deluxe Suite', image: 'roomDeluxeSuite',
+    slug: 'deluxe-suite', kind: 'suite', name: 'Deluxe Suite', image: 'roomDeluxeSuite',
     line: 'Two rooms, one long view.',
     text: 'A living room that opens onto the bedroom, so the light carries through from one end to the other. Colour comes from the art on the walls.',
     size: '', guests: '', bed: '', maxGuests: null,
     features: ['Separate living room', 'Original artwork', 'Smart TV'],
   },
   {
-    slug: 'grand-suite', name: 'Grand Suite', image: 'roomGrand',
+    slug: 'grand-suite', kind: 'suite', name: 'Grand Suite', image: 'roomGrand',
     line: 'The house at its most generous.',
-    text: 'Brass pendants hang over a wide, low bed. Rich colour on the walls and soft neutrals everywhere else make this a room to come back to.',
+    text: 'Brass pendants hang over a wide, low bed. Rich colour on the walls and soft neutrals everywhere else make this a suite to come back to.',
     size: '', guests: '', bed: '', maxGuests: null,
     features: ['Brass pendant lighting', 'Original artwork', 'Upholstered headboard'],
   },
 ];
+
+// "In every apartment" list (client, Oct 2026) — identical for all apartment categories.
+export const amenities = {
+  it: ['Pompe di calore inverter', 'Wi-Fi', 'Smart TV', 'Divano letto matrimoniale o poltrona letto singola',
+    'Stoviglie (piatti, bicchieri, posate, pentole, scolapasta, taglieri, tovagliette ecc.)', 'Bollitore',
+    'Macchina per il caffè (con capsule)', 'Corredo letto (lenzuola, federe, piumino e copripiumino)',
+    'Corredo bagno (telo da bagno, tappetino)', 'Kit di cortesia (bagnodoccia e shampoo)', 'Phon',
+    'Culla e seggiolone per bambini (su richiesta)'],
+  en: ['Inverter heat pump (heating and air conditioning)', 'Wi-Fi', 'Smart TV', 'Double sofa bed or single armchair bed',
+    'Tableware (plates, glasses, cutlery, pots, colander, chopping boards, placemats and more)', 'Kettle',
+    'Coffee machine (with capsules)', 'Bed linen (sheets, pillowcases, duvet and duvet cover)',
+    'Bath linen (bath towel, bath mat)', 'Courtesy kit (shower gel and shampoo)', 'Hairdryer',
+    'Cot and high chair for children (on request)'],
+};
+
+// ⚠️ PENDING CLIENT CONFIRMATION — keep `enabled: false` until the client confirms how many suites
+// have a private panoramic terrace (their notes say "two", the site has three suite types).
+export const suitesIntro = {
+  enabled: false,
+  it: { title: 'Luxury Suite con terrazza panoramica', text: 'Eccelso dispone anche di due Suite esclusive con terrazza privata e vista sul centro storico di Palermo. Spazi unici dove vivere momenti romantici e suggestivi, ammirando la città dall’alto.' },
+  en: { title: 'Luxury Suites with Panoramic Terrace', text: 'Eccelso also has two exclusive Suites with a private terrace and a view over Palermo’s historic centre. Unique spaces for romantic, memorable moments, taking in the city from above.' },
+};
 
 // Gallery — the full unique photo set, tagged by subject.
 export const gallery = [
@@ -200,12 +234,12 @@ export const it = {
     corridor: 'Reception e corridoio con lampade a sospensione in ottone e murales botanici',
     linen: 'Asciugamani bianchi piegati su un letto appena rifatto',
     prosecco: 'Prosecco e due calici accanto alla vasca idromassaggio, con morbidi accappatoi bianchi',
-    roomSuperior: 'Camera Superior con madia verde salvia e pavimento effetto rovere',
-    roomDeluxe: 'Camera Deluxe sotto un soffitto con travi in legno',
+    roomSuperior: 'Appartamento Superior con madia verde salvia e pavimento effetto rovere',
+    roomDeluxe: 'Appartamento Deluxe: camera da letto sotto un soffitto con travi in legno',
     roomJunior: 'Zona giorno della Junior Suite con divano, travi a vista e angolo cottura',
     roomSenior: 'Senior Suite: divano in lino, un’agave e un tavolino color terracotta',
     roomDeluxeSuite: 'Il soggiorno della Deluxe Suite che si apre sulla camera da letto',
-    roomGrand: 'Camera della Grand Suite con lampade a sospensione in ottone e un quadro astratto',
+    roomGrand: 'Camera da letto della Grand Suite con lampade a sospensione in ottone e un quadro astratto',
     tub: 'La vasca idromassaggio verde salvia, rialzata su gradini, accanto a una parete dipinta a motivi botanici',
     lobby: 'Lampade in ottone nella hall, pannelli ad arco e murales di pampas',
     terrace: 'La terrazza con piastrelle blu decorate, sedie gialle e lettini',
@@ -216,8 +250,8 @@ export const it = {
     niche: 'Nicchie illuminate con piccole piante',
     kitchenette: 'Angolo cottura sotto le travi in legno a vista',
     mondello: 'La baia di Mondello al tramonto, ai piedi di Monte Pellegrino',
-    roomSuperiorDetail: 'Dettaglio della camera Superior: madia verde salvia, pavimento effetto rovere e tende a tutta altezza',
-    roomsOpening: 'Una camera con lampade in ottone, cuscini cremisi e verdi e una tela astratta',
+    roomSuperiorDetail: 'Dettaglio dell’appartamento Superior: madia verde salvia, pavimento effetto rovere e tende a tutta altezza',
+    roomsOpening: 'Una camera da letto con lampade in ottone, cuscini cremisi e verdi e una tela astratta',
     g1: 'Biancheria da letto a motivi botanici e una lampada in ottone',
     g2: 'Uno specchio tondo e un portabagagli sotto le travi',
     g3: 'Una lampada ad anello in ottone sul soffitto bianco',
@@ -225,8 +259,8 @@ export const it = {
     g5: 'Un tavolo rotondo con fiori secchi',
     g6: 'Specchio ad arco illuminato sopra un lavabo scultoreo',
     g7: 'Una lampada a sospensione conica blu ardesia',
-    g8: 'Camera con testiera blu, cuscini cremisi e una tela astratta',
-    galleryOpening: 'Camera con biancheria blu sotto una lampada ad anello in ottone',
+    g8: 'Camera da letto con testiera blu, cuscini cremisi e una tela astratta',
+    galleryOpening: 'Camera da letto con biancheria blu sotto una lampada ad anello in ottone',
     locOpening: 'La vasca idromassaggio verde salvia, rialzata su gradini, accanto a una parete dipinta a motivi botanici',
     sauna: 'La sauna in legno con secchio e mestolo',
     hammam: 'Il bagno turco, illuminato di blu intenso',
@@ -234,12 +268,12 @@ export const it = {
     host: 'L’host alla reception',
   },
   rooms: {
-    'superior': { line: 'Semplice, luminosa, serena.', text: 'Legni verde salvia, pavimenti effetto rovere e lunghe tende che addolciscono la luce siciliana. Una camera essenziale, che cura ciò che conta davvero.', features: ['Pavimento effetto rovere', 'Smart TV', 'Tende a tutta altezza'] },
-    'deluxe': { line: 'Sotto le antiche travi in legno.', text: 'Calde travi in legno sopra di te, lenzuola fresche sotto. Verde profondo, cremisi e un tocco d’oro, con uno specchio tondo che cattura la luce del pomeriggio.', features: ['Soffitto con travi in legno a vista', 'Specchio tondo', 'Portabagagli'] },
-    'junior-suite': { line: 'Spazio per vivere, non solo per dormire.', text: 'Un ampio soggiorno sotto le travi, con un divano accogliente e un angolo cottura tutto tuo. Pensata per i soggiorni lunghi e le mattine lente.', features: ['Zona giorno con divano', 'Angolo cottura', 'Soffitto con travi in legno a vista'] },
+    'superior': { cardName: 'Monolocali Superior', pageTitle: 'Monolocali a Palermo', bookingName: 'Monolocale Superior', line: 'Open space eleganti e funzionali.', text: 'Open space eleganti e funzionali, ideali per coppie, viaggiatori singoli e piccoli nuclei familiari. Ambienti curati nei minimi dettagli, pensati per offrirti comfort e privacy.', features: [] },
+    'deluxe': { cardName: 'Bilocali Deluxe', pageTitle: 'Bilocali nel Centro Storico di Palermo', bookingName: 'Bilocale Deluxe', line: 'Soluzioni spaziose con camera matrimoniale e zona living completa.', text: 'Soluzioni spaziose con camera matrimoniale e zona living completa. Perfette per coppie o amici che desiderano vivere Palermo in totale relax.', features: [] },
+    'junior-suite': { cardName: 'Trilocali Junior Suite', pageTitle: 'Trilocali per Famiglie e Gruppi', bookingName: 'Trilocale Junior Suite', line: 'Ampie soluzioni ideali per famiglie e gruppi di amici.', text: 'Ampie soluzioni ideali per famiglie e gruppi di amici, con una o due camere matrimoniali e zona giorno completamente attrezzata.', features: [] },
     'senior-suite': { line: 'Lino, terracotta e verde.', text: 'Imbottiture in lino, un tavolino color terracotta, un’agave in un vaso bianco. Una suite di dettagli scelti con cura, dove i pomeriggi scorrono lenti.', features: ['Angolo salotto separato', 'Divano in lino', 'Pavimento effetto rovere'] },
     'deluxe-suite': { line: 'Due ambienti, un’unica prospettiva.', text: 'Un soggiorno che si apre sulla camera da letto, così la luce attraversa la suite da un capo all’altro. Il colore arriva dalle opere alle pareti.', features: ['Soggiorno separato', 'Opere d’arte originali', 'Smart TV'] },
-    'grand-suite': { line: 'La casa nella sua versione più generosa.', text: 'Lampade in ottone sospese sopra un letto ampio e basso. Colori intensi alle pareti e toni neutri tutto intorno: una camera in cui tornare.', features: ['Lampade a sospensione in ottone', 'Opere d’arte originali', 'Testiera imbottita'] },
+    'grand-suite': { line: 'La casa nella sua versione più generosa.', text: 'Lampade in ottone sospese sopra un letto ampio e basso. Colori intensi alle pareti e toni neutri tutto intorno: una suite in cui tornare.', features: ['Lampade a sospensione in ottone', 'Opere d’arte originali', 'Testiera imbottita'] },
   },
   nearby: [
     ['Cattedrale di Palermo', 'La cattedrale arabo-normanna, dietro l’angolo.', 'circa 3 min a piedi'],

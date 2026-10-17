@@ -156,6 +156,14 @@
   const visuals = $$('.menu__visual img', menu);
   $$('.menu__list a', menu).forEach((a) => a.addEventListener('mouseenter', () => visuals.forEach((v, i) => v.classList.toggle('is-active', i === Number(a.dataset.i)))));
 
+  /* ---------- images: fade in only once actually loaded ---------- */
+  const markLoaded = (img) => {
+    const done = () => img.classList.add('is-loaded');
+    if (img.complete && img.naturalWidth) done();
+    else { img.addEventListener('load', done, { once: true }); img.addEventListener('error', done, { once: true }); }
+  };
+  $$('.media img').forEach(markLoaded);
+
   /* ---------- reveal ---------- */
   const revealEls = $$('[data-reveal], [data-split]');
   if ('IntersectionObserver' in window && !reduced) {
@@ -169,6 +177,16 @@
     }), { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
     targets.forEach((_, t) => io.observe(t));
   } else revealEls.forEach((el) => el.classList.add('is-in'));
+
+  // jumping to a section (#anchor link or URL hash) shows it at once instead of waiting for the scroll reveal
+  const revealNow = (hash) => {
+    let el = null;
+    try { el = hash && hash.length > 1 ? document.querySelector(hash) : null; } catch { /* invalid selector */ }
+    if (el) [el, ...el.querySelectorAll('[data-reveal], [data-split]')].forEach((e) => e.classList.add('is-in'));
+  };
+  revealNow(location.hash);
+  addEventListener('hashchange', () => revealNow(location.hash));
+  document.addEventListener('click', (e) => { const a = e.target.closest('a[href^="#"]'); if (a) revealNow(a.getAttribute('href')); });
 
   /* ---------- parallax ---------- */
   const pEls = reduced ? [] : $$('[data-parallax]');
@@ -335,12 +353,25 @@
     const cal = new Calendar($('[data-cal]', bb), {
       months: innerWidth < 1100 ? 1 : 2, start: state.start, end: state.end, minNights: CFG.minNights || 1,
       onChange: (c) => { state.start = c.start; state.end = c.end; label(); },
-      onComplete: () => setTimeout(() => { close(); $('[data-pop="guests"]', bb).classList.add('is-open'); }, 350),
+      onComplete: () => setTimeout(() => open($('[data-pop="guests"]', bb)), 350),
     });
+    // open above the bar when it fits below the fixed header, otherwise below it (and scroll it into view)
+    const place = (p) => {
+      p.classList.remove('popover--down');
+      const bar = bb.getBoundingClientRect(), headH = header ? header.getBoundingClientRect().bottom : 0;
+      if (bar.top - 12 - p.offsetHeight < Math.max(headH, 0) + 8) {
+        p.classList.add('popover--down');
+        requestAnimationFrame(() => {
+          const r = p.getBoundingClientRect();
+          if (r.bottom > innerHeight - 12) scrollBy({ top: r.bottom - innerHeight + 24, behavior: reduced ? 'auto' : 'smooth' });
+        });
+      }
+    };
+    const open = (p) => { close(); place(p); p.classList.add('is-open'); };
     $$('[data-open]', bb).forEach((b) => b.addEventListener('click', (e) => {
       e.stopPropagation();
       const p = $(`[data-pop="${b.dataset.open}"]`, bb), was = p.classList.contains('is-open');
-      close(); if (!was) p.classList.add('is-open');
+      if (was) close(); else open(p);
     }));
     bb.addEventListener('click', (e) => {
       const s = e.target.closest('[data-step]'); if (!s) return;

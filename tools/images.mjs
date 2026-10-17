@@ -2,7 +2,8 @@
 //   node tools/images.mjs          (macOS — uses the built-in `sips`)
 // Output: assets/images/<category>/web/<slug>-<width>.jpg + assets/images/manifest.json
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, writeFileSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, statSync, readFileSync, mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { images } from '../src/content.mjs';
@@ -18,6 +19,7 @@ const dims = (file) => {
 };
 
 const manifest = {};
+const tmp = mkdtempSync(join(tmpdir(), 'eccelso-lqip-'));
 let made = 0;
 for (const [key, { src }] of Object.entries(images)) {
   const input = join(imgRoot, src);
@@ -38,7 +40,12 @@ for (const [key, { src }] of Object.entries(images)) {
     }
     files.push({ w: tw, path: `assets/images/${cat}/web/${name}` });
   }
-  manifest[key] = { w, h, files };
+  // tiny blurred placeholder (inlined as a CSS background while the real image loads)
+  const lq = join(tmp, `${kebab(key)}.png`);
+  execFileSync('sips', ['-s', 'format', 'png', '--resampleWidth', '16', input, '--out', lq], { stdio: 'ignore' });
+  const lqip = `data:image/png;base64,${readFileSync(lq).toString('base64')}`;
+  manifest[key] = { w, h, files, lqip };
 }
+rmSync(tmp, { recursive: true, force: true });
 writeFileSync(join(imgRoot, 'manifest.json'), JSON.stringify(manifest, null, 1));
 console.log(`images: ${Object.keys(manifest).length} sources, ${made} files generated`);
