@@ -112,7 +112,6 @@ export const images = {
   sauna:          { src: 'location/orizzontale ultima.JPG',          alt: 'The wooden sauna with its bucket and ladle' },
   hammam:         { src: 'location/verticale destra.JPG',            alt: 'The steam room, lit in deep blue' },
   robes:          { src: 'location/verticale sinistra1.JPG',         alt: 'Bathrobes, slippers and two glasses of prosecco' },
-  // ── AI-GENERATED IMAGES (ChatGPT, C2PA "trainedAlgorithmicMedia") ─────────────────────────────
   // TODO(before launch): replace each with a REAL photo of that room, or keep it only with the visible
   // AI label (automatic when site.production = true). Source files: ~/Downloads/eccelso foto/.
   // Matched to room types by visual cues — CLIENT TO CONFIRM.

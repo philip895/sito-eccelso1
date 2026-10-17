@@ -1000,8 +1000,6 @@ select.input { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
   .hero__slide:nth-child(3) img { object-position: 18% 50%; } /* terrace: keep the yellow armchairs in frame */
 }
 
-
-/* AI-generated image label (only rendered when site.production = true) */
 .ai-badge { position: absolute; left: .6rem; bottom: .6rem; z-index: 2; padding: .3rem .55rem; border-radius: 999px; background: rgba(20, 24, 21, .72); color: #fff; font-size: .625rem; font-weight: 500; letter-spacing: .08em; line-height: 1.2; pointer-events: none; }
 .hero__slide .ai-badge { left: auto; right: var(--gutter); bottom: auto; top: calc(var(--header-h) + .75rem); }
 

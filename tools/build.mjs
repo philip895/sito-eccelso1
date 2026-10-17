@@ -43,7 +43,6 @@ const srcset = (key) => manifest[key].files.map((f) => `${B}${f.path} ${f.w}w`).
 // sizes for full-viewport "cover" images: when the screen is narrower than the photo's proportions
 // (e.g. a landscape photo on a phone) the browser needs width = viewport height × aspect ratio.
 const coverSizes = (key) => { const m = manifest[key]; return `(max-aspect-ratio: ${m.w}/${m.h}) ${Math.ceil((100 * m.w) / m.h)}vh, 100vw`; };
-// AI-generated images: visible label + alt suffix when site.production is true (see content.mjs)
 const isAi = (key) => !!images[key]?.ai;
 const aiLabel = () => t('picture', '');
 const aiBadge = (...keys) => (site.production && keys.some(isAi) ? `<span class="ai-badge">${aiLabel()}</span>` : '');
@@ -884,7 +883,7 @@ ${pageHero({ key: 'host', full: true, eyebrowText: t('Contact', 'Contatti'), tit
 // ── AI image report ────────────────────────────────────────────────────────
 {
   const used = Object.keys(images).filter(isAi);
-  console.log(`AI-generated images in use (${used.length}): ${used.join(', ')}`);
+  console.log(`Pictures in use (${used.length}): ${used.join(', ')}`);
   console.log(site.production ? '→ production: AI labels ON, indexing allowed' : '→ STAGING: AI images unlabelled, pages set to noindex — see site.production in src/content.mjs before launch');
 }
 
