@@ -92,6 +92,7 @@
     const img = $('[data-sum-img]');
     const want = r ? r.img : CFG.fallbackImg;
     if (!img.src.endsWith(want)) img.src = want;
+    const aiTag = $('[data-sum-ai]'); if (aiTag) aiTag.hidden = !(r && r.ai);
     $('[data-s-in]').textContent = state.start ? long(state.start) : '—';
     $('[data-s-out]').textContent = state.end ? long(state.end) : '—';
     $('[data-s-n]').textContent = n ?? '—';

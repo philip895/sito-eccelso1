@@ -12,6 +12,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const site = {
+  // ⚠️ STAGING vs PRODUCTION — read before launch.
+  // false = staging/preview: pages carry <meta name="robots" content="noindex"> and AI images are unlabelled.
+  // true  = public site: every image marked `ai: true` below automatically gets a visible
+  //         "Immagine generata con IA" / "AI-generated image" label. Before going live, replace AI images
+  //         with real photos of the actual rooms wherever possible (EU AI Act Art. 50 transparency,
+  //         booking-platform photo policies, consumer law on misleading descriptions).
+  production: false,
+
   // Name as shown on the illuminated sign in the property's own photography.
   name: 'Eccelso',
   descriptor: 'Case Vacanza',
@@ -105,6 +113,15 @@ export const images = {
   sauna:          { src: 'location/orizzontale ultima.JPG',          alt: 'The wooden sauna with its bucket and ladle' },
   hammam:         { src: 'location/verticale destra.JPG',            alt: 'The steam room, lit in deep blue' },
   robes:          { src: 'location/verticale sinistra1.JPG',         alt: 'Bathrobes, slippers and two glasses of prosecco' },
+  // ── AI-GENERATED IMAGES (ChatGPT, C2PA "trainedAlgorithmicMedia") ─────────────────────────────
+  // TODO(before launch): replace each with a REAL photo of that room, or keep it only with the visible
+  // AI label (automatic when site.production = true). Source files: ~/Downloads/eccelso foto/.
+  // Matched to room types by visual cues — CLIENT TO CONFIRM.
+  aiTerraceArmchairs: { ai: true, src: 'ai/terrace-armchairs.png', alt: 'The terrace with blue-and-white patterned tiles, yellow armchairs and sun loungers' },   // TODO AI: from "Immagine ChatGPT 16 ott 2026, 17_12_47-2.png"
+  aiTerraceLoungers:  { ai: true, src: 'ai/terrace-loungers.png',  alt: 'Two sun loungers on the terrace, framed by potted greenery' },                            // TODO AI: from "Immagine ChatGPT 16 ott 2026, 17_12_48-3.png"
+  aiTerraceView:      { ai: true, src: 'ai/terrace-view.png',      alt: 'The terrace among the surrounding buildings of the old town' },                          // TODO AI: from "Immagine ChatGPT 14 ott 2026, 21_11_02-9.png"
+  aiSeniorLounge:     { ai: true, src: 'ai/senior-suite-lounge.png', alt: 'Senior Suite: lounge corner with linen sofa, terracotta side table and dining area' },  // TODO AI: from "Immagine ChatGPT 16 ott 2026, 17_42_00-3.png"
+  aiSuperiorOpen:     { ai: true, src: 'ai/superior-open-space.png', alt: 'Superior studio: open-plan space with sage-green sideboard, dining table and beamed ceiling' }, // TODO AI: from "Immagine ChatGPT 16 ott 2026, 17_36_36-2.png"
   // contact
   host:           { src: 'contact/orizzontale apertura pagina.jpg',  alt: 'Your host at the reception desk' },
 };
@@ -116,9 +133,8 @@ export const images = {
 // size / guests / bed stay empty (hidden) until confirmed by the owner.
 export const rooms = [
   {
-    // Photo: client asked to replace the sideboard crop; g8 (blue-headboard bedroom) is the best
-    // full-room shot not tied to another type — CLIENT TO CONFIRM it shows a Superior studio.
-    slug: 'superior', name: 'Superior', image: 'g8', kind: 'apartment',
+    // TODO AI: image is AI-generated (aiSuperiorOpen) — swap for a real photo before launch.
+    slug: 'superior', name: 'Superior', image: 'aiSuperiorOpen', kind: 'apartment',
     cardName: 'Superior Studios', pageTitle: 'Studios in Palermo', bookingName: 'Superior Studio',
     line: 'Elegant, functional open-plan spaces.',
     text: 'Elegant, functional open-plan spaces, ideal for couples, solo travellers and small families. Carefully finished interiors designed to offer you comfort and privacy.',
@@ -145,7 +161,8 @@ export const rooms = [
     features: ['One or two double bedrooms', 'Living area with sofa', 'Kitchenette', 'Exposed wooden-beam ceiling'],
   },
   {
-    slug: 'senior-suite', kind: 'suite', name: 'Senior Suite', image: 'roomSenior',
+    // TODO AI: image is AI-generated (aiSeniorLounge) — swap for a real photo before launch.
+    slug: 'senior-suite', kind: 'suite', name: 'Senior Suite', image: 'aiSeniorLounge',
     line: 'Linen, terracotta and green.',
     text: 'Soft linen upholstery, a terracotta table, an agave in a white pot. A suite of quiet, well-chosen details where the afternoons pass slowly.',
     size: '', guests: '', bed: '', maxGuests: null,
@@ -198,8 +215,10 @@ export const gallery = [
   ['hammam', 'wellness'], ['roomGrand', 'rooms'], ['g5', 'details'], ['terrace', 'spaces'],
   ['mondello', 'palermo'], ['roomSuperior', 'rooms'], ['g7', 'details'], ['sauna', 'wellness'],
   ['g4', 'rooms'], ['niche', 'details'], ['roomDeluxeSuite', 'rooms'], ['linen', 'details'],
-  ['aboutOpening', 'spaces'], ['robes', 'wellness'], ['kitchenette', 'rooms'], ['roomSenior', 'rooms'],
+  ['aboutOpening', 'spaces'], ['robes', 'wellness'], ['kitchenette', 'rooms'], ['aiSeniorLounge', 'rooms'],
   ['galleryOpening', 'rooms'], ['roomsOpening', 'rooms'], ['host', 'spaces'],
+  // TODO AI: the five entries below are AI-generated
+  ['aiTerraceArmchairs', 'spaces'], ['aiSuperiorOpen', 'rooms'], ['aiTerraceLoungers', 'spaces'], ['aiTerraceView', 'spaces'],
 ];
 
 // Guest reviews — VERBATIM excerpts, first names only. Never edit the wording.
@@ -269,6 +288,12 @@ export const it = {
     hammam: 'Il bagno turco, illuminato di blu intenso',
     robes: 'Accappatoi, pantofole e due calici di prosecco',
     host: 'L’host alla reception',
+    // AI-generated (see TODO in `images`)
+    aiTerraceArmchairs: 'La terrazza con piastrelle a motivi bianchi e blu, poltroncine gialle e lettini',
+    aiTerraceLoungers: 'Due lettini sulla terrazza, tra piante in vaso',
+    aiTerraceView: 'La terrazza tra i palazzi del centro storico',
+    aiSeniorLounge: 'Senior Suite: angolo salotto con divano in lino, tavolino color terracotta e zona pranzo',
+    aiSuperiorOpen: 'Monolocale Superior: open space con madia verde salvia, tavolo da pranzo e travi a vista',
   },
   rooms: {
     'superior': { cardName: 'Monolocali Superior', pageTitle: 'Monolocali a Palermo', bookingName: 'Monolocale Superior', line: 'Open space eleganti e funzionali.', text: 'Open space eleganti e funzionali, ideali per coppie, viaggiatori singoli e piccoli nuclei familiari. Ambienti curati nei minimi dettagli, pensati per offrirti comfort e privacy.', features: ['Open space', 'Pavimento effetto rovere', 'Smart TV', 'Tende a tutta altezza'] },

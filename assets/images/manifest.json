@@ -691,6 +691,101 @@
   ],
   "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAYCAIAAAB8wupbAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAAGAAAAAAEJTozAAAD8klEQVQ4EQ2UW28bRRTH57a73vWud22vL3ESx3HSJKWVqqJUraryhvqAhCpVCMEL4pEHvgEfiRcEXwHRiEgkNFVThZSmTZ1gO77sfXbnxkozcx5mzkX/+Z0Dv3v6eDQPZmGy1W2Ol0vfdbKccSE92wrSol6zaMFoUYwXy+FKfWfDJ2kKCDItE2YZBsCiVOMcciE4M8yKJTiWEisFXNuFxJTIIop2sYqBnKvcM1AFc0OJQvAc8ZoCQjIDgsw0NZ4pIcDm5ha+P9zXTWQ6eLM/rNVNqATWFCaqPNur/upGm6msEPRqetOoQgtR8i74UwCgaVrAI8l5nkZpmnHOJVDvlpdr3dajB/vT6c14NitvszgiV+8ny0IUUiIEy6KbXiNNFMaGkFxn1aBCaEalAjXH9qqq47fgs0c/YdGcxqeFfq1jY3/nCWeBXauenp0uskanrSQ4XIS00/b3d30e3pCDo58xtACcZgIpDd77pOF5ds6uFsUZ0nyETcvtkrrRruGdW8PjgxFxNQ1DgbFDbGeeGn8dfyQwj5KcFmpnt7YIrtc8Xy4X3a0dqVSj1UQQUUxyQlghg5bP6g0R0NkymQoQJvnNzfw6jea1qmmbppDKMCqIg5iDKJdpzuJcLGgRFixmPJQgVjCXqmCMS5mcvH4FEWJFgShMQr5kKg5oPJ7PR5NpFIecF03fvX93UNGRUW5NHZ+8HE+mnOXE91vpYiYBTLK0v9F++ODe7e3+oN/DBPc6rb3t1bfvR0W2sB2XCWBWXdJrN8bxdBLzb7/68scfvm/5dZ4numEQTX978WFtY3UeZeNRdHtvr9rs1Ot3yVrbnV6g4e7t58++SMPl6+uPhk46K6tODRsaeXF4Op5MXhwcNJqt4d6g1vTI9vr6YOvO82++tu1qFC5P//j97PzMqzmeY2KMW3Xr38vFLIp1ywxK6zr4s6ef9/rrJf1JOFWc7u7dWen1jt+cvLl498+HS6LjwWa/VXccy/Q8x3Yc/PjJI8CYXTHSOKi6PiFat90yqxXd0m5tb+kVHQAIFdKIiYhu2xUyn83Kb3v46X3bXpGCC07Pz98fvzwhhlGiG4a5XvaIElxlZRsFy4CUTqPL0S+//rY16EPAS5DfnJ+3N/rNRoMVtOGsXXz8UKkCgnGSUoQQgQCYln746u/DoyOgeCHZan+1VrM1gnIqF/GiUtWqplFKJ6UqV2mY57mDQe/qvwlClWGvs762ohFSzoGCCY3Qlu9kWcoozyiFEJUOEkLQ7rY73Vb5jpSRIUqSbD5fJGnabLh1zyr1LbELozgtq+JlojKVEArAkkchZEbzKErKueG6LqUsiiND10qpbNvRdf1/VEsvR00w1WUAAAAASUVORK5CYII="
  },
+ "aiTerraceArmchairs": {
+  "w": 1448,
+  "h": 1086,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/ai/web/ai-terrace-armchairs-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/ai/web/ai-terrace-armchairs-960.jpg"
+   },
+   {
+    "w": 1448,
+    "path": "assets/images/ai/web/ai-terrace-armchairs-1448.jpg"
+   }
+  ],
+  "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAIAAADkharWAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAACRRQtxAAACAElEQVQoFRVSyYoTYRD+914my5AYs5BFJ47OTRQRQaOHQebmSfDik/gGPoF3yQvIHCIooxdvgmBQRpmImJmYxZ7J0ul0uvuv8k9Rh9r4vqqPoocvnw3++ZjbK1WbQWp3krkzipxYY1n6o4AQ4VDQA18HQBgTklPhOqJeyk4uet2PnyvVxsHTQt+3BqFqyr8sax0Hxa/LnOPy3S3dCH+QxVAk0Yoj1AtWSubjBCUE9rh7K6W2s5V88VItiLJLdw20Hv68MuxgEYWwt5UUnGmYjh266hy1x95gp1pVp+za1QflWrMYHHF/RMLeBFSa5w1DCOAoZws0JoH+7X2fsWHMPNtOfTn5lM5YsBr58Xq60M3cTWVRMfMj144XszkSmkkNnz95EaabSlpI1fsPbxkDz/92dnb8sHVw2v/zrtMWRobW3WnvxPt1Tm7srPvE9ub2Ojbn6Mr1fX8+zZbv1faC2ewiUaXW/m36pv1Kjl6vacFWciwehbn7KB2jnznMmFKSMqa1Joi2ZSUaRKb5uBs0uFTAXOFmqGBGcEKMU0QSJ5pSIJRSQoMwupyVwnZddAogBDKeIHCggps2AsBmjCBjzAQaCSDOlkRQRjVlJmEAhHOCZsYY0RrIJjRlNKpvMJCcL2MmBLcUBySRRm6IqVkDENB8QZIYGmQEV5Hh3iBN/fV/iEULDLH64D0AAAAASUVORK5CYII="
+ },
+ "aiTerraceLoungers": {
+  "w": 1448,
+  "h": 1086,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/ai/web/ai-terrace-loungers-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/ai/web/ai-terrace-loungers-960.jpg"
+   },
+   {
+    "w": 1448,
+    "path": "assets/images/ai/web/ai-terrace-loungers-1448.jpg"
+   }
+  ],
+  "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAIAAADkharWAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAACRRQtxAAACMElEQVQoFRWQS08TYRSGv9sw17bT1mKvsTQtoUFqpGBiiAZUQkBDQlyYiLr0D7jzB/gLXLvxstKwZunOhKBpKGAQsFNqKdMOlw5tZ9qZ+fx4c87mzZtzeeDeTsnv82ME9A78sKXwHDEs13M9nsNMHKIR3u5S8ZrgiDwZC1P8cPpOLJ0Y4kRCuOZAFLmeLCrz7noe72acjTx30vONhDY/Pr2XvJXihyUHP3mc+l76YvVbR9UNz2sYB59ld9sHy4O+tn30dSqXpdXKv8oaCKNkvEghIGvrn0yEdyoltw0QsWP+eMXqbAIQluN/j08V81vd7DSoHTWMZqvFbkWrL98nY6N1rVecfL744K0ghcKBhGd7ihLo9zpefHJu5Z2fv2HoplY7qR2fobvT9yez82YtOpZZWll5o6qzf3ZBR0+Uf3YvWyOZ9PLtwqLTTrYNQBBkGIhW01O5heVXN/WLvtWzF5ZeU2nCdjGCNKpKxeJMs9mI5x8FVb9WP5N5hMdnnlkeRzm5qlUjqpLLjhTGR5uXlJd8S7NTsiiWtsq6SQOhqAN4s0dxcW5VEHhKUev0vHKwn06nfvz6rZ9bF+3O4cFh3x7sV445KTjEDVHGiB1VmH0xHJIpgAE11O3D8t7RWZcKgsILQrvraHVD8IUlQYSUCbAilgMBBQhhhEjkeozZmBB0JRhUgwACDABlOFkIQnvgkolc+LRts5DjelcmQ+Gylz22HrGGEAGKgccGuS6NR8T/ltkDamH0gU0AAAAASUVORK5CYII="
+ },
+ "aiTerraceView": {
+  "w": 1448,
+  "h": 1086,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/ai/web/ai-terrace-view-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/ai/web/ai-terrace-view-960.jpg"
+   },
+   {
+    "w": 1448,
+    "path": "assets/images/ai/web/ai-terrace-view-1448.jpg"
+   }
+  ],
+  "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAIAAADkharWAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAACRRQtxAAACI0lEQVQoFQ3Ry2oTUQCA4XOb+0yTyXVM0lwaiKbgBcTShQuLFcGNIILv4c4X6CMIvoFLd66E1pUELSK1oU1bY0iaJmmSmUmdS2bOOebff6sfHrUvMIQsDkb9rpq6hbDAOb1dzZ/3rz4MGpokqoSnZW6KDBERQ04wQp3TYxCHo8msJiU1nWAIbMdZ+v5j6YxEiwQN9NA3ZT6ihpiukMDzYoAvuoOCZcWUUsYIohzAyB2nB0druQ2ZyGi5MPWcxBgMz8lsOrWyGf9mkTaNFWCUBVHIuea5k8nJ/nzhaPn1+eXZVuqZrJkEY8JAJGAkwOVgOCGSrhtmFMVX43lvyjxQCpwYsRPC7YMfe5XsnXL6CVYyuWqp/GX/IG9VwyCYuZ0oxqpilMoVq7FVrN0tFh82GruUe+P576TewGuyXqrfc25gzLTe6Gvr+3sj0XRcHwK8Wc9nEoKpEZlEuVSzUtxNZtbxzut37lKjYiqAmuv8Gfa+ze1TTtvXdst3rv2lDmjf8z1FVCTCFBHgp6/eigJZBSFnwAzCon2NRpdDd95lcEHJ9PDnx7H9T5OZLKRVVSIEwdUKDgAC2EjmN+4/Z/FO4I51cDkcH/f7LVliityb2bEi1HrdIWFxKKoq4wBBwDiFEAmyoGfr249e0Gh52m73Or/s6afDsFPINrl0hndfvnHdyDC0mDKEESYYAJ7L6EUrgRC2CoXNB9uABH/bF4kEcP3P/wGbUg86bI9VbgAAAABJRU5ErkJggg=="
+ },
+ "aiSeniorLounge": {
+  "w": 1448,
+  "h": 1086,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/ai/web/ai-senior-lounge-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/ai/web/ai-senior-lounge-960.jpg"
+   },
+   {
+    "w": 1448,
+    "path": "assets/images/ai/web/ai-senior-lounge-1448.jpg"
+   }
+  ],
+  "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAIAAADkharWAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAACRRQtxAAACF0lEQVQoFRWQSU8UURSF33Crq4rqoQZo0DA0U5RgTFwgO9y5NCa68Mdo4q8wbtWNiWsTo3GJLAizJkQiglDdDd10VVOv5vfqWZztOd/NORcf/fi8/vY17e3OTdajOCOjC/bMUv/3duv5q0prJY2COMkKKRuWgwlFGOOLo92U+Ydf3ne3v9YNVaFYCBkhbe3lJ0XTk4h5LC1jddMCUEoACkT8YTT56AVz7kmM7aYzoim/dnaUmsmzTIKqqBghREEhACUJ10F0+OGNMzcP00tjE7fHp+ctZ8ztDkDRgjAV/CZaAuRGFCFMdF2bXFzKweA8p3q99DAq3E5n4HnlZUyBZ0keBwQqZR8pJfS8fnb/wS3AF532n59b4cyi41hWz+X+ldCNokAii/y+KwkaHW+JQgL3euHBxsLjJ7WGGW5uxN2joD+lBldQiPXv7xRomOZYp31id9px8g3lLpzub0UHe3u1WtltoqHefbiKDMNeWU6G/5r21PHex/3LJA6FUa9KJILAhzsLTWP5KeiGXisHkGTo5SGv1s3h6UF43mbXxBu0KdWjfh7E0eraM8z+bqI8knlczpUlARU2DMLLE8bC87Mz/5q5TBy7fZPy8ks89oGO2LEv8jTMAk/ytGpZegWDZY4Ymg75hesSyYymQpUqBpUXNiDQUkGIlAOf2bUKLfJu+0qBgsehUa3Ozk5T6CApoKIRUBHo/wGOsgyGyaUa1QAAAABJRU5ErkJggg=="
+ },
+ "aiSuperiorOpen": {
+  "w": 1448,
+  "h": 1086,
+  "files": [
+   {
+    "w": 480,
+    "path": "assets/images/ai/web/ai-superior-open-480.jpg"
+   },
+   {
+    "w": 960,
+    "path": "assets/images/ai/web/ai-superior-open-960.jpg"
+   },
+   {
+    "w": 1448,
+    "path": "assets/images/ai/web/ai-superior-open-1448.jpg"
+   }
+  ],
+  "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAIAAADkharWAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAADAAAAACRRQtxAAACK0lEQVQoFQ2Q204TQQCGZ2Znz6W7tpS1Ymg5KWo8BBOINkaNJHDnhd75CD4Az+Kdz2AMRgnRBNB4DJiYEEst29Jz2e2y2+5hdmfs3XfxJ1/+D5arrb1v+/euGOVXL3LZ1MLK2iBSM0bOL+8Q3w483+53pZkV9dFmglVKE4wxX22Ub98o2sqy3Tiqv/1QWLrulD8nZJR4Z0DSc2ubeGEtZhygFHEYQwRlPuUFo1vPXh7/2FMk6dL60+jcOnzzOrs4lb9ZkmfuJEmMKaOUBoGPAYBpfVKb0EHck8fzVFYvXEtCpud355em+JzBeB5ymESRa/XEVBpBCA1tQkAIQMQLAiURSgCIQxLHkkD7ltXo2taZTcLA6dQULYsZAMPAY9GQjQlARmMIAEKIENrzhHdfdlmu7Xb21x8/x7LcqVXx2IAQHXiuCjgaE/f4pHrwU9LSVq3VbzVmV590nZFD1fppszhd+Lq9hSGAR/9MQ41dy+mZf4/ef/q+9RHkp0d1E5HhYirlilKzVQvPvbyurz58MD4NAPEAVET3cHFuim5snFQaZwJ3v7R83q9fVpNKoxJ3mlQPWpXfbSfC42RzxatGJhf2FD9G86USP9se7u9kCkZE2nEY3J3Lz18QR54bnP4SqQSPzS5g1Pqz7ZgHCYUJJ5OIeF1Tm7w4sps8xqKiyKLAIBoM+ubpCaaUsTgcNCsJScaxAfBVVeU0jaeBiJjIg9AfAsqwwAMkpTOF///OKm96/HnzAAAAAElFTkSuQmCC"
+ },
  "host": {
   "w": 2400,
   "h": 2012,

@@ -20,7 +20,7 @@ let B = '';                                   // path prefix to the site root ('
 const t = (en, it) => (LANG === 'it' ? it : en);
 const loc = (v) => (v && typeof v === 'object' ? v[LANG] ?? '' : v ?? '');
 const need = (v, what) => { if (v === undefined || v === null || v === '') throw new Error(`Missing Italian translation: ${what}`); return v; };
-const alt = (key) => (LANG === 'it' ? need(IT.alts[key], `it.alts.${key}`) : images[key].alt);
+const alt = (key) => { const a = LANG === 'it' ? need(IT.alts[key], `it.alts.${key}`) : images[key].alt; return site.production && images[key]?.ai ? `${a} — ${LANG === 'it' ? 'immagine generata con IA' : 'AI-generated image'}` : a; };
 const roomT = (r0) => {
   const r = LANG === 'it' ? { ...r0, ...need(IT.rooms[r0.slug], `it.rooms.${r0.slug}`) } : { ...r0 };
   return { ...r, cardName: r.cardName || r.name, pageTitle: r.pageTitle || r.name, bookingName: r.bookingName || r.name };
@@ -43,6 +43,10 @@ const srcset = (key) => manifest[key].files.map((f) => `${B}${f.path} ${f.w}w`).
 // sizes for full-viewport "cover" images: when the screen is narrower than the photo's proportions
 // (e.g. a landscape photo on a phone) the browser needs width = viewport height × aspect ratio.
 const coverSizes = (key) => { const m = manifest[key]; return `(max-aspect-ratio: ${m.w}/${m.h}) ${Math.ceil((100 * m.w) / m.h)}vh, 100vw`; };
+// AI-generated images: visible label + alt suffix when site.production is true (see content.mjs)
+const isAi = (key) => !!images[key]?.ai;
+const aiLabel = () => t('AI-generated image', 'Immagine generata con IA');
+const aiBadge = (...keys) => (site.production && keys.some(isAi) ? `<span class="ai-badge">${aiLabel()}</span>` : '');
 // blurred placeholder shown by .media until the real image has loaded
 const lq = (key) => (manifest[key]?.lqip ? `--lqip:url(${manifest[key].lqip})` : '');
 
@@ -56,7 +60,7 @@ function media(key, { ratio = '', arch = false, parallax = false, reveal = true,
   const cls = ['media', ratio, arch && 'media--arch', parallax && 'media--parallax'].filter(Boolean).join(' ');
   const style = [d && `--d:${d}s`, lq(key)].filter(Boolean).join(';');
   const attrs = [reveal && 'data-reveal', parallax && 'data-parallax', style && `style="${style}"`, extra].filter(Boolean).join(' ');
-  return `<div class="${cls}" ${attrs}>${img(key, { sizes, eager })}</div>`;
+  return `<div class="${cls}" ${attrs}>${img(key, { sizes, eager })}${aiBadge(key)}</div>`;
 }
 
 const lines = (arr, d = 0) => arr.map((l, i) => `<span class="line"><span style="--i:${i}${d ? `;--d:${d}s` : ''}">${l}</span></span>`).join('');
@@ -201,7 +205,7 @@ function clientConfig() {
   const cfg = {
     name: site.name, city: site.city, lang: LANG, bookingEndpoint: site.bookingEndpoint, contactEndpoint: site.contactEndpoint,
     minNights: site.minNights, maxGuests: site.maxGuests,
-    rooms: rooms.map((r0) => { const r = roomT(r0); return { slug: r.slug, name: r.bookingName, line: r.line, img: src(r.image, 960), maxGuests: r.maxGuests }; }),
+    rooms: rooms.map((r0) => { const r = roomT(r0); return { slug: r.slug, name: r.bookingName, line: r.line, img: src(r.image, 960), ai: site.production && isAi(r.image), maxGuests: r.maxGuests }; }),
     fallbackImg: src('livingWall', 960), i18n: I18N[LANG],
   };
   return `<script>window.ECCELSO=${JSON.stringify(cfg)};</script>`;
@@ -223,7 +227,7 @@ function layout({ page, file, title, description, hero = false, body, scripts = 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<meta name="theme-color" content="#232f29">
+<meta name="theme-color" content="#232f29">${site.production ? '' : '\n<meta name="robots" content="noindex, nofollow">'}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="${t('en_GB', 'it_IT')}">
 <meta property="og:title" content="${esc(title)}">
@@ -341,11 +345,11 @@ function buildPages() {
 
   // HOME ------------------------------------------------------------------
   // Every photo appears once on the homepage (client: "cambiare foto che si ripetono").
-  const heroSlides = ['livingWall', 'tub', 'host'];
-  const heroMobile = ['facade', 'tub', 'host']; // portrait-friendly, high-res sources for phones
+  const heroSlides = ['livingWall', 'tub', 'aiTerraceArmchairs'];   // TODO AI: slide 3 is AI-generated
+  const heroMobile = ['facade', 'tub', 'aiTerraceArmchairs']; // portrait-friendly sources for phones
   const moments = [
     ['lobby', t('The lobby', 'La hall'), t('Brass light and pampas grass painted on arched walls.', 'Luce d’ottone ed erba della pampa dipinta su pareti ad arco.')],
-    ['terrace', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')],
+    ['aiTerraceLoungers', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')], // TODO AI
     ['g6', t('The bathroom', 'Il bagno'), t('An illuminated arched mirror above a sculpted basin.', 'Uno specchio ad arco illuminato sopra un lavabo scultoreo.')],
   ];
   pages['index.html'] = layout({
@@ -356,7 +360,7 @@ function buildPages() {
 <section class="hero" aria-label="${t('Welcome', 'Benvenuti')}">
   <div class="hero__media"><div class="hero__parallax" data-parallax data-speed="0.25">
     <div class="hero__slides">
-      ${heroSlides.map((k, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}"><picture><source media="(max-width: 700px)" srcset="${srcset(heroMobile[i])}" sizes="${coverSizes(heroMobile[i])}">${img(k, { eager: i === 0, priority: i === 0, sizes: coverSizes(k) })}</picture></div>`).join('\n      ')}
+      ${heroSlides.map((k, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}"><picture><source media="(max-width: 700px)" srcset="${srcset(heroMobile[i])}" sizes="${coverSizes(heroMobile[i])}">${img(k, { eager: i === 0, priority: i === 0, sizes: coverSizes(k) })}</picture>${aiBadge(k, heroMobile[i])}</div>`).join('\n      ')}
     </div>
   </div></div>
   <div class="hero__content on-image">
@@ -429,7 +433,7 @@ function buildPages() {
   </div>
   <div class="track" data-track tabindex="0" aria-label="${t('Apartments and suites', 'Appartamenti e suite')}">
     ${R.map((r, i) => `<a class="room-card" href="rooms.html#${r.slug}" data-reveal style="--d:${Math.min(i, 3) * 0.1}s">
-      <div class="media" style="${lq(r.image)}">${img(r.image, { sizes: '(max-width: 900px) 82vw, 40vw' })}</div>
+      <div class="media" style="${lq(r.image)}">${img(r.image, { sizes: '(max-width: 900px) 82vw, 40vw' })}${aiBadge(r.image)}</div>
       <div class="room-card__meta"><span class="room-card__num">${pad(i + 1)}</span><h3 class="h3">${r.cardName}</h3><span class="room-card__go" aria-hidden="true">${icon.next}</span><p class="room-card__line">${r.line}</p></div>
     </a>`).join('\n    ')}
   </div>
@@ -456,7 +460,7 @@ function buildPages() {
     </div>
     <div class="moments__layout">
     <div class="moments__stage" data-reveal="fade">
-      ${moments.map(([k], i) => `<div class="moments__slide${i === 0 ? ' is-active' : ''}" style="${lq(k)}">${img(k, { sizes: '(max-width: 900px) 100vw, 68vw' })}</div>`).join('\n      ')}
+      ${moments.map(([k], i) => `<div class="moments__slide${i === 0 ? ' is-active' : ''}" style="${lq(k)}">${img(k, { sizes: '(max-width: 900px) 100vw, 68vw' })}${aiBadge(k)}</div>`).join('\n      ')}
     </div>
     <div class="moments__bar">
       <div class="moments__caps" aria-live="polite">
@@ -645,7 +649,7 @@ ${pageHero({ key: 'galleryOpening', eyebrowText: t('Gallery', 'Galleria'), title
       ${cats.map(([c, l], i) => `<button class="filter${i === 0 ? ' is-active' : ''}" role="tab" aria-selected="${i === 0}" data-filter="${c}">${l}<sup>${pad(count(c))}</sup></button>`).join('')}
     </div>
     <div class="masonry" data-gallery>
-      ${gallery.map(([k, c], i) => `<figure class="masonry__item" data-cat="${c}"><button type="button" data-lb="${i}" data-full="${src(k, 2400)}" aria-label="${t('Open photo', 'Apri la foto')}: ${esc(alt(k))}"><div class="media" data-reveal style="--d:${(i % 3) * 0.08}s;${lq(k)}">${img(k, { sizes: '(max-width: 600px) 100vw, (max-width: 900px) 50vw, 32vw' })}</div></button><figcaption class="masonry__cap"><span>${esc(alt(k).split(',')[0])}</span><span>${cats.find((x) => x[0] === c)[1]}</span></figcaption></figure>`).join('\n      ')}
+      ${gallery.map(([k, c], i) => `<figure class="masonry__item" data-cat="${c}"><button type="button" data-lb="${i}" data-full="${src(k, 2400)}" aria-label="${t('Open photo', 'Apri la foto')}: ${esc(alt(k))}"><div class="media" data-reveal style="--d:${(i % 3) * 0.08}s;${lq(k)}">${img(k, { sizes: '(max-width: 600px) 100vw, (max-width: 900px) 50vw, 32vw' })}${aiBadge(k)}</div></button><figcaption class="masonry__cap"><span>${esc(alt(k).split(',')[0])}</span><span>${cats.find((x) => x[0] === c)[1]}</span></figcaption></figure>`).join('\n      ')}
     </div>
   </div>
 </section>
@@ -674,6 +678,7 @@ ${pageHero({ key: 'facade', eyebrowText: t('Location', 'Dove siamo'), title: t([
       <h2 class="h2" id="city2-title" data-split>${lines(t([`${esc(site.city)},`, '<em>between history and wonder.</em>'], [`${esc(site.city)},`, '<em>tra storia e meraviglia.</em>']))}</h2>
       <p class="body" data-reveal>${t('Through timeless alleyways, Mediterranean scents and baroque splendour, Palermo reveals its most authentic soul. Just steps away, the charm of the markets and the majesty of the Cathedral invite you to lose yourself in the city’s beauty.', 'Tra vicoli senza tempo, profumi mediterranei e splendori barocchi, Palermo svela la sua anima più autentica. A pochi passi, il fascino dei mercati e la maestosità della Cattedrale invitano a perdersi nella bellezza della città.')}</p>
     </div>
+    <figure class="places__b">${media('aiTerraceView', { ratio: 'ratio-43', sizes: '(max-width: 900px) 90vw, 34vw', d: 0.12 })}<figcaption class="caption">${t('Our terrace, among the rooftops of the old town', 'La nostra terrazza, tra i tetti del centro storico')}</figcaption></figure>
   </div>
 </section>
 <section class="section section--dark" aria-labelledby="near-title">
@@ -792,7 +797,7 @@ ${pageHero({ key: 'host', full: true, eyebrowText: t('Contact', 'Contatti'), tit
           <h2 class="h3 step__title" id="s2">${t('Choose your apartment', 'Scegli l’appartamento')}</h2>
           <p class="body step__intro">${t('Pick an apartment type, or let us suggest the best one for your dates.', 'Scegli una tipologia, oppure lascia che ti suggeriamo la migliore per le tue date.')}</p>
           <div class="room-opts" role="radiogroup" aria-label="${t('Apartment type', 'Tipologia di appartamento')}">
-            ${R.map((r) => `<label class="room-opt" data-room-opt="${r.slug}"><input type="radio" name="room" value="${r.slug}"><div class="media" style="${lq(r.image)}">${img(r.image, { sizes: '11rem', alt: '' })}</div><div><div class="room-opt__name">${r.bookingName}</div><p class="room-opt__line">${r.line}</p></div><span class="room-opt__radio" aria-hidden="true"></span></label>`).join('\n            ')}
+            ${R.map((r) => `<label class="room-opt" data-room-opt="${r.slug}"><input type="radio" name="room" value="${r.slug}"><div class="media" style="${lq(r.image)}">${img(r.image, { sizes: '11rem', alt: '' })}${aiBadge(r.image)}</div><div><div class="room-opt__name">${r.bookingName}</div><p class="room-opt__line">${r.line}</p></div><span class="room-opt__radio" aria-hidden="true"></span></label>`).join('\n            ')}
             <label class="room-opt room-opt--none"><input type="radio" name="room" value="any"><div><div class="room-opt__name"><em>${t('No preference', 'Nessuna preferenza')}</em></div><p class="room-opt__line">${t('Suggest the best available apartment for our dates.', 'Suggeritemi il miglior appartamento disponibile per le mie date.')}</p></div><span class="room-opt__radio" aria-hidden="true"></span></label>
           </div>
           <p class="step__error" data-err="2" role="alert"></p>
@@ -837,7 +842,7 @@ ${pageHero({ key: 'host', full: true, eyebrowText: t('Contact', 'Contatti'), tit
     </div>
     <aside class="booking__aside" aria-label="${t('Your stay', 'Il tuo soggiorno')}">
       <div class="summary" data-summary>
-        <div class="media"><img src="${src('livingWall', 960)}" alt="" data-sum-img width="1024" height="683"></div>
+        <div class="media"><img src="${src('livingWall', 960)}" alt="" data-sum-img width="1024" height="683"><span class="ai-badge" data-sum-ai hidden>${aiLabel()}</span></div>
         <div class="summary__body">
           <p class="eyebrow">${t('Your stay', 'Il tuo soggiorno')}</p>
           <p class="summary__room" data-sum-room>${esc(site.name)}, ${esc(site.city)}</p>
@@ -874,6 +879,13 @@ ${pageHero({ key: 'host', full: true, eyebrowText: t('Contact', 'Contatti'), tit
   });
 
   return pages;
+}
+
+// ── AI image report ────────────────────────────────────────────────────────
+{
+  const used = Object.keys(images).filter(isAi);
+  console.log(`AI-generated images in use (${used.length}): ${used.join(', ')}`);
+  console.log(site.production ? '→ production: AI labels ON, indexing allowed' : '→ STAGING: AI images unlabelled, pages set to noindex — see site.production in src/content.mjs before launch');
 }
 
 // ── write both languages ───────────────────────────────────────────────────
