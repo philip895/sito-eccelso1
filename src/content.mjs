@@ -18,7 +18,7 @@ export const site = {
   //         "Immagine generata con IA" / "AI-generated image" label. Before going live, replace AI images
   //         with real photos of the actual rooms wherever possible (EU AI Act Art. 50 transparency,
   //         booking-platform photo policies, consumer law on misleading descriptions).
-  production: false,
+  production: true,
 
   // Name as shown on the illuminated sign in the property's own photography.
   name: 'Eccelso',
