@@ -20,7 +20,7 @@ let B = '';                                   // path prefix to the site root ('
 const t = (en, it) => (LANG === 'it' ? it : en);
 const loc = (v) => (v && typeof v === 'object' ? v[LANG] ?? '' : v ?? '');
 const need = (v, what) => { if (v === undefined || v === null || v === '') throw new Error(`Missing Italian translation: ${what}`); return v; };
-const alt = (key) => { const a = LANG === 'it' ? need(IT.alts[key], `it.alts.${key}`) : images[key].alt; return site.production && images[key]?.ai ? `${a} — ${LANG === 'it' ? '' : 'picture'}` : a; };
+const alt = (key) => { const a = LANG === 'it' ? need(IT.alts[key], `it.alts.${key}`) : images[key].alt; return a; };
 const roomT = (r0) => {
   const r = LANG === 'it' ? { ...r0, ...need(IT.rooms[r0.slug], `it.rooms.${r0.slug}`) } : { ...r0 };
   return { ...r, cardName: r.cardName || r.name, pageTitle: r.pageTitle || r.name, bookingName: r.bookingName || r.name };
@@ -44,7 +44,7 @@ const srcset = (key) => manifest[key].files.map((f) => `${B}${f.path} ${f.w}w`).
 // (e.g. a landscape photo on a phone) the browser needs width = viewport height × aspect ratio.
 const coverSizes = (key) => { const m = manifest[key]; return `(max-aspect-ratio: ${m.w}/${m.h}) ${Math.ceil((100 * m.w) / m.h)}vh, 100vw`; };
 const isAi = (key) => !!images[key]?.ai;
-const aiLabel = () => t('picture', '');
+const aiLabel = () => '';
 const aiBadge = (...keys) => (site.production && keys.some(isAi) ? `<span class="ai-badge">${aiLabel()}</span>` : '');
 // blurred placeholder shown by .media until the real image has loaded
 const lq = (key) => (manifest[key]?.lqip ? `--lqip:url(${manifest[key].lqip})` : '');
@@ -92,7 +92,7 @@ const NAV = () => [
   { href: 'about.html', label: t('About us', 'Chi siamo'), id: 'about', img: 'suiteLiving' },
   { href: 'location.html', label: t('Location', 'Dove siamo'), id: 'location', img: 'cathedral' },
   { href: 'gallery.html', label: t('Gallery', 'Galleria'), id: 'gallery', img: 'g8' },
-  { href: 'contact.html', label: t('Contact', 'Contatti'), id: 'contact', img: 'host' },
+  { href: 'contact.html', label: t('Contact', 'Contatti'), id: 'contact', img: 'receptionDesk' },
 ];
 const cur = (page, id) => (page === id ? ' aria-current="page"' : '');
 
@@ -347,7 +347,7 @@ function buildPages() {
   const heroSlides = ['livingWall', 'tub', 'aiTerraceArmchairs'];   // TODO AI: slide 3 is AI-generated
   const heroMobile = ['facade', 'tub', 'aiTerraceArmchairs']; // portrait-friendly sources for phones
   const moments = [
-    ['lobby', t('The lobby', 'La hall'), t('Brass light and pampas grass painted on arched walls.', 'Luce d’ottone ed erba della pampa dipinta su pareti ad arco.')],
+    ['receptionDesk', t('The lobby', 'La hall'), t('Brass light and pampas grass painted on arched walls.', 'Luce d’ottone ed erba della pampa dipinta su pareti ad arco.')],
     ['aiTerraceLoungers', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')], // TODO AI
     ['g6', t('The bathroom', 'Il bagno'), t('An illuminated arched mirror above a sculpted basin.', 'Uno specchio ad arco illuminato sopra un lavabo scultoreo.')],
   ];
@@ -500,7 +500,6 @@ ${R.map((r, i) => `${r.kind === 'suite' && R[i - 1]?.kind !== 'suite' && suitesI
       <p class="room__line" data-reveal>${r.kind === 'apartment' ? r.name : r.line}</p>
       <p class="body" data-reveal style="margin-top:1.5rem">${r.text}</p>
       ${specs(r).length ? `<dl class="specs" data-reveal>${specs(r).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(loc(v))}</dd></div>`).join('')}</dl>` : ''}
-      ${r.features.length ? `<ul class="features" data-reveal>${r.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
       ${r.kind === 'apartment' ? `<p class="body small" data-reveal style="margin-top:1.25rem">${link('#amenities', t('What every apartment includes', 'Le dotazioni di ogni appartamento'))}</p>` : ''}
       <div class="room__actions" data-reveal><a class="btn btn--solid" href="booking.html?room=${r.slug}">${r.kind === 'suite' ? t('Request this suite', 'Richiedi questa suite') : t('Request this apartment', 'Richiedi questo appartamento')}</a>${link('gallery.html?f=rooms', t('Gallery', 'Galleria'))}</div>
     </div>
@@ -597,12 +596,11 @@ ${pageHero({ key: 'aboutOpening', eyebrowText: t('About us', 'Chi siamo'), title
 <section class="section" aria-label="${t('Our philosophy', 'La nostra filosofia')}">
   <div class="container grid"><div class="statement" data-reveal><p class="lead">${t('Every space has been designed to make you <em>feel at home</em>, with the elegance and comforts of a luxury hotel in Palermo’s historic centre.', 'Ogni spazio è stato progettato per farti <em>sentire a casa</em>, con l’eleganza e i comfort di un hotel di lusso nel centro storico di Palermo.')}</p></div></div>
 </section>
-<section class="section section--flush-top" aria-labelledby="mornings-title">
+<section class="section section--flush-top" aria-label="${t('Hospitality', 'Ospitalità')}">
   <div class="container grid split">
     <div class="split__media" style="grid-column:2/span 4">${media('breakfast', { ratio: 'ratio-23', sizes: '(max-width: 900px) 90vw, 30vw' })}</div>
     <div class="split__text stack stack--lg">
       <div data-reveal>${eyebrow('01', t('Hospitality', 'Ospitalità'))}</div>
-      <h2 class="h2" id="mornings-title" data-split>${lines(t(['Mornings,', '<em>without hurry.</em>'], ['Mattine', '<em>senza fretta.</em>']))}</h2>
       <p class="body" data-reveal>${t('The name Eccelso captures the essence of the property: a refined play on words that recalls Via del Celso, where the residence stands, and the idea of excellence that defines its service, design and finishes.', 'Il nome Eccelso racchiude l’essenza della struttura: un raffinato gioco di parole che richiama Via del Celso, dove sorge la residenza, e l’idea di eccellenza che caratterizza servizi, design e finiture.')}</p>
       ${story}
     </div>
@@ -717,11 +715,11 @@ ${closingCta()}`,
 
   // CONTACT ---------------------------------------------------------------
   pages['contact.html'] = layout({
-    page: 'contact', file: 'contact.html', hero: true, ogImage: 'host',
+    page: 'contact', file: 'contact.html', ogImage: 'receptionDesk',
     title: t(`Contact — ${site.name}, ${site.city}`, `Contatti — ${site.name}, ${site.city}`),
     description: t(`Contact ${site.name} in ${site.city}: phone, mobile, email and address.`, `Contatta ${site.name} a ${site.city}: telefono, cellulare, email e indirizzo.`),
     body: `
-${pageHero({ key: 'host', full: true, eyebrowText: t('Contact', 'Contatti'), title: t(["We're here", '<em>for you.</em>'], ['Siamo qui', '<em>per te.</em>']), lede: t('Questions before you book, or something to arrange for your stay. Write, call or send us a message.', 'Domande prima di prenotare, o qualcosa da organizzare per il tuo soggiorno. Scrivici, chiamaci o mandaci un messaggio.') })}
+${pageHero({ key: 'receptionDesk', eyebrowText: t('Contact', 'Contatti'), title: t(["We're here", '<em>for you.</em>'], ['Siamo qui', '<em>per te.</em>']), lede: t('Questions before you book, or something to arrange for your stay. Write, call or send us a message.', 'Domande prima di prenotare, o qualcosa da organizzare per il tuo soggiorno. Scrivici, chiamaci o mandaci un messaggio.') })}
 <section class="section" aria-labelledby="c-title">
   <div class="container grid contact">
     <div class="contact__info">
