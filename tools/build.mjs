@@ -344,8 +344,8 @@ function buildPages() {
 
   // HOME ------------------------------------------------------------------
   // Every photo appears once on the homepage (client: "cambiare foto che si ripetono").
-  const heroSlides = ['chatLobby', 'chatTubSteps', 'chatTerrace', 'chatHallLounge'];   // client images (Oct 2026)
-  const heroMobile = ['chatReception', 'chatProsecco', 'chatTerrace', 'chatHallLounge']; // portrait-friendly sources for phones
+  const heroSlides = ['chatLobby', 'chatTubSteps', 'chatTerrace', 'homeGreenRoom'];   // client images (Oct 2026); slide 4 = client's extra photo
+  const heroMobile = ['chatReception', 'chatProsecco', 'chatTerrace', 'homeGreenRoom']; // portrait-friendly sources for phones
   const moments = [
     ['receptionDesk', t('The lobby', 'La hall'), t('A welcoming space to make your arrival comfortable.', 'Un ambiente accogliente renderà il tuo arrivo confortevole.')],
     ['aiTerraceLoungers', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')], // TODO AI

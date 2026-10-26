@@ -15,10 +15,10 @@ export const chatImages = {
   biBlu3: { ai: true, src: "chat/bi-blu3.jpg", alt: "Blue one-bedroom: blue bathroom with shower" }, // appartamenti/bilocali/bilocale blu/Immagine ChatGPT 14 ott 2026, 21_10_59-6.png
   biVerde1: { ai: true, src: "chat/bi-verde1.jpg", alt: "Green one-bedroom: bedroom with a green headboard" }, // appartamenti/bilocali/bilocale verde/Immagine ChatGPT 16 ott 2026, 19_32_02-8.png
   biVerde2: { ai: true, src: "chat/bi-verde2.jpg", alt: "Green one-bedroom: living area with sofa and kitchenette under wooden beams" }, // appartamenti/bilocali/bilocale verde/Immagine ChatGPT 16 ott 2026, 19_31_54-2.png
-  biVerde3: { ai: true, src: "chat/bi-verde3.jpg", alt: "Green one-bedroom: pink bathroom" }, // appartamenti/bilocali/bilocale verde/Immagine ChatGPT 16 ott 2026, 19_32_03-9.png
+  biVerde3: { ai: true, src: "chat/bi-verde3.jpg", alt: "Green one-bedroom: sage-green bathroom with a backlit round mirror" }, // appartamenti/bilocali/bilocale rosso/Immagine ChatGPT 16 ott 2026, 19_44_45-2.png (filed under "rosso" by the client, but it is the green bathroom)
   biRosso1: { ai: true, src: "chat/bi-rosso1.jpg", alt: "Red one-bedroom: bedroom with a terracotta headboard and green cushions" }, // appartamenti/bilocali/bilocale rosso/Immagine ChatGPT 16 ott 2026, 19_44_53-10.png
   biRosso2: { ai: true, src: "chat/bi-rosso2.jpg", alt: "Red one-bedroom: living room with sofa and dining area" }, // appartamenti/bilocali/bilocale rosso/Immagine ChatGPT 16 ott 2026, 19_44_47-4.png
-  biRosso3: { ai: true, src: "chat/bi-rosso3.jpg", alt: "Red one-bedroom: bathroom with a backlit round mirror" }, // appartamenti/bilocali/bilocale rosso/Immagine ChatGPT 16 ott 2026, 19_44_45-2.png
+  biRosso3: { ai: true, src: "chat/bi-rosso3.jpg", alt: "Red one-bedroom: pink bathroom" }, // appartamenti/bilocali/bilocale verde/Immagine ChatGPT 16 ott 2026, 19_32_03-9.png (filed under "verde" by the client, but it is the red/pink bathroom)
   triBlu1: { ai: true, src: "chat/tri-blu1.jpg", alt: "Blue family apartment: bedroom with a blue headboard" }, // appartamenti/trilocali/trilocale blu/Immagine ChatGPT 16 ott 2026, 18_06_25-4.png
   triBlu2: { ai: true, src: "chat/tri-blu2.jpg", alt: "Blue family apartment: kitchenette and dining area" }, // appartamenti/trilocali/trilocale blu/Immagine ChatGPT 16 ott 2026, 18_06_29-8.png
   triBlu3: { ai: true, src: "chat/tri-blu3.jpg", alt: "Blue family apartment: blue bathroom" }, // appartamenti/trilocali/trilocale blu/Immagine ChatGPT 16 ott 2026, 18_06_30-10.png
@@ -103,10 +103,10 @@ export const chatAltsIt = {
   biBlu3: "Bilocale blu: bagno blu con doccia",
   biVerde1: "Bilocale verde: camera con testiera verde",
   biVerde2: "Bilocale verde: zona giorno con divano e angolo cottura sotto le travi in legno",
-  biVerde3: "Bilocale verde: bagno rosa",
+  biVerde3: "Bilocale verde: bagno verde salvia con specchio tondo retroilluminato",
   biRosso1: "Bilocale rosso: camera con testiera color terracotta e cuscini verdi",
   biRosso2: "Bilocale rosso: soggiorno con divano e zona pranzo",
-  biRosso3: "Bilocale rosso: bagno con specchio tondo retroilluminato",
+  biRosso3: "Bilocale rosso: bagno rosa",
   triBlu1: "Trilocale blu: camera con testiera blu",
   triBlu2: "Trilocale blu: angolo cottura e zona pranzo",
   triBlu3: "Trilocale blu: bagno blu",

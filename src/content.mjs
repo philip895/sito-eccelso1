@@ -127,6 +127,9 @@ export const images = {
   // AI-edited version of `host` (client, Oct 2026): contact hero, La Hall slide 01, gallery.
   // Source: ~/Downloads/Reception elegante con accoglienza moderna.png
   receptionDesk:  { ai: true, src: 'contact/reception.png', alt: 'The reception desk under gold pendant lights, with a palm-leaf mural on the arched wall' },
+  // Client's pick for the extra homepage photo (Oct 2026): ~/Downloads/sito eccelso/home/nuova foto home - camera verde.png
+  // (a 24 px white export strip trimmed off the left edge; source is only 978 px wide)
+  homeGreenRoom: { src: 'home/nuova foto home - camera verde.jpg', alt: 'Bedroom with a green bedspread, olive cushions and a colourful abstract painting' },
   // client images from ~/Downloads/sito eccelso chat/ (see src/images-chat.mjs)
   ...chatImages,
 };
@@ -197,7 +200,7 @@ export const suitesIntro = {
 };
 
 // Gallery — the client's full image set (Oct 2026), tagged by subject; see src/images-chat.mjs.
-export const gallery = chatGallery;
+export const gallery = [...chatGallery, ['homeGreenRoom', 'rooms']];
 
 // Guest reviews — VERBATIM excerpts, first names only. Never edit the wording.
 // Sources (retrieved 9 Oct 2026):
@@ -273,6 +276,7 @@ export const it = {
     aiTerraceView: 'La terrazza tra i palazzi del centro storico',
     aiSeniorLounge: 'Senior Suite: angolo salotto con divano in lino, tavolino color terracotta e zona pranzo',
     aiSuperiorOpen: 'Monolocale Superior: open space con madia verde salvia, tavolo da pranzo e travi a vista',
+    homeGreenRoom: 'Camera da letto con copriletto verde, cuscini verde oliva e un quadro astratto colorato',
     ...chatAltsIt,
   },
   rooms: {
