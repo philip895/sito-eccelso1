@@ -1008,3 +1008,17 @@ select.input { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   .js [data-reveal], .js [data-split] .line > span { opacity: 1 !important; transform: none !important; clip-path: none !important; }
 }
+
+/* apartment colour-variant slideshow (rooms.html) — reuses the moments slider */
+.room-slides__bar { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; margin-top: 1.25rem; }
+.room-slides__cap { font-size: var(--fs-small); color: var(--c-ink-2); white-space: nowrap; }
+.room-slides__cap .moments__count { display: inline; margin: 0 .75rem 0 0; }
+.room-slides .moments__ctrl { flex-direction: row; align-items: center; gap: 1.25rem; }
+.room-slides .moments__dots { gap: .25rem; }
+.room-slides .moments__dot { width: 1.4rem; }
+@media (max-width: 900px) {
+  .room-slides .moments__stage { aspect-ratio: 3 / 2; margin-inline: calc(-1 * var(--gutter)); border-radius: 0; }
+  .room-slides .slider-btns { display: none; }
+  .room-slides__bar { gap: 1rem; }
+  .room-slides .moments__dot { width: .9rem; }
+}

@@ -11,6 +11,8 @@
 //  bottom of this file — the build stops with an error if one is missing.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { chatImages, chatAltsIt, chatGallery } from './images-chat.mjs';
+
 export const site = {
   // ⚠️ STAGING vs PRODUCTION — read before launch.
   // false = staging/preview: pages carry <meta name="robots" content="noindex"> and AI images are unlabelled.
@@ -125,6 +127,8 @@ export const images = {
   // AI-edited version of `host` (client, Oct 2026): contact hero, La Hall slide 01, gallery.
   // Source: ~/Downloads/Reception elegante con accoglienza moderna.png
   receptionDesk:  { ai: true, src: 'contact/reception.png', alt: 'The reception desk under gold pendant lights, with a palm-leaf mural on the arched wall' },
+  // client images from ~/Downloads/sito eccelso chat/ (see src/images-chat.mjs)
+  ...chatImages,
 };
 
 // Apartment types. `name` = type (Superior…); `cardName` = homepage card; `pageTitle` = heading on
@@ -135,21 +139,24 @@ export const images = {
 export const rooms = [
   {
     // TODO AI: image is AI-generated (aiSuperiorOpen) — swap for a real photo before launch.
-    slug: 'superior', name: 'Superior', image: 'aiSuperiorOpen', kind: 'apartment',
+    slug: 'superior', name: 'Superior', image: 'monoBlu1', kind: 'apartment',
+    slides: [['monoBlu1', 'blue'], ['monoBlu2', 'blue'], ['monoBlu3', 'blue'], ['monoVerde1', 'green'], ['monoVerde2', 'green'], ['monoVerde3', 'green'], ['monoRosso1', 'red'], ['monoRosso2', 'red'], ['monoRosso3', 'red']],
     cardName: 'Superior Studios', pageTitle: 'Studios in Palermo', bookingName: 'Superior Studio',
     line: 'Elegant, functional open-plan spaces.',
     text: 'Elegant, functional open-plan spaces, ideal for couples, solo travellers and small families. Carefully finished interiors designed to offer you comfort and privacy.',
     size: '', guests: '', bed: '', maxGuests: null,
   },
   {
-    slug: 'deluxe', name: 'Deluxe', image: 'roomDeluxe', kind: 'apartment',
+    slug: 'deluxe', name: 'Deluxe', image: 'biBlu1', kind: 'apartment',
+    slides: [['biBlu1', 'blue'], ['biBlu2', 'blue'], ['biBlu3', 'blue'], ['biVerde1', 'green'], ['biVerde2', 'green'], ['biVerde3', 'green'], ['biRosso1', 'red'], ['biRosso2', 'red'], ['biRosso3', 'red']],
     cardName: 'Deluxe One-Bedrooms', pageTitle: 'One-Bedroom Apartments in Palermo’s Historic Centre', bookingName: 'Deluxe One-Bedroom',
     line: 'Spacious layouts with a double bedroom and a full living area.',
     text: 'Spacious layouts with a double bedroom and a full living area. Perfect for couples or friends who want to experience Palermo in total relaxation.',
     size: '', guests: '', bed: '', maxGuests: null,
   },
   {
-    slug: 'junior-suite', name: 'Junior Suite', image: 'roomJunior', kind: 'apartment',
+    slug: 'junior-suite', name: 'Junior Suite', image: 'triBlu1', kind: 'apartment',
+    slides: [['triBlu1', 'blue'], ['triBlu2', 'blue'], ['triBlu3', 'blue'], ['triVerde1', 'green'], ['triVerde2', 'green'], ['triVerde3', 'green'], ['triMattone1', 'brick'], ['triMattone2', 'brick'], ['triMattone3', 'brick']],
     cardName: 'Junior Suite Family Apartments', pageTitle: 'Apartments for Families and Groups', bookingName: 'Junior Suite Family Apartment',
     line: 'Generous layouts ideal for families and groups of friends.',
     text: 'Generous layouts ideal for families and groups of friends, with one or two double bedrooms and a fully equipped living area.',
@@ -157,9 +164,9 @@ export const rooms = [
   },
   {
     // One "Suite" category replaces Senior / Deluxe / Grand Suite (client, Oct 2026).
-    // TODO: image g8 is a stand-in — swap for the client's Suite photo (blue headboard + en-suite
-    // bathroom with backlit oval mirror) when it arrives.
-    slug: 'suite', kind: 'suite', name: 'Suite', image: 'g8',
+    // Client folder has a blue and a red suite only — NO green variant (ask the client).
+    slug: 'suite', kind: 'suite', name: 'Suite', image: 'suiteBlu1',
+    slides: [['suiteBlu1', 'blue'], ['suiteBlu2', 'blue'], ['suiteBlu3', 'blue'], ['suiteRossa1', 'red'], ['suiteRossa2', 'red'], ['suiteRossa3', 'red']],
     cardName: 'Suites', pageTitle: 'Suites', bookingName: 'Suite',
     line: 'A private terrace and sun deck.',
     text: 'The most spacious of our options will delight you with its airy private terrace, decorated with traditional Sicilian-style tiles, and its sun deck.',
@@ -189,20 +196,8 @@ export const suitesIntro = {
   en: { title: 'Luxury Suites with Panoramic Terrace', text: 'Eccelso also has two exclusive Suites with a private terrace and a view over Palermo’s historic centre. Unique spaces for romantic, memorable moments, taking in the city from above.' },
 };
 
-// Gallery — the full unique photo set, tagged by subject.
-export const gallery = [
-  ['livingWall', 'spaces'], ['facade', 'palermo'], ['roomDeluxe', 'rooms'], ['g6', 'details'],
-  ['tub', 'wellness'], ['g1', 'rooms'], ['corridor', 'spaces'], ['roomJunior', 'rooms'],
-  ['g3', 'details'], ['cathedral', 'palermo'], ['g8', 'rooms'], ['prosecco', 'wellness'],
-  ['suiteLiving', 'rooms'], ['lobby', 'spaces'], ['g2', 'rooms'], ['breakfast', 'details'],
-  ['hammam', 'wellness'], ['roomGrand', 'rooms'], ['g5', 'details'], ['terrace', 'spaces'],
-  ['mondello', 'palermo'], ['roomSuperior', 'rooms'], ['g7', 'details'], ['sauna', 'wellness'],
-  ['g4', 'rooms'], ['niche', 'details'], ['roomDeluxeSuite', 'rooms'], ['linen', 'details'],
-  ['aboutOpening', 'spaces'], ['robes', 'wellness'], ['kitchenette', 'rooms'], ['aiSeniorLounge', 'rooms'],
-  ['galleryOpening', 'rooms'], ['roomsOpening', 'rooms'], ['receptionDesk', 'spaces'],
-  // TODO AI: the five entries below are AI-generated
-  ['aiTerraceArmchairs', 'spaces'], ['aiSuperiorOpen', 'rooms'], ['aiTerraceLoungers', 'spaces'], ['aiTerraceView', 'spaces'],
-];
+// Gallery — the client's full image set (Oct 2026), tagged by subject; see src/images-chat.mjs.
+export const gallery = chatGallery;
 
 // Guest reviews — VERBATIM excerpts, first names only. Never edit the wording.
 // Sources (retrieved 9 Oct 2026):
@@ -278,6 +273,7 @@ export const it = {
     aiTerraceView: 'La terrazza tra i palazzi del centro storico',
     aiSeniorLounge: 'Senior Suite: angolo salotto con divano in lino, tavolino color terracotta e zona pranzo',
     aiSuperiorOpen: 'Monolocale Superior: open space con madia verde salvia, tavolo da pranzo e travi a vista',
+    ...chatAltsIt,
   },
   rooms: {
     'superior': { cardName: 'Monolocali Superior', pageTitle: 'Monolocali a Palermo', bookingName: 'Monolocale Superior', line: 'Open space eleganti e funzionali.', text: 'Open space eleganti e funzionali, ideali per coppie, viaggiatori singoli e piccoli nuclei familiari. Ambienti curati nei minimi dettagli, pensati per offrirti comfort e privacy.' },
