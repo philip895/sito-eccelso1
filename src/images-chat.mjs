@@ -23,14 +23,14 @@ export const chatImages = {
   triBlu2: { ai: true, src: "chat/tri-blu2.jpg", alt: "Blue family apartment: kitchenette and dining area" }, // appartamenti/trilocali/trilocale blu/Immagine ChatGPT 16 ott 2026, 18_06_29-8.png
   triBlu3: { ai: true, src: "chat/tri-blu3.jpg", alt: "Blue family apartment: blue bathroom" }, // appartamenti/trilocali/trilocale blu/Immagine ChatGPT 16 ott 2026, 18_06_30-10.png
   triVerde1: { ai: true, src: "chat/tri-verde1.jpg", alt: "Green family apartment: bedroom with a green headboard" }, // appartamenti/trilocali/trilocale verde/Immagine ChatGPT 16 ott 2026, 17_36_40-6.png
-  triVerde2: { ai: true, src: "chat/tri-verde2.jpg", alt: "Green family apartment: dining and living area under wooden beams" }, // appartamenti/trilocali/trilocale verde/Immagine ChatGPT 16 ott 2026, 17_36_36-2.png
+  triVerde2: { ai: true, src: "chat/tri-verde2.jpg", alt: "Green family apartment: dining and living area under wooden beams" }, // appartamenti/trilocali/trilocale verde/Immagine ChatGPT 16 ott 2026, 17_36_36-2.png — file replaced by the larger 1954 px export of the same image (assets/images/ai/superior-open-space.png)
   triVerde3: { ai: true, src: "chat/tri-verde3.jpg", alt: "Green family apartment: sage-green bathroom" }, // appartamenti/trilocali/trilocale verde/Immagine ChatGPT 16 ott 2026, 17_36_40-7.png
   triMattone1: { ai: true, src: "chat/tri-mattone1.jpg", alt: "Brick-red family apartment: bedroom with a brick-red headboard" }, // appartamenti/trilocali/trilocale color mattone/Immagine ChatGPT 16 ott 2026, 17_24_00-8.png
   triMattone2: { ai: true, src: "chat/tri-mattone2.jpg", alt: "Brick-red family apartment: living room with sofa and dining area" }, // appartamenti/trilocali/trilocale color mattone/Immagine ChatGPT 16 ott 2026, 17_23_56-4.png
   triMattone3: { ai: true, src: "chat/tri-mattone3.jpg", alt: "Brick-red family apartment: terracotta bathroom" }, // appartamenti/trilocali/trilocale color mattone/Immagine ChatGPT 16 ott 2026, 17_23_59-7.png
   suiteBlu1: { ai: true, src: "chat/suite-blu1.jpg", alt: "Blue suite: bedroom with a blue headboard" }, // appartamenti/Suites con terrazza/suite blu con terrazza grande/Immagine ChatGPT 16 ott 2026, 17_12_55-10.png
   suiteBlu2: { ai: true, src: "chat/suite-blu2.jpg", alt: "Blue suite: living room with sofa and armchair" }, // appartamenti/Suites con terrazza/suite blu con terrazza grande/Immagine ChatGPT 16 ott 2026, 17_55_25-9.png
-  suiteBlu3: { ai: true, src: "chat/suite-blu3.jpg", alt: "Blue suite: the large private terrace with blue-and-white tiles" }, // appartamenti/Suites con terrazza/suite blu con terrazza grande/Immagine ChatGPT 16 ott 2026, 17_12_47-2.png
+  suiteBlu3: { ai: true, src: "chat/suite-blu3.jpg", alt: "Blue suite: the large private terrace with blue-and-white tiles" }, // appartamenti/Suites con terrazza/suite blu con terrazza grande/Immagine ChatGPT 16 ott 2026, 17_12_47-2.png — file replaced by the larger 1954 px export (assets/images/ai/terrace-armchairs.png)
   suiteRossa1: { ai: true, src: "chat/suite-rossa1.jpg", alt: "Red suite: bed with a terracotta headboard" }, // appartamenti/Suites con terrazza/suite rossa con terrazzino interno/Immagine ChatGPT 14 ott 2026, 21_16_44-1.png
   suiteRossa2: { ai: true, src: "chat/suite-rossa2.jpg", alt: "Red suite: living room under wooden beams" }, // appartamenti/Suites con terrazza/suite rossa con terrazzino interno/Immagine ChatGPT 14 ott 2026, 21_16_45-3.png
   suiteRossa3: { ai: true, src: "chat/suite-rossa3.jpg", alt: "Red suite: the inner terrace with orange chairs" }, // appartamenti/Suites con terrazza/suite rossa con terrazzino interno/Immagine ChatGPT 16 ott 2026, 17_42_04-7.png
@@ -71,7 +71,7 @@ export const chatImages = {
   chatG13: { ai: true, src: "chat/chat-g13.jpg", alt: "Bedroom with a round mirror and luggage rack" }, // gallery/Immagine ChatGPT 14 ott 2026, 21_10_50-1.png
   chatG14: { ai: true, src: "chat/chat-g14.jpg", alt: "Monogrammed towels on the bed" }, // gallery/Immagine ChatGPT 14 ott 2026, 21_10_52-2.png
   chatG16: { ai: true, src: "chat/chat-g16.jpg", alt: "Green bathroom with shower" }, // gallery/Immagine ChatGPT 16 ott 2026, 17_06_51-8.png
-  chatG18: { ai: true, src: "chat/chat-g18.jpg", alt: "Two sun loungers on the terrace" }, // gallery/Immagine ChatGPT 16 ott 2026, 17_12_48-3.png
+  chatG18: { ai: true, src: "chat/chat-g18.jpg", alt: "Two sun loungers on the terrace" }, // gallery/Immagine ChatGPT 16 ott 2026, 17_12_48-3.png — file replaced by the larger 1954 px export (assets/images/ai/terrace-loungers.png)
   chatG19: { ai: true, src: "chat/chat-g19.jpg", alt: "Living area with a sofa and green cushions under wooden beams" }, // gallery/Immagine ChatGPT 16 ott 2026, 17_55_21-4.png
   chatG20: { ai: true, src: "chat/chat-g20.jpg", alt: "Kitchenette and dining table with red chairs" }, // gallery/Immagine ChatGPT 16 ott 2026, 17_55_23-6.png
   chatG21: { ai: true, src: "chat/chat-g21.jpg", alt: "Kitchenette with a marble splashback" }, // gallery/Immagine ChatGPT 16 ott 2026, 17_55_23-7.png
@@ -86,6 +86,41 @@ export const chatImages = {
   chatG34: { ai: true, src: "chat/chat-g34.jpg", alt: "Velvet poufs and a side table in the lobby" }, // gallery/Immagine ChatGPT 16 ott 2026, 20_01_19-1.png
   chatG36: { ai: true, src: "chat/chat-g36.jpg", alt: "Coffee tables with eucalyptus, seen from above" }, // gallery/Immagine ChatGPT 16 ott 2026, 20_01_26-7.png
   chatG37: { ai: true, src: "chat/chat-g37.jpg", alt: "A hanging rattan chair by the living wall" }, // gallery/Immagine ChatGPT 16 ott 2026, 20_44_30-1.png
+  // extra gallery photos (Oct 2026)
+  galHall3: { ai: true, src: "chat/gal-hall3.jpg", alt: "The lobby with a rust-red velvet sofa, poufs and the reception in the background" }, // hall/Immagine ChatGPT 16 ott 2026, 20_01_21-3.png
+  galHall4: { ai: true, src: "chat/gal-hall4.jpg", alt: "A corner of the lobby with a red abstract painting and a small dining table" }, // hall/Immagine ChatGPT 16 ott 2026, 20_01_22-4.png
+  galHall6: { ai: true, src: "chat/gal-hall6.jpg", alt: "Blue velvet sofa, poufs and round coffee tables in the lobby" }, // hall/Immagine ChatGPT 16 ott 2026, 20_01_25-6.png
+  galHall8: { ai: true, src: "chat/gal-hall8.jpg", alt: "The bright lobby lounge with marble floors and brass ring lights" }, // hall/Immagine ChatGPT 16 ott 2026, 20_01_27-8.png
+  galSpazi3: { ai: true, src: "chat/gal-spazi3.jpg", alt: "The white building with wrought-iron balconies above the tiled courtyard" }, // spazi esterni/Immagine ChatGPT 16 ott 2026, 19_52_37-3.png
+  galSpazi4: { ai: true, src: "chat/gal-spazi4.jpg", alt: "The outdoor passageway between the white buildings" }, // spazi esterni/Immagine ChatGPT 16 ott 2026, 19_52_38-4.png
+  galSpazi5: { ai: true, src: "chat/gal-spazi5.jpg", alt: "Planters with ornamental grasses along the outdoor walkway" }, // spazi esterni/Immagine ChatGPT 16 ott 2026, 19_52_39-5.png
+  galHome4: { ai: true, src: "chat/gal-home4.jpg", alt: "An agave on a terracotta side table beside the linen sofa" }, // home/Immagine ChatGPT 14 ott 2026, 20_21_11-6.png
+  galHome9: { ai: true, src: "chat/gal-home9.jpg", alt: "The reception wall with brass pendant lights and a botanical mural" }, // home/Immagine ChatGPT 14 ott 2026, 20_26_16-1.png
+  galHome14: { ai: true, src: "chat/gal-home14.jpg", alt: "The staircase with a glass balustrade and a potted olive tree" }, // home/Immagine ChatGPT 16 ott 2026, 20_44_31-2.png
+  galAbout8: { ai: true, src: "chat/gal-about8.jpg", alt: "The massage room with a wooden treatment table" }, // about us/Immagine ChatGPT 14 ott 2026, 20_59_08.png
+  galAbout12: { ai: true, src: "chat/gal-about12.jpg", alt: "The illuminated Eccelso sign on the living wall" }, // about us/Immagine ChatGPT 16 ott 2026, 20_44_34-4.png
+  galMonoBlu4: { ai: true, src: "chat/gal-mono-blu4.jpg", alt: "Blue studio: open wardrobe, round mirror and armchair" }, // appartamenti/monolocale/monolocale blu/Immagine ChatGPT 16 ott 2026, 20_35_48-1.png
+  galMonoBlu12: { ai: true, src: "chat/gal-mono-blu12.jpg", alt: "Blue studio: a red handbag and dried flowers by the armchair" }, // appartamenti/monolocale/monolocale blu/foto_02_professionale.jpg
+  galMonoVerde3: { ai: true, src: "chat/gal-mono-verde3.jpg", alt: "Green studio: dining table with red chairs and kitchenette under wooden beams" }, // appartamenti/monolocale/monolocale verde/Immagine ChatGPT 16 ott 2026, 17_06_46-2.png
+  galMonoVerde6: { ai: true, src: "chat/gal-mono-verde6.jpg", alt: "Green studio: armchair and green TV unit below a round window" }, // appartamenti/monolocale/monolocale verde/Immagine ChatGPT 16 ott 2026, 17_06_49-5.png
+  galMonoRosso5: { ai: true, src: "chat/gal-mono-rosso5.jpg", alt: "Red studio: kitchenette, round mirror and olive-green chairs" }, // appartamenti/monolocale/monolocale rosso/Immagine ChatGPT 16 ott 2026, 18_15_31-4.png
+  galMonoRosso6: { ai: true, src: "chat/gal-mono-rosso6.jpg", alt: "Red studio: armchair and terracotta TV unit" }, // appartamenti/monolocale/monolocale rosso/Immagine ChatGPT 16 ott 2026, 18_15_32-5.png
+  galBiBlu4: { ai: true, src: "chat/gal-bi-blu4.jpg", alt: "Blue one-bedroom: armchair with a red cushion and blue flowers" }, // appartamenti/bilocali/bilocale blu/Immagine ChatGPT 14 ott 2026, 21_10_57-4.png
+  galBiBlu5: { ai: true, src: "chat/gal-bi-blu5.jpg", alt: "Blue one-bedroom: living room with sofa and kitchenette" }, // appartamenti/bilocali/bilocale blu/Immagine ChatGPT 14 ott 2026, 21_10_58-5.png
+  galBiVerde2: { ai: true, src: "chat/gal-bi-verde2.jpg", alt: "Green one-bedroom: TV on a mint-green sideboard with dried flowers" }, // appartamenti/bilocali/bilocale verde/Immagine ChatGPT 16 ott 2026, 19_31_53-1.png
+  galBiVerde5: { ai: true, src: "chat/gal-bi-verde5.jpg", alt: "Green one-bedroom: kitchenette and dining table under wooden beams" }, // appartamenti/bilocali/bilocale verde/Immagine ChatGPT 16 ott 2026, 19_31_57-4.png
+  galBiRosso1: { ai: true, src: "chat/gal-bi-rosso1.jpg", alt: "Red one-bedroom: bedroom with an open wardrobe and a green throw" }, // appartamenti/bilocali/bilocale rosso/Immagine ChatGPT 16 ott 2026, 19_44_44-1.png
+  galBiRosso7: { ai: true, src: "chat/gal-bi-rosso7.jpg", alt: "Red one-bedroom: terracotta TV unit and brass floor lamp" }, // appartamenti/bilocali/bilocale rosso/Immagine ChatGPT 16 ott 2026, 19_44_51-7.png
+  galTriBlu5: { ai: true, src: "chat/gal-tri-blu5.jpg", alt: "Blue family apartment: the two bedrooms side by side" }, // appartamenti/trilocali/trilocale blu/Immagine ChatGPT 16 ott 2026, 18_06_26-5.png
+  galTriBlu6: { ai: true, src: "chat/gal-tri-blu6.jpg", alt: "Blue family apartment: living room with sofa and blue TV unit" }, // appartamenti/trilocali/trilocale blu/Immagine ChatGPT 16 ott 2026, 18_06_27-6.png
+  galTriVerde3: { ai: true, src: "chat/gal-tri-verde3.jpg", alt: "Green family apartment: view from the living area into the bedroom" }, // appartamenti/trilocali/trilocale verde/Immagine ChatGPT 16 ott 2026, 17_36_35-1.png
+  galTriVerde5: { ai: true, src: "chat/gal-tri-verde5.jpg", alt: "Green family apartment: green TV unit, round mirror and brass floor lamp" }, // appartamenti/trilocali/trilocale verde/Immagine ChatGPT 16 ott 2026, 17_36_37-3.png
+  galTriMattone6: { ai: true, src: "chat/gal-tri-mattone6.jpg", alt: "Brick-red family apartment: living room opening onto the bedroom" }, // appartamenti/trilocali/trilocale color mattone/Immagine ChatGPT 16 ott 2026, 17_23_58-6.png
+  galTriMattone9: { ai: true, src: "chat/gal-tri-mattone9.jpg", alt: "Brick-red family apartment: dining table with olive-green chairs" }, // appartamenti/trilocali/trilocale color mattone/Immagine ChatGPT 16 ott 2026, 17_24_01-9.png
+  galSuiteBlu6: { ai: true, src: "chat/gal-suite-blu6.jpg", alt: "Blue suite: bathroom with a backlit oval mirror and shower" }, // appartamenti/Suites con terrazza/suite blu con terrazza grande/Immagine ChatGPT 16 ott 2026, 17_12_52-6.png
+  galSuiteBlu7: { ai: true, src: "chat/gal-suite-blu7.jpg", alt: "Blue suite: red armchair and blue TV unit" }, // appartamenti/Suites con terrazza/suite blu con terrazza grande/Immagine ChatGPT 16 ott 2026, 17_12_53-7.png
+  galSuiteRossa6: { ai: true, src: "chat/gal-suite-rossa6.jpg", alt: "Red suite: gas hob and black sink on a marble-effect worktop" }, // appartamenti/Suites con terrazza/suite rossa con terrazzino interno/Immagine ChatGPT 16 ott 2026, 17_42_01-4.png
+  galSuiteRossa11: { ai: true, src: "chat/gal-suite-rossa11.jpg", alt: "Red suite: terracotta bathroom" }, // appartamenti/Suites con terrazza/suite rossa con terrazzino interno/Immagine ChatGPT 16 ott 2026, 17_42_05-9.png
 };
 
 export const chatAltsIt = {
@@ -174,6 +209,41 @@ export const chatAltsIt = {
   chatG34: "Pouf in velluto e un tavolino nella hall",
   chatG36: "Tavolini con eucalipto, visti dall’alto",
   chatG37: "Una poltrona sospesa in rattan accanto alla parete verde",
+  // extra gallery photos (Oct 2026)
+  galHall3: "La hall con un divano in velluto ruggine, pouf e la reception sullo sfondo",
+  galHall4: "Un angolo della hall con un quadro astratto rosso e un tavolino con sedie",
+  galHall6: "Divano in velluto blu, pouf e tavolini rotondi nella hall",
+  galHall8: "Il luminoso salotto della hall con pavimenti in marmo e lampade ad anello in ottone",
+  galSpazi3: "L’edificio bianco con balconi in ferro battuto sopra il cortile piastrellato",
+  galSpazi4: "Il passaggio esterno tra gli edifici bianchi",
+  galSpazi5: "Fioriere con graminacee ornamentali lungo il passaggio esterno",
+  galHome4: "Un’agave su un tavolino color terracotta accanto al divano in lino",
+  galHome9: "La parete della reception con lampade a sospensione in ottone e un murale botanico",
+  galHome14: "La scala con balaustra in vetro e un ulivo in vaso",
+  galAbout8: "La sala massaggi con il lettino in legno",
+  galAbout12: "L’insegna luminosa di Eccelso sulla parete verde",
+  galMonoBlu4: "Monolocale blu: guardaroba a giorno, specchio tondo e poltrona",
+  galMonoBlu12: "Monolocale blu: una borsa rossa e fiori secchi accanto alla poltrona",
+  galMonoVerde3: "Monolocale verde: tavolo da pranzo con sedie rosse e angolo cottura sotto le travi in legno",
+  galMonoVerde6: "Monolocale verde: poltrona e mobile TV verde sotto una finestra tonda",
+  galMonoRosso5: "Monolocale rosso: angolo cottura, specchio tondo e sedie verde oliva",
+  galMonoRosso6: "Monolocale rosso: poltrona e mobile TV color terracotta",
+  galBiBlu4: "Bilocale blu: poltrona con cuscino rosso e fiori blu",
+  galBiBlu5: "Bilocale blu: soggiorno con divano e angolo cottura",
+  galBiVerde2: "Bilocale verde: TV su un mobile verde menta con fiori secchi",
+  galBiVerde5: "Bilocale verde: angolo cottura e tavolo da pranzo sotto le travi in legno",
+  galBiRosso1: "Bilocale rosso: camera con guardaroba a giorno e copriletto verde",
+  galBiRosso7: "Bilocale rosso: mobile TV color terracotta e lampada da terra in ottone",
+  galTriBlu5: "Trilocale blu: le due camere da letto una accanto all’altra",
+  galTriBlu6: "Trilocale blu: soggiorno con divano e mobile TV blu",
+  galTriVerde3: "Trilocale verde: vista dalla zona giorno verso la camera da letto",
+  galTriVerde5: "Trilocale verde: mobile TV verde, specchio tondo e lampada da terra in ottone",
+  galTriMattone6: "Trilocale color mattone: soggiorno che si apre sulla camera da letto",
+  galTriMattone9: "Trilocale color mattone: tavolo da pranzo con sedie verde oliva",
+  galSuiteBlu6: "Suite blu: bagno con specchio ovale retroilluminato e doccia",
+  galSuiteBlu7: "Suite blu: poltrona rossa e mobile TV blu",
+  galSuiteRossa6: "Suite rossa: piano cottura e lavello nero su un top effetto marmo",
+  galSuiteRossa11: "Suite rossa: bagno color terracotta",
 };
 
 // Gallery: the full client set, tagged by subject (rooms · spaces · wellness · details · palermo).
@@ -243,7 +313,6 @@ export const chatGallery = [
   ["suiteRossa3", "rooms"],
   ["chatLobby", "spaces"],
   ["chatTubSteps", "wellness"],
-  ["chatTerrace", "spaces"],
   ["chatHallLounge", "spaces"],
   ["chatReception", "spaces"],
   ["chatProsecco", "wellness"],
@@ -263,4 +332,39 @@ export const chatGallery = [
   ["chatCathedralArches", "palermo"],
   ["chatCathedralFloat", "palermo"],
   ["chatCathedralApse", "palermo"],
+  // extra gallery photos (Oct 2026)
+  ["galHall3", "spaces"],
+  ["galHall4", "spaces"],
+  ["galHall6", "spaces"],
+  ["galHall8", "spaces"],
+  ["galSpazi3", "spaces"],
+  ["galSpazi4", "spaces"],
+  ["galSpazi5", "spaces"],
+  ["galHome4", "details"],
+  ["galHome9", "spaces"],
+  ["galHome14", "spaces"],
+  ["galAbout8", "wellness"],
+  ["galAbout12", "details"],
+  ["galMonoBlu4", "rooms"],
+  ["galMonoBlu12", "details"],
+  ["galMonoVerde3", "rooms"],
+  ["galMonoVerde6", "rooms"],
+  ["galMonoRosso5", "rooms"],
+  ["galMonoRosso6", "rooms"],
+  ["galBiBlu4", "rooms"],
+  ["galBiBlu5", "rooms"],
+  ["galBiVerde2", "details"],
+  ["galBiVerde5", "rooms"],
+  ["galBiRosso1", "rooms"],
+  ["galBiRosso7", "rooms"],
+  ["galTriBlu5", "rooms"],
+  ["galTriBlu6", "rooms"],
+  ["galTriVerde3", "rooms"],
+  ["galTriVerde5", "rooms"],
+  ["galTriMattone6", "rooms"],
+  ["galTriMattone9", "rooms"],
+  ["galSuiteBlu6", "rooms"],
+  ["galSuiteBlu7", "rooms"],
+  ["galSuiteRossa6", "details"],
+  ["galSuiteRossa11", "rooms"],
 ];

@@ -217,7 +217,7 @@ const jsonLd = () => `<script type="application/ld+json">${JSON.stringify({
   checkinTime: site.checkInTime, checkoutTime: site.checkOutTime,
 })}</script>`;
 
-function layout({ page, file, title, description, hero = false, body, scripts = [], ogImage = 'livingWall', bookBar = true }) {
+function layout({ page, file, title, description, hero = false, body, scripts = [], ogImage = 'chatLobby', bookBar = true }) {
   const itHref = LANG === 'it' ? file : `../${file}`, enHref = LANG === 'it' ? `en/${file}` : file;
   return `<!doctype html>
 <html lang="${LANG}">
@@ -344,8 +344,8 @@ function buildPages() {
 
   // HOME ------------------------------------------------------------------
   // Every photo appears once on the homepage (client: "cambiare foto che si ripetono").
-  const heroSlides = ['chatLobby', 'chatTubSteps', 'chatTerrace', 'homeGreenRoom'];   // client images (Oct 2026); slide 4 = client's extra photo
-  const heroMobile = ['chatReception', 'chatProsecco', 'chatTerrace', 'homeGreenRoom']; // portrait-friendly sources for phones
+  const heroSlides = ['chatLobby', 'chatTubSteps', 'suiteBlu3', 'homeGreenRoom'];   // client images (Oct 2026); slide 4 = client's extra photo
+  const heroMobile = ['chatReception', 'chatProsecco', 'suiteBlu3', 'homeGreenRoom']; // portrait-friendly sources for phones
   const moments = [
     ['receptionDesk', t('The lobby', 'La hall'), t('A welcoming space to make your arrival comfortable.', 'Un ambiente accogliente renderà il tuo arrivo confortevole.')],
     ['aiTerraceLoungers', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')], // TODO AI
@@ -513,7 +513,6 @@ ${R.map((r, i) => `${r.kind === 'suite' && R[i - 1]?.kind !== 'suite' && suitesI
       <p class="room__line" data-reveal>${r.kind === 'apartment' ? r.name : r.line}</p>
       <p class="body" data-reveal style="margin-top:1.5rem">${r.text}</p>
       ${specs(r).length ? `<dl class="specs" data-reveal>${specs(r).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(loc(v))}</dd></div>`).join('')}</dl>` : ''}
-      ${r.kind === 'apartment' ? `<p class="body small" data-reveal style="margin-top:1.25rem">${link('#amenities', t('What every apartment includes', 'Le dotazioni di ogni appartamento'))}</p>` : ''}
       <div class="room__actions" data-reveal><a class="btn btn--solid" href="booking.html?room=${r.slug}">${r.kind === 'suite' ? t('Request this suite', 'Richiedi questa suite') : t('Request this apartment', 'Richiedi questo appartamento')}</a>${link('gallery.html?f=rooms', t('Gallery', 'Galleria'))}</div>
     </div>
   </div>
