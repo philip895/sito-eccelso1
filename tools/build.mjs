@@ -400,6 +400,7 @@ function buildPages() {
       <div data-reveal>${link('about.html', t('Our story', 'La nostra storia'))}</div>
     </div>
     <figure class="intro__b">${media('chatSofa', { ratio: 'ratio-34', parallax: true, sizes: '(max-width: 900px) 70vw, 38vw', extra: 'data-speed="0.12"' })}<figcaption class="caption">${t('A suite living room', 'Il soggiorno di una suite')}</figcaption></figure>
+    <figure class="intro__c">${media('introBedroom', { ratio: 'ratio-45', sizes: '(max-width: 900px) 60vw, 24vw', d: 0.15 })}<figcaption class="caption">${t('One of our bedrooms', 'Una delle nostre camere')}</figcaption></figure>
   </div>
 </section>
 

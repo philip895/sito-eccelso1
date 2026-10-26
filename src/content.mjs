@@ -130,6 +130,8 @@ export const images = {
   // Client's pick for the extra homepage photo (Oct 2026): ~/Downloads/sito eccelso/home/nuova foto home - camera verde.png
   // (a 24 px white export strip trimmed off the left edge; source is only 978 px wide)
   homeGreenRoom: { src: 'home/nuova foto home - camera verde.jpg', alt: 'Bedroom with a green bedspread, olive cushions and a colourful abstract painting' },
+  // Homepage intro, paired with the sofa photo — same file as biRosso1 (red one-bedroom)
+  introBedroom: { ai: true, src: 'chat/bi-rosso1.jpg', alt: 'Bedroom with a terracotta headboard, an olive-green bedspread and a colourful abstract painting' },
   // client images from ~/Downloads/sito eccelso chat/ (see src/images-chat.mjs)
   ...chatImages,
 };
@@ -277,6 +279,7 @@ export const it = {
     aiSeniorLounge: 'Senior Suite: angolo salotto con divano in lino, tavolino color terracotta e zona pranzo',
     aiSuperiorOpen: 'Monolocale Superior: open space con madia verde salvia, tavolo da pranzo e travi a vista',
     homeGreenRoom: 'Camera da letto con copriletto verde, cuscini verde oliva e un quadro astratto colorato',
+    introBedroom: 'Camera da letto con testiera color terracotta, copriletto verde oliva e un quadro astratto colorato',
     ...chatAltsIt,
   },
   rooms: {

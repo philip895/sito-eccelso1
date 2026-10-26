@@ -391,6 +391,7 @@ ul, ol { padding: 0; list-style: none; }
 .intro__text { grid-column: 7 / span 5; grid-row: 1; align-self: start; padding-top: clamp(2rem, 8vw, 8rem); }
 .intro__b { grid-column: 9 / span 4; grid-row: 2; }
 .intro__b .media { aspect-ratio: 4 / 5; }
+.intro__c { grid-column: 6 / span 3; grid-row: 2; align-self: start; margin-top: clamp(3rem, 9vw, 9rem); }
 .intro__quote { margin: clamp(3rem, 7vw, 7rem) 0 0 16%; max-width: 19rem; padding-top: 1.5rem; border-top: 1px solid var(--c-brass); font-family: var(--ff-serif); font-size: 1.3125rem; line-height: 1.45; color: var(--c-ink-2); }
 .intro__quote em:first-child { font-size: 1.15em; color: var(--c-ink); }
 
@@ -777,6 +778,7 @@ select.input { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
 
   .intro__a { width: 82%; }
   .intro__b { width: 70%; margin-left: auto; margin-top: calc(-1 * var(--s-6)); }
+  .intro__c { width: 60%; margin: 0; }
   .intro__text { padding-top: 0; }
   .rituals__text { position: static; }
   .rituals__a, .rituals__b { margin-top: 0; }
