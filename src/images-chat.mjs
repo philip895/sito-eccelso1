@@ -42,7 +42,7 @@ export const chatImages = {
   chatProsecco: { ai: true, src: "chat/chat-prosecco.jpg", alt: "Prosecco and two glasses beside the hot tub, with soft white bathrobes" }, // home/Immagine ChatGPT 14 ott 2026, 20_21_10-5.png
   chatMassage: { ai: true, src: "chat/chat-massage.jpg", alt: "A massage table with a rolled white towel" }, // home/Immagine ChatGPT 14 ott 2026, 20_21_09-4.png
   chatSpaTub: { ai: true, src: "chat/chat-spa-tub.jpg", alt: "The hot tub with prosecco and bathrobes" }, // spa/Immagine ChatGPT 14 ott 2026, 20_55_10-5.png
-  chatSpaRelax: { ai: true, src: "chat/chat-spa-relax.jpg", alt: "A guest in a bathrobe relaxing on a lounger in the wellness area" }, // spa/Immagine ChatGPT 14 ott 2026, 20_55_06-2.png
+  chatSpaRelax: { ai: true, src: "chat/chat-spa-relax.jpg", alt: "A robe and relaxation in the wellness area" }, // spa/Immagine ChatGPT 14 ott 2026, 20_55_06-2.png
   chatSpaRobes: { ai: true, src: "chat/chat-spa-robes.jpg", alt: "Bathrobes, slippers and prosecco on the edge of the hot tub" }, // spa/Immagine ChatGPT 14 ott 2026, 20_55_14-9.png
   chatSauna: { ai: true, src: "chat/chat-sauna.jpg", alt: "The wooden sauna" }, // spa/Immagine ChatGPT 14 ott 2026, 20_59_29-1.png
   chatSaunaLight: { ai: true, src: "chat/chat-sauna-light.jpg", alt: "The sauna with soft coloured lighting" }, // spa/Immagine ChatGPT 14 ott 2026, 20_59_33-4.png
@@ -66,8 +66,8 @@ export const chatImages = {
   chatG8: { ai: true, src: "chat/chat-g8.jpg", alt: "Bedroom with a blue headboard, red cushions and folded towels" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_09_15-8.png
   chatG9: { ai: true, src: "chat/chat-g9.jpg", alt: "Blue studio with a ring light and botanical-print bed" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_09_19-9.png
   chatG10: { ai: true, src: "chat/chat-g10.jpg", alt: "Relaxing on a lounger in the relaxation area" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_04-1.png
-  chatG11: { ai: true, src: "chat/chat-g11.jpg", alt: "A guest by the hot tub" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_07-3.png
-  chatG12: { ai: true, src: "chat/chat-g12.jpg", alt: "A guest by the hot tub with prosecco" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_09-4.png
+  chatG11: { ai: true, src: "chat/chat-g11.jpg", alt: "The hot tub" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_07-3.png
+  chatG12: { ai: true, src: "chat/chat-g12.jpg", alt: "The hot tub with prosecco" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_09-4.png
   chatG13: { ai: true, src: "chat/chat-g13.jpg", alt: "Bedroom with a round mirror and luggage rack" }, // gallery/Immagine ChatGPT 14 ott 2026, 21_10_50-1.png
   chatG14: { ai: true, src: "chat/chat-g14.jpg", alt: "Monogrammed towels on the bed" }, // gallery/Immagine ChatGPT 14 ott 2026, 21_10_52-2.png
   chatG16: { ai: true, src: "chat/chat-g16.jpg", alt: "Green bathroom with shower" }, // gallery/Immagine ChatGPT 16 ott 2026, 17_06_51-8.png
@@ -165,7 +165,7 @@ export const chatAltsIt = {
   chatProsecco: "Prosecco e due calici accanto alla vasca idromassaggio, con morbidi accappatoi bianchi",
   chatMassage: "Un lettino da massaggio con un asciugamano bianco arrotolato",
   chatSpaTub: "La vasca idromassaggio con prosecco e accappatoi",
-  chatSpaRelax: "Un’ospite in accappatoio si rilassa su un lettino nell’area benessere",
+  chatSpaRelax: "Accappatoio e relax nell’area benessere",
   chatSpaRobes: "Accappatoi, pantofole e prosecco sul bordo della vasca idromassaggio",
   chatSauna: "La sauna in legno",
   chatSaunaLight: "La sauna con una luce colorata soffusa",
@@ -189,8 +189,8 @@ export const chatAltsIt = {
   chatG8: "Camera con testiera blu, cuscini rossi e asciugamani piegati",
   chatG9: "Monolocale blu con lampada ad anello e letto a motivi botanici",
   chatG10: "Relax su un lettino nell’area relax",
-  chatG11: "Un’ospite accanto alla vasca idromassaggio",
-  chatG12: "Un’ospite accanto alla vasca idromassaggio con il prosecco",
+  chatG11: "Idromassaggio nell’area benessere",
+  chatG12: "Idromassaggio e prosecco",
   chatG13: "Camera con specchio tondo e portabagagli",
   chatG14: "Asciugamani con monogramma sul letto",
   chatG16: "Bagno verde con doccia",

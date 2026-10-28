@@ -153,7 +153,7 @@ export const rooms = [
   },
   {
     slug: 'deluxe', name: 'Deluxe', image: 'biVerde1', kind: 'apartment',
-    slides: [['biBlu1', 'blue'], ['biBlu2', 'blue'], ['biBlu3', 'blue'], ['biVerde1', 'green'], ['biVerde2', 'green'], ['biVerde3', 'green'], ['biRosso1', 'red'], ['biRosso2', 'red'], ['biRosso3', 'red']],
+    slides: [['biVerde1', 'green'], ['biVerde2', 'green'], ['biVerde3', 'green'], ['biBlu1', 'blue'], ['biBlu2', 'blue'], ['biBlu3', 'blue'], ['biRosso1', 'red'], ['biRosso2', 'red'], ['biRosso3', 'red']],
     cardName: 'Deluxe One-Bedrooms', pageTitle: 'One-Bedroom Apartments in Palermo’s Historic Centre', bookingName: 'Deluxe One-Bedroom',
     line: 'Spacious layouts with a double bedroom and a full living area.',
     text: 'Spacious layouts with a double bedroom and a full living area. Perfect for couples or friends who want to experience Palermo in total relaxation.',
@@ -161,7 +161,7 @@ export const rooms = [
   },
   {
     slug: 'junior-suite', name: 'Junior Suite', image: 'triMattone1', kind: 'apartment',
-    slides: [['triBlu1', 'blue'], ['triBlu2', 'blue'], ['triBlu3', 'blue'], ['triVerde1', 'green'], ['triVerde2', 'green'], ['triVerde3', 'green'], ['triMattone1', 'brick'], ['triMattone2', 'brick'], ['triMattone3', 'brick']],
+    slides: [['triMattone1', 'brick'], ['triMattone2', 'brick'], ['triMattone3', 'brick'], ['triBlu1', 'blue'], ['triBlu2', 'blue'], ['triBlu3', 'blue'], ['triVerde1', 'green'], ['triVerde2', 'green'], ['triVerde3', 'green']],
     cardName: 'Junior Suite Family Apartments', pageTitle: 'Apartments for Families and Groups', bookingName: 'Junior Suite Family Apartment',
     line: 'Generous layouts ideal for families and groups of friends.',
     text: 'Generous layouts ideal for families and groups of friends, with one or two double bedrooms and a fully equipped living area.',
@@ -171,7 +171,7 @@ export const rooms = [
     // One "Suite" category replaces Senior / Deluxe / Grand Suite (client, Oct 2026).
     // Client folder has a blue and a red suite only — NO green variant (ask the client).
     slug: 'suite', kind: 'suite', name: 'Suite', image: 'suiteBlu1',
-    slides: [['suiteBlu1', 'blue'], ['suiteBlu2', 'blue'], ['suiteBlu3', 'blue'], ['suiteRossa1', 'red'], ['suiteRossa2', 'red'], ['suiteRossa3', 'red']],
+    slides: [['suiteRossa1', 'red'], ['suiteRossa2', 'red'], ['suiteRossa3', 'red'], ['suiteBlu1', 'blue'], ['suiteBlu2', 'blue'], ['suiteBlu3', 'blue']],
     cardName: 'Suites', pageTitle: 'Suites', bookingName: 'Suite',
     line: 'A private terrace and sun deck.',
     text: 'The most spacious of our options will delight you with its airy private terrace, decorated with traditional Sicilian-style tiles, and its sun deck. Or you can enjoy a covered private terrace, to breathe the Sicilian air even in winter.',
