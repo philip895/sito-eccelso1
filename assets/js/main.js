@@ -393,6 +393,15 @@
     label();
   }
 
+  /* ---------- Bedzzle booking engine ---------- */
+  // The widgets are created by initBedzzle() (inline, per page). If the Bedzzle library could not load,
+  // the buttons still lead somewhere: the /prenota page, or from there the reservation request form.
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[id^="be-submit-"]');
+    if (!b || typeof window.bzlwgtbe !== 'undefined') return;
+    location.href = document.body.classList.contains('page-prenota') ? 'booking.html' : 'prenota.html';
+  });
+
   /* ---------- forms ---------- */
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const PHONE = /^\+?[\d\s().-]{6,20}$/;

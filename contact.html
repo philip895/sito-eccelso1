@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=ecc6585c">
+<link rel="stylesheet" href="assets/css/styles.css?v=79784095">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="page-contact">
@@ -32,7 +32,7 @@
       <nav class="nav nav--left" aria-label="Principale"><a href="rooms.html">Appartamenti & Suite</a><a href="wellness.html">Benessere</a><a href="about.html">Chi siamo</a><a href="location.html">Dove siamo</a></nav>
     </div>
     <a href="index.html" aria-label="Eccelso — home"><span class="wordmark"><span class="wordmark__name">ECCELSO</span><span class="wordmark__sub"><span class="wordmark__desc">Case Vacanza · </span>Palermo</span></span></a>
-    <nav class="nav nav--right" aria-label="Secondaria"><a href="gallery.html">Galleria</a><a href="contact.html" aria-current="page">Contatti</a><span class="lang lang--full" role="group" aria-label="Lingua"><span class="lang__cur" aria-current="true">IT</span><span class="lang__sep" aria-hidden="true">/</span><a href="en/contact.html" hreflang="en" lang="en" data-lang="en" title="English">EN</a></span><a class="btn btn--sm" href="booking.html">Prenota</a></nav>
+    <nav class="nav nav--right" aria-label="Secondaria"><a href="gallery.html">Galleria</a><a href="contact.html" aria-current="page">Contatti</a><span class="lang lang--full" role="group" aria-label="Lingua"><span class="lang__cur" aria-current="true">IT</span><span class="lang__sep" aria-hidden="true">/</span><a href="en/contact.html" hreflang="en" lang="en" data-lang="en" title="English">EN</a></span><input id="be-cal-head" type="hidden" /><button id="be-submit-head" type="button" class="btn btn--sm">Prenota<span class="btn__more"> ora</span></button></nav>
   </div>
 </header>
 <div class="menu" id="menu" aria-hidden="true">
@@ -45,7 +45,7 @@
       <li><a href="location.html" data-i="4">Dove siamo</a></li>
       <li><a href="gallery.html" data-i="5">Galleria</a></li>
       <li><a href="contact.html" data-i="6" aria-current="page">Contatti</a></li>
-      <li><a href="booking.html" data-i="0">Prenota il soggiorno</a></li>
+      <li><a href="prenota.html" data-i="0">Prenota il soggiorno</a></li>
     </ul>
     <div class="menu__lang"><span aria-current="true">Italiano</span><a href="en/contact.html" hreflang="en" lang="en" data-lang="en">English</a></div>
     <div class="menu__meta"><span>Via del Celso, 101/119, 90134 Palermo (PA), Italia</span><span><a class="" href="tel:+390916254283">+39 091 6254283</a> · <a class="" href="tel:+393751489153">+39 375 1489153</a> · <a class="" href="mailto:eccelso.info@gmail.com">eccelso.info@gmail.com</a></span></div>
@@ -123,10 +123,41 @@
     <nav aria-label="Note legali"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookie</a></nav>
   </div>
 </footer>
-<div class="mobile-book" aria-hidden="true"><span class="mobile-book__txt">Il tuo soggiorno a Palermo</span><a class="btn btn--solid btn--sm" href="booking.html" tabindex="-1">Prenota</a></div>
+<div class="mobile-book" aria-hidden="true"><span class="mobile-book__txt">Il tuo soggiorno a Palermo</span><input id="be-cal-mob" type="hidden" /><button id="be-submit-mob" type="button" class="btn btn--solid btn--sm" tabindex="-1">Prenota ora</button></div>
 <script>window.ECCELSO={"name":"Eccelso","city":"Palermo","lang":"it","bookingEndpoint":"","contactEndpoint":"","minNights":1,"maxGuests":6,"rooms":[{"slug":"superior","name":"Monolocale Superior","line":"Open space eleganti e funzionali.","img":"assets/images/chat/web/mono-blu1-960.jpg","ai":true,"maxGuests":null},{"slug":"deluxe","name":"Bilocale Deluxe","line":"Soluzioni spaziose con camera matrimoniale e zona living completa.","img":"assets/images/chat/web/bi-verde1-960.jpg","ai":true,"maxGuests":null},{"slug":"junior-suite","name":"Trilocale Junior Suite","line":"Ampie soluzioni ideali per famiglie e gruppi di amici.","img":"assets/images/chat/web/tri-mattone1-960.jpg","ai":true,"maxGuests":null},{"slug":"suite","name":"Suite","line":"Terrazzo privato e area solarium.","img":"assets/images/chat/web/suite-blu1-960.jpg","ai":true,"maxGuests":null}],"fallbackImg":"assets/images/chat/web/chat-lobby-960.jpg","i18n":{"locale":"it-IT","dows":["Lu","Ma","Me","Gi","Ve","Sa","Do"],"prevMonth":"Mese precedente","nextMonth":"Mese successivo","clear":"Cancella date","pickIn":"Seleziona la data di arrivo","pickOut":"Ora seleziona la data di partenza","night":"notte","nights":"notti","adult":"adulto","adults":"adulti","child":"bambino","children":"bambini","menu":"Menu","close":"Chiudi","selectDate":"Seleziona","select":"Seleziona","errReq":"Campo obbligatorio.","errConsent":"Per continuare è necessario accettare.","errEmail":"Inserisci un indirizzo email valido.","errPhone":"Inserisci un numero di telefono valido.","sending":"Invio in corso…","sendMsg":"Invia messaggio","thanks":"Grazie. Ti risponderemo al più presto.","demoContact":"(Modalità demo: imposta contactEndpoint per inviare i messaggi.)","errSend":"Spiacenti, non è stato possibile inviare il messaggio. Riprova o contattaci per telefono.","noPref":"Nessuna preferenza","errIn":"Scegli la data di arrivo.","errOut":"Scegli la data di partenza.","errMin":"Il soggiorno minimo è di {n} notti.","errRoom":"Scegli un appartamento, oppure seleziona “Nessuna preferenza”.","rCheckIn":"Arrivo","rCheckOut":"Partenza","rNights":"Notti","rGuests":"Ospiti","rRoom":"Appartamento","rName":"Nome","rEmail":"Email","rPhone":"Telefono","rCountry":"Paese","rArrival":"Orario di arrivo previsto","rRequests":"Richieste particolari","edit":"Modifica","sendReq":"Invia richiesta","errBooking":"Spiacenti, non è stato possibile inviare la richiesta. Riprova o contattaci direttamente.","details":"Dettagli","hideDetails":"Nascondi dettagli"}};</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Eccelso - Case Vacanza","address":{"@type":"PostalAddress","streetAddress":"Via del Celso, 101/119","postalCode":"90134","addressLocality":"Palermo","addressRegion":"PA","addressCountry":"IT"},"telephone":"+39 091 6254283","geo":{"@type":"GeoCoordinates","latitude":38.1161605,"longitude":13.3575479},"checkinTime":"16:00","checkoutTime":"10:00"}</script>
-<script src="assets/js/main.js?v=29960521" defer></script>
+<script src="assets/js/main.js?v=5e664032" defer></script>
 
+<!-- Bedzzle Widget Start -->
+<script>
+	function initBedzzle() {
+		var BedzzleWidget1 = new bzlwgtbe({
+			client: new bzlapi({
+				apiKey: '64ecb3ed58c491c4e2edf944dd07e04c'
+			}),
+			type: 'search',
+			options: {
+				lang: 'it',
+				calendarTarget: '#be-cal-head',
+				submitSelector: '#be-submit-head'
+			}
+		});
+		var BedzzleWidget2 = new bzlwgtbe({
+			client: new bzlapi({
+				apiKey: '64ecb3ed58c491c4e2edf944dd07e04c'
+			}),
+			type: 'search',
+			options: {
+				lang: 'it',
+				calendarTarget: '#be-cal-mob',
+				submitSelector: '#be-submit-mob'
+			}
+		});
+	}
+</script>
+<!-- Bedzzle Widget End -->
+<!-- Bedzzle API include start -->
+<script src="https://api-libs.bedzzle.com/js/api.js?load=widget.be&onload=initBedzzle&theme=001"></script>
+<!-- Bedzzle API include end -->
 </body>
 </html>

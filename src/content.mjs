@@ -66,6 +66,10 @@ export const site = {
 
   minNights: 1,
   maxGuests: 6,
+
+  // Bedzzle booking engine (property #1966 - Eccelso Casa Vacanze). Widget code from
+  // docs.bedzzle.com/it/developers/booking-engine/widget/search: library + `new bzlwgtbe({...})`.
+  bedzzle: { apiKey: '64ecb3ed58c491c4e2edf944dd07e04c', theme: '001' },
 };
 
 // Image registry. src = original (copied) file inside assets/images/.

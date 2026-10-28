@@ -125,14 +125,14 @@ function header(page, file) {
       <nav class="nav nav--left" aria-label="${t('Primary', 'Principale')}">${navItem('rooms')}${navItem('wellness')}${navItem('about')}${navItem('location')}</nav>
     </div>
     <a href="index.html" aria-label="${esc(site.name)} — home">${wordmark()}</a>
-    <nav class="nav nav--right" aria-label="${t('Secondary', 'Secondaria')}">${navItem('gallery')}${navItem('contact')}${langSwitch(file, 'lang--full')}<a class="btn btn--sm" href="booking.html">${t('Book<span class="btn__more"> now</span>', 'Prenota')}</a></nav>
+    <nav class="nav nav--right" aria-label="${t('Secondary', 'Secondaria')}">${navItem('gallery')}${navItem('contact')}${langSwitch(file, 'lang--full')}${bzButton('head', t('Book<span class="btn__more"> now</span>', 'Prenota<span class="btn__more"> ora</span>'), 'btn btn--sm')}</nav>
   </div>
 </header>
 <div class="menu" id="menu" aria-hidden="true">
   <nav class="menu__nav" aria-label="Menu">
     <ul class="menu__list">
       ${nav.map((n, i) => `<li><a href="${n.href}" data-i="${i}"${cur(page, n.id)}>${n.label}</a></li>`).join('\n      ')}
-      <li><a href="booking.html" data-i="0">${t('Book your stay', 'Prenota il soggiorno')}</a></li>
+      <li><a href="prenota.html" data-i="0">${t('Book your stay', 'Prenota il soggiorno')}</a></li>
     </ul>
     <div class="menu__lang">${LANG === 'it' ? `<span aria-current="true">Italiano</span><a href="${otherHref(file)}" hreflang="en" lang="en" data-lang="en">English</a>` : `<a href="${otherHref(file)}" hreflang="it" lang="it" data-lang="it">Italiano</a><span aria-current="true">English</span>`}</div>
     <div class="menu__meta"><span>${esc(site.address)}, ${esc(site.postcode)}</span><span>${[phoneLink(), mobileLink(), emailLink()].filter(Boolean).join(' · ')}</span></div>
@@ -163,7 +163,39 @@ function footer() {
 </footer>`;
 }
 
-const mobileBook = () => `<div class="mobile-book" aria-hidden="true"><span class="mobile-book__txt">${t(`Your stay in ${esc(site.city)}`, `Il tuo soggiorno a ${esc(site.city)}`)}</span><a class="btn btn--solid btn--sm" href="booking.html" tabindex="-1">${t('Book now', 'Prenota')}</a></div>`;
+const mobileBook = () => `<div class="mobile-book" aria-hidden="true"><span class="mobile-book__txt">${t(`Your stay in ${esc(site.city)}`, `Il tuo soggiorno a ${esc(site.city)}`)}</span>${bzButton('mob', t('Book now', 'Prenota ora'), 'btn btn--solid btn--sm', ' tabindex="-1"')}</div>`;
+
+// ── Bedzzle booking engine ──────────────────────────────────────────────────
+// Widget markup follows Bedzzle's search-widget guide: a hidden (or inline) calendar target, optional
+// check-in/out inputs and guest selects, and a submit button. Each block shares an id suffix (be-cal-<id>,
+// be-submit-<id>…); bedzzleInit() finds them in the finished page and creates one widget per block.
+const bzButton = (id, label, cls, attrs = '') => `<input id="be-cal-${id}" type="hidden" /><button id="be-submit-${id}" type="button" class="${cls}"${attrs}>${label}</button>`;
+const bzOpts = (n, from, sel, one, many) => Array.from({ length: n }, (_, i) => i + from).map((v) => `<option value="${v}"${v === sel ? ' selected' : ''}>${v} ${v === 1 ? one : many}</option>`).join('');
+const bzGuests = (id) => `<label class="bookbar__field"><span class="bookbar__label">${t('Adults', 'Adulti')}</span><select id="be-adults-${id}" class="bookbar__value">${bzOpts(site.maxGuests, 1, 2, t('adult', 'adulto'), t('adults', 'adulti'))}</select></label>
+        <label class="bookbar__field"><span class="bookbar__label">${t('Children', 'Bambini')}</span><select id="be-children-${id}" class="bookbar__value">${bzOpts(site.maxGuests, 0, 0, t('child', 'bambino'), t('children', 'bambini'))}</select></label>`;
+function bedzzleInit(html) {
+  const ids = [...html.matchAll(/id="be-cal-([\w-]+)"/g)].map((m) => m[1]);
+  if (!ids.length) return '';
+  const on = (k, id) => html.includes(`id="be-${k}-${id}"`);
+  const widgets = ids.map((id, i) => {
+    const o = [`lang: '${LANG}'`, `calendarTarget: '#be-cal-${id}'`];
+    if (on('checkin', id)) o.push(`checkInSelector: '#be-checkin-${id}'`, `checkOutSelector: '#be-checkout-${id}'`);
+    if (on('adults', id)) o.push(`adultsNumSelector: '#be-adults-${id}'`, `childrenNumSelector: '#be-children-${id}'`);
+    o.push(`submitSelector: '#be-submit-${id}'`);
+    if (html.includes(`<div id="be-cal-${id}"`)) o.push(`calendar: { display: 'inline' }`);
+    return `\t\tvar BedzzleWidget${i + 1} = new bzlwgtbe({\n\t\t\tclient: new bzlapi({\n\t\t\t\tapiKey: '${site.bedzzle.apiKey}'\n\t\t\t}),\n\t\t\ttype: 'search',\n\t\t\toptions: {\n\t\t\t\t${o.join(',\n\t\t\t\t')}\n\t\t\t}\n\t\t});`;
+  });
+  return `<!-- Bedzzle Widget Start -->
+<script>
+\tfunction initBedzzle() {
+${widgets.join('\n')}
+\t}
+</script>
+<!-- Bedzzle Widget End -->
+<!-- Bedzzle API include start -->
+<script src="https://api-libs.bedzzle.com/js/api.js?load=widget.be&onload=initBedzzle&theme=${site.bedzzle.theme}"></script>
+<!-- Bedzzle API include end -->`;
+}
 
 // strings used by assets/js/main.js and booking.js
 const I18N = {
@@ -225,7 +257,7 @@ const jsonLd = () => `<script type="application/ld+json">${JSON.stringify({
 
 function layout({ page, file, title, description, hero = false, body, scripts = [], ogImage = 'chatLobby', bookBar = true }) {
   const itHref = LANG === 'it' ? file : `../${file}`, enHref = LANG === 'it' ? `en/${file}` : file;
-  return `<!doctype html>
+  const html = `<!doctype html>
 <html lang="${LANG}">
 <head>
 <meta charset="utf-8">
@@ -262,6 +294,7 @@ ${scripts.map((s) => `<script src="${B}${ver(s)}" defer></script>`).join('\n')}
 </body>
 </html>
 `;
+  return html.replace('</body>', `${bedzzleInit(html)}\n</body>`);
 }
 
 // Small, understated rating badge for the booking CTA (owner-supplied Google rating).
@@ -277,7 +310,7 @@ const closingCta = (title) => `
     <div class="closing__side" data-reveal>
       <p class="body">${t(`Send us your dates and we'll reply${reply()} with availability and our best rate. No payment is taken at this stage.`, `Inviaci le tue date: ti risponderemo${reply()} con la disponibilità e la nostra migliore tariffa. In questa fase non è richiesto alcun pagamento.`)}</p>
       ${trustBadge()}
-      <a class="btn btn--solid" href="booking.html">${t('Check availability', 'Verifica disponibilità')}</a>
+      <a class="btn btn--solid" href="prenota.html">${t('Check availability', 'Verifica disponibilità')}</a>
       ${link('contact.html', t('Or write to us', 'Oppure scrivici'))}
     </div>
   </div>
@@ -382,17 +415,13 @@ function buildPages() {
           <div class="hero__counter" aria-hidden="true"><span data-hero-index>01</span><span class="hero__progress"><span></span></span><span>${pad(heroSlides.length)}</span></div>
         </div>
       </div>
-      <form class="bookbar" action="booking.html" data-bookbar data-reveal style="--d:1.1s" aria-label="${t('Check availability', 'Verifica disponibilità')}">
-        <button type="button" class="bookbar__field" data-open="dates"><span class="bookbar__label">${t('Check-in', 'Arrivo')}</span><span class="bookbar__value is-empty" data-in>${t('Select date', 'Seleziona')}</span></button>
-        <button type="button" class="bookbar__field" data-open="dates"><span class="bookbar__label">${t('Check-out', 'Partenza')}</span><span class="bookbar__value is-empty" data-out>${t('Select date', 'Seleziona')}</span></button>
-        <button type="button" class="bookbar__field" data-open="guests"><span class="bookbar__label">${t('Guests', 'Ospiti')}</span><span class="bookbar__value" data-guests>${t('2 adults', '2 adulti')}</span></button>
-        <button type="submit" class="btn btn--light">${t('Check availability', 'Verifica disponibilità')}</button>
-        <div class="popover popover--up" data-pop="dates" style="left:0"><div class="cal" data-cal></div></div>
-        <div class="popover popover--up" data-pop="guests" style="left:66%;min-width:20rem">
-          <div class="stepper"><span class="stepper__label">${t('Adults', 'Adulti')}<small>${t('Ages 13+', 'Dai 13 anni')}</small></span><span class="stepper__ctrl"><button type="button" class="stepper__btn" data-step="adults:-1" aria-label="${t('Fewer adults', 'Meno adulti')}">−</button><span class="stepper__val" data-val="adults">2</span><button type="button" class="stepper__btn" data-step="adults:1" aria-label="${t('More adults', 'Più adulti')}">+</button></span></div>
-          <div class="stepper"><span class="stepper__label">${t('Children', 'Bambini')}<small>${t('Ages 0–12', '0–12 anni')}</small></span><span class="stepper__ctrl"><button type="button" class="stepper__btn" data-step="children:-1" aria-label="${t('Fewer children', 'Meno bambini')}">−</button><span class="stepper__val" data-val="children">0</span><button type="button" class="stepper__btn" data-step="children:1" aria-label="${t('More children', 'Più bambini')}">+</button></span></div>
-        </div>
-      </form>
+      <div class="bookbar bookbar--bz" data-reveal style="--d:1.1s" role="search" aria-label="${t('Check availability', 'Verifica disponibilità')}">
+        <input id="be-cal-hero" type="hidden" />
+        <label class="bookbar__field"><span class="bookbar__label">${t('Check-in', 'Arrivo')}</span><input id="be-checkin-hero" class="bookbar__value" type="text" readonly placeholder="${t('Select date', 'Seleziona')}" /></label>
+        <label class="bookbar__field"><span class="bookbar__label">${t('Check-out', 'Partenza')}</span><input id="be-checkout-hero" class="bookbar__value" type="text" readonly placeholder="${t('Select date', 'Seleziona')}" /></label>
+        ${bzGuests('hero')}
+        <button id="be-submit-hero" type="button" class="btn btn--light">${t('Check availability', 'Verifica disponibilità')}</button>
+      </div>
     </div>
   </div>
 </section>
@@ -521,7 +550,7 @@ ${R.map((r, i) => `${r.kind === 'suite' && R[i - 1]?.kind !== 'suite' && suitesI
       <p class="room__line" data-reveal>${r.kind === 'apartment' ? r.name : r.line}</p>
       <p class="body" data-reveal style="margin-top:1.5rem">${r.text}</p>
       ${specs(r).length ? `<dl class="specs" data-reveal>${specs(r).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(loc(v))}</dd></div>`).join('')}</dl>` : ''}
-      <div class="room__actions" data-reveal><a class="btn btn--solid" href="booking.html?room=${r.slug}">${r.kind === 'suite' ? t('Request this suite', 'Richiedi questa suite') : t('Request this apartment', 'Richiedi questo appartamento')}</a>${link('gallery.html?f=rooms', t('Gallery', 'Galleria'))}</div>
+      <div class="room__actions" data-reveal>${bzButton(`room-${r.slug}`, t('Book', 'Prenota'), 'btn btn--solid')}${link('gallery.html?f=rooms', t('Gallery', 'Galleria'))}</div>
     </div>
   </div>
 </article>`).join('')}
@@ -778,6 +807,29 @@ ${pageHero({ key: 'receptionDesk', focusX: '57%', eyebrowText: t('Contact', 'Con
     </div>
   </div>
 </section>`,
+  });
+
+  // PRENOTA (Bedzzle booking engine) -------------------------------------------
+  pages['prenota.html'] = layout({
+    page: 'prenota', file: 'prenota.html', bookBar: false, ogImage: 'biBlu1',
+    title: t(`Book your stay — ${site.name}, ${site.city}`, `Prenota il soggiorno — ${site.name}, ${site.city}`),
+    description: t(`Check availability and book your apartment or suite at ${site.name}, ${site.city}.`, `Verifica la disponibilità e prenota il tuo appartamento o la tua suite da ${site.name}, ${site.city}.`),
+    body: `
+<div class="prenota container">
+  <div class="prenota__head">
+    <p class="eyebrow">${t('Reservations', 'Prenotazioni')}</p>
+    <h1 class="h1" style="margin-top:1rem">${t('Book<br><em>your stay.</em>', 'Prenota<br><em>il tuo soggiorno.</em>')}</h1>
+    <p class="body">${t('Choose your dates and guests to see live availability and rates.', 'Scegli le date e gli ospiti per vedere disponibilità e tariffe in tempo reale.')}</p>
+  </div>
+  <div class="prenota__widget">
+    <div id="be-cal-page"></div>
+    <div class="prenota__bar bookbar--bz">
+      ${bzGuests('page')}
+      <button id="be-submit-page" type="button" class="btn btn--solid">${t('Check availability', 'Verifica disponibilità')}</button>
+    </div>
+  </div>
+  <p class="prenota__note body small">${t('A special request, or a question before booking?', 'Una richiesta particolare o una domanda prima di prenotare?')} ${link('booking.html', t('Send us a request', 'Inviaci una richiesta'))} ${t('or', 'oppure')} ${link('contact.html', t('contact us', 'contattaci'))}.</p>
+</div>`,
   });
 
   // BOOKING ---------------------------------------------------------------

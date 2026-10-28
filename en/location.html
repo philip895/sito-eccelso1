@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/css/styles.css?v=ecc6585c">
+<link rel="stylesheet" href="../assets/css/styles.css?v=79784095">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="page-location">
@@ -32,7 +32,7 @@
       <nav class="nav nav--left" aria-label="Primary"><a href="rooms.html">Apartments & Suites</a><a href="wellness.html">Wellness</a><a href="about.html">About us</a><a href="location.html" aria-current="page">Location</a></nav>
     </div>
     <a href="index.html" aria-label="Eccelso — home"><span class="wordmark"><span class="wordmark__name">ECCELSO</span><span class="wordmark__sub"><span class="wordmark__desc">Case Vacanza · </span>Palermo</span></span></a>
-    <nav class="nav nav--right" aria-label="Secondary"><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><span class="lang lang--full" role="group" aria-label="Language"><a href="../location.html" hreflang="it" lang="it" data-lang="it" title="Italiano">IT</a><span class="lang__sep" aria-hidden="true">/</span><span class="lang__cur" aria-current="true">EN</span></span><a class="btn btn--sm" href="booking.html">Book<span class="btn__more"> now</span></a></nav>
+    <nav class="nav nav--right" aria-label="Secondary"><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><span class="lang lang--full" role="group" aria-label="Language"><a href="../location.html" hreflang="it" lang="it" data-lang="it" title="Italiano">IT</a><span class="lang__sep" aria-hidden="true">/</span><span class="lang__cur" aria-current="true">EN</span></span><input id="be-cal-head" type="hidden" /><button id="be-submit-head" type="button" class="btn btn--sm">Book<span class="btn__more"> now</span></button></nav>
   </div>
 </header>
 <div class="menu" id="menu" aria-hidden="true">
@@ -45,7 +45,7 @@
       <li><a href="location.html" data-i="4" aria-current="page">Location</a></li>
       <li><a href="gallery.html" data-i="5">Gallery</a></li>
       <li><a href="contact.html" data-i="6">Contact</a></li>
-      <li><a href="booking.html" data-i="0">Book your stay</a></li>
+      <li><a href="prenota.html" data-i="0">Book your stay</a></li>
     </ul>
     <div class="menu__lang"><a href="../location.html" hreflang="it" lang="it" data-lang="it">Italiano</a><span aria-current="true">English</span></div>
     <div class="menu__meta"><span>Via del Celso, 101/119, 90134 Palermo (PA), Italia</span><span><a class="" href="tel:+390916254283">+39 091 6254283</a> · <a class="" href="tel:+393751489153">+39 375 1489153</a> · <a class="" href="mailto:eccelso.info@gmail.com">eccelso.info@gmail.com</a></span></div>
@@ -130,7 +130,7 @@
     <div class="closing__side" data-reveal>
       <p class="body">Send us your dates and we'll reply with availability and our best rate. No payment is taken at this stage.</p>
       <p class="trust"><a href="https://www.google.com/maps?cid=7825399527972135495" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 from 50 Google reviews"><span aria-hidden="true">4.9</span><svg class="trust__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.75 6.06 6.62.7-4.95 4.46 1.38 6.52L12 17.02l-5.8 3.32 1.38-6.52L2.63 9.36l6.62-.7z"/></svg><span class="trust__sep" aria-hidden="true">·</span><span aria-hidden="true">50 Google reviews</span></a></p>
-      <a class="btn btn--solid" href="booking.html">Check availability</a>
+      <a class="btn btn--solid" href="prenota.html">Check availability</a>
       <a class="link" href="contact.html"><span>Or write to us</span><svg class="arrow" viewBox="0 0 26 10" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 5h25M21 1l4 4-4 4"/></svg></a>
     </div>
   </div>
@@ -152,10 +152,41 @@
     <nav aria-label="Legal"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookie</a></nav>
   </div>
 </footer>
-<div class="mobile-book" aria-hidden="true"><span class="mobile-book__txt">Your stay in Palermo</span><a class="btn btn--solid btn--sm" href="booking.html" tabindex="-1">Book now</a></div>
+<div class="mobile-book" aria-hidden="true"><span class="mobile-book__txt">Your stay in Palermo</span><input id="be-cal-mob" type="hidden" /><button id="be-submit-mob" type="button" class="btn btn--solid btn--sm" tabindex="-1">Book now</button></div>
 <script>window.ECCELSO={"name":"Eccelso","city":"Palermo","lang":"en","bookingEndpoint":"","contactEndpoint":"","minNights":1,"maxGuests":6,"rooms":[{"slug":"superior","name":"Superior Studio","line":"Elegant, functional open-plan spaces.","img":"../assets/images/chat/web/mono-blu1-960.jpg","ai":true,"maxGuests":null},{"slug":"deluxe","name":"Deluxe One-Bedroom","line":"Spacious layouts with a double bedroom and a full living area.","img":"../assets/images/chat/web/bi-verde1-960.jpg","ai":true,"maxGuests":null},{"slug":"junior-suite","name":"Junior Suite Family Apartment","line":"Generous layouts ideal for families and groups of friends.","img":"../assets/images/chat/web/tri-mattone1-960.jpg","ai":true,"maxGuests":null},{"slug":"suite","name":"Suite","line":"A private terrace and sun deck.","img":"../assets/images/chat/web/suite-blu1-960.jpg","ai":true,"maxGuests":null}],"fallbackImg":"../assets/images/chat/web/chat-lobby-960.jpg","i18n":{"locale":"en-GB","dows":["Mo","Tu","We","Th","Fr","Sa","Su"],"prevMonth":"Previous month","nextMonth":"Next month","clear":"Clear dates","pickIn":"Select your arrival date","pickOut":"Now select your departure","night":"night","nights":"nights","adult":"adult","adults":"adults","child":"child","children":"children","menu":"Menu","close":"Close","selectDate":"Select date","select":"Select","errReq":"This field is required.","errConsent":"Please accept to continue.","errEmail":"Please enter a valid email address.","errPhone":"Please enter a valid phone number.","sending":"Sending…","sendMsg":"Send message","thanks":"Thank you. We’ll be in touch soon.","demoContact":"(Demo mode: set contactEndpoint to send messages.)","errSend":"Sorry, your message could not be sent. Please try again or contact us by phone.","noPref":"No preference","errIn":"Please choose your check-in date.","errOut":"Please choose your check-out date.","errMin":"The minimum stay is {n} nights.","errRoom":"Please choose an apartment, or select “No preference”.","rCheckIn":"Check-in","rCheckOut":"Check-out","rNights":"Nights","rGuests":"Guests","rRoom":"Apartment","rName":"Name","rEmail":"Email","rPhone":"Telephone","rCountry":"Country","rArrival":"Estimated arrival","rRequests":"Special requests","edit":"Edit","sendReq":"Send request","errBooking":"Sorry, we could not send your request. Please try again, or contact us directly.","details":"Details","hideDetails":"Hide details"}};</script>
 
-<script src="../assets/js/main.js?v=29960521" defer></script>
+<script src="../assets/js/main.js?v=5e664032" defer></script>
 
+<!-- Bedzzle Widget Start -->
+<script>
+	function initBedzzle() {
+		var BedzzleWidget1 = new bzlwgtbe({
+			client: new bzlapi({
+				apiKey: '64ecb3ed58c491c4e2edf944dd07e04c'
+			}),
+			type: 'search',
+			options: {
+				lang: 'en',
+				calendarTarget: '#be-cal-head',
+				submitSelector: '#be-submit-head'
+			}
+		});
+		var BedzzleWidget2 = new bzlwgtbe({
+			client: new bzlapi({
+				apiKey: '64ecb3ed58c491c4e2edf944dd07e04c'
+			}),
+			type: 'search',
+			options: {
+				lang: 'en',
+				calendarTarget: '#be-cal-mob',
+				submitSelector: '#be-submit-mob'
+			}
+		});
+	}
+</script>
+<!-- Bedzzle Widget End -->
+<!-- Bedzzle API include start -->
+<script src="https://api-libs.bedzzle.com/js/api.js?load=widget.be&onload=initBedzzle&theme=001"></script>
+<!-- Bedzzle API include end -->
 </body>
 </html>
