@@ -170,7 +170,7 @@ export const rooms = [
   {
     // One "Suite" category replaces Senior / Deluxe / Grand Suite (client, Oct 2026).
     // Client folder has a blue and a red suite only — NO green variant (ask the client).
-    slug: 'suite', kind: 'suite', name: 'Suite', image: 'suiteRossa1',
+    slug: 'suite', kind: 'suite', name: 'Suite', image: 'suiteBlu1',
     slides: [['suiteBlu1', 'blue'], ['suiteBlu2', 'blue'], ['suiteBlu3', 'blue'], ['suiteRossa1', 'red'], ['suiteRossa2', 'red'], ['suiteRossa3', 'red']],
     cardName: 'Suites', pageTitle: 'Suites', bookingName: 'Suite',
     line: 'A private terrace and sun deck.',
