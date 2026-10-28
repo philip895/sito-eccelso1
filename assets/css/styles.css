@@ -787,8 +787,8 @@ select.input { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
   .intro__text { padding-top: 0; }
   .rituals__text { position: static; }
   .rituals__a, .rituals__b { margin-top: 0; }
-  .rituals__a { width: 68%; }
-  .rituals__b { width: 78%; margin-left: auto; margin-top: var(--s-5) !important; } /* staggered, but never over the first photo's caption */
+  .rituals__a { width: 68%; margin-inline: auto; }
+  .rituals__b { width: 78%; margin-inline: auto; margin-top: var(--s-5) !important; } /* centred on mobile, never over the first photo's caption */
   .rooms-head__controls .slider-btns { display: none; }
   .track { grid-auto-columns: 82vw; }
   .city { min-height: 0; }
