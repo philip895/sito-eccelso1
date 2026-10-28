@@ -789,10 +789,17 @@ select.input { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
   .bookbar { display: none; }
 
   .media--parallax img { height: 100%; margin-top: 0; } /* parallax is off on mobile: no zoom headroom needed */
-  .intro__a { width: 82%; margin-inline: auto; }
-  .intro__b { width: 70%; margin-inline: auto; margin-top: calc(-1 * var(--s-6)); }
-  .intro__c { width: 60%; margin: 0 auto; }
-  .intro__text { padding-top: 0; }
+  /* 01 Aparthotel on phones: text first, the reception full width, sofa + bedroom side by side, the quote to close */
+  .intro.grid { grid-template-columns: 1fr 1fr; column-gap: .75rem; row-gap: var(--s-6); }
+  .intro__a { display: contents; }
+  .intro.grid > .intro__text { order: 1; padding-top: 0; }
+  .intro.grid > .intro__a > figure { order: 2; grid-column: 1 / -1; }
+  .intro.grid > .intro__b { order: 3; grid-column: 1 !important; margin: 0; width: auto; }
+  .intro.grid > .intro__c { order: 3; grid-column: 2 !important; margin: 0; width: auto; }
+  .intro.grid > .intro__a > .intro__quote { order: 4; grid-column: 1 / -1; margin: 0 auto; text-align: center; max-width: 17rem; }
+  .intro__a .media { aspect-ratio: 4 / 5; }
+  .intro__b .media, .intro__c .media { aspect-ratio: 4 / 5; }
+  .intro__b .caption, .intro__c .caption { font-size: .6875rem; letter-spacing: .04em; gap: .5rem; }
   .rituals__text { position: static; }
   .rituals__a, .rituals__b { margin-top: 0; }
   .rituals__a { width: 68%; margin-inline: auto; }
@@ -800,7 +807,7 @@ select.input { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
   .rooms-head__controls .slider-btns { display: none; }
   .track { grid-auto-columns: 82vw; padding-inline: 9vw; scroll-padding-inline: 0; }
   .track > * { scroll-snap-align: center; } /* each card stops centred under the logo */
-  .intro__a .media img { transform-origin: 0 50%; transform: scale(1.25); } /* reception desk sits left in the photo: zoom from the left edge to bring it under the logo */
+  .intro__a .media img { object-position: 50% 62%; transform-origin: 0 62%; transform: scale(1.25); } /* reception desk sits left in the photo: zoom from the left edge to bring it under the logo */
   .city { min-height: 0; }
   .city__media { min-height: 0; aspect-ratio: 4 / 5; margin-inline: calc(-1 * var(--gutter)); }
   .city { padding-inline: var(--gutter); }
