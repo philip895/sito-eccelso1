@@ -82,7 +82,6 @@ const mobileLink = (cls = '') => (!has(site.mobile) ? '' : `<a class="${cls}" hr
 const waLink = (cls = '') => (!has(site.whatsapp) ? '' : `<a class="${cls}" href="https://wa.me/${site.whatsapp.replace(/[^\d]/g, '')}" rel="noopener" target="_blank">${esc(site.whatsapp)}</a>`);
 const reply = (pre = ' ') => (has(site.replyTime) ? `${pre}${esc(loc(site.replyTime))}` : '');
 const li = (...parts) => parts.filter(Boolean).map((p) => `<li>${p}</li>`).join('');
-const checkInOut = () => t(`from ${site.checkInTime} · by ${site.checkOutTime}`, `dalle ${site.checkInTime} · entro le ${site.checkOutTime}`);
 
 // ── chrome ─────────────────────────────────────────────────────────────────
 const NAV = () => [
@@ -101,6 +100,10 @@ const wordmark = () => `<span class="wordmark"><span class="wordmark__name">${es
 // language switch: same page in the other language
 const otherHref = (file) => (LANG === 'it' ? `en/${file}` : `../${file}`);
 function langSwitch(file, cls) {
+  if (cls === 'lang--compact') {   // phones/tablets: show the current language, tap to switch
+    const [cur, other, name] = LANG === 'it' ? ['IT', 'en', 'English'] : ['EN', 'it', 'Italiano'];
+    return `<span class="lang ${cls}"><a href="${otherHref(file)}" hreflang="${other}" data-lang="${other}" title="${name}" aria-label="${t('Language: English. Switch to Italian', 'Lingua: italiano. Passa all’inglese')}">${cur}</a></span>`;
+  }
   const it = LANG === 'it' ? `<span class="lang__cur" aria-current="true">IT</span>` : `<a href="${otherHref(file)}" hreflang="it" lang="it" data-lang="it" title="Italiano">IT</a>`;
   const en = LANG === 'en' ? `<span class="lang__cur" aria-current="true">EN</span>` : `<a href="${otherHref(file)}" hreflang="en" lang="en" data-lang="en" title="English">EN</a>`;
   return `<span class="lang ${cls}" role="group" aria-label="${t('Language', 'Lingua')}">${it}<span class="lang__sep" aria-hidden="true">/</span>${en}</span>`;
@@ -346,6 +349,7 @@ function buildPages() {
   // Every photo appears once on the homepage (client: "cambiare foto che si ripetono").
   const heroSlides = ['chatLobby', 'chatTubSteps', 'suiteBlu3', 'homeGreenRoom'];   // client images (Oct 2026); slide 4 = client's extra photo
   const heroMobile = ['chatReception', 'chatProsecco', 'suiteBlu3', 'homeGreenRoom']; // portrait-friendly sources for phones
+  const heroLight = [1, 3];                                                              // bright slides: extra scrim behind the title
   const moments = [
     ['receptionDesk', t('The lobby', 'La hall'), t('A welcoming space to make your arrival comfortable.', 'Un ambiente accogliente renderà il tuo arrivo confortevole.')],
     ['aiTerraceLoungers', t('The terrace', 'La terrazza'), t('Patterned blue tiles, sun loungers and the rooftops of Palermo.', 'Piastrelle blu decorate, lettini e i tetti di Palermo.')], // TODO AI
@@ -359,7 +363,7 @@ function buildPages() {
 <section class="hero" aria-label="${t('Welcome', 'Benvenuti')}">
   <div class="hero__media"><div class="hero__parallax" data-parallax data-speed="0.25">
     <div class="hero__slides">
-      ${heroSlides.map((k, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}"><picture><source media="(max-width: 700px)" srcset="${srcset(heroMobile[i])}" sizes="${coverSizes(heroMobile[i])}">${img(k, { eager: i === 0, priority: i === 0, sizes: coverSizes(k) })}</picture>${aiBadge(k, heroMobile[i])}</div>`).join('\n      ')}
+      ${heroSlides.map((k, i) => `<div class="hero__slide${i === 0 ? ' is-active' : ''}${heroLight.includes(i) ? ' hero__slide--light' : ''}"><picture><source media="(max-width: 700px)" srcset="${srcset(heroMobile[i])}" sizes="${coverSizes(heroMobile[i])}">${img(k, { eager: i === 0, priority: i === 0, sizes: coverSizes(k) })}</picture>${aiBadge(k, heroMobile[i])}</div>`).join('\n      ')}
     </div>
   </div></div>
   <div class="hero__content on-image">
@@ -395,7 +399,7 @@ function buildPages() {
       <p class="intro__quote" data-reveal>${t('<em>Eccelso</em> · Italian for lofty, sublime; from the Latin <em>excelsus</em>.', '<em>Eccelso</em> · elevato, sublime; dal latino <em>excelsus</em>.')}</p></div>
     <div class="intro__text stack stack--lg">
       <div data-reveal>${eyebrow('01', 'Aparthotel')}</div>
-      <h2 class="h2 h2--long" id="house-title" data-split>${lines(t(['Eccelso – Suites &amp; Spa', '<em>welcomes you into a unique and unforgettable stay experience.</em>'], ['Eccelso – Suites &amp; Spa', '<em>ti accoglie in un’esperienza di soggiorno unica ed emozionante.</em>']))}</h2>
+      <h2 class="h2 h2--long" id="house-title" data-split>${lines(t(['Eccelso · Suites &amp; Spa', '<em>welcomes you into a unique and unforgettable stay experience.</em>'], ['Eccelso · Suites &amp; Spa', '<em>ti accoglie in un’esperienza di soggiorno unica ed emozionante.</em>']))}</h2>
       <p class="body" data-reveal>${t('The timeless charm of the historic centre meets contemporary design and modern comfort, giving life to an elegant property made for those who want to experience Palermo in style. Amid historic markets, iconic landmarks, authentic restaurants and exclusive venues, Eccelso is the ideal choice for unforgettable holidays or business stays.', 'L’antico fascino del centro storico incontra il design contemporaneo e il comfort moderno, dando vita a una struttura elegante pensata per chi desidera vivere Palermo con stile. Tra mercati storici, monumenti iconici, ristoranti tipici e locali esclusivi, Eccelso è la scelta ideale per vacanze indimenticabili o soggiorni business.')}</p>
       <div data-reveal>${link('about.html', t('Our story', 'La nostra storia'))}</div>
     </div>
@@ -484,7 +488,7 @@ ${closingCta()}`,
   const variantName = { blue: t('Blue variant', 'Variante blu'), green: t('Green variant', 'Variante verde'), red: t('Red variant', 'Variante rossa'), brick: t('Brick-red variant', 'Variante color mattone') };
   const roomSlides = (r) => `<div class="room__media room-slides" data-moments>
       <div class="moments__stage" data-reveal="fade">
-        ${r.slides.map(([k], i) => `<div class="moments__slide${i === 0 ? ' is-active' : ''}" style="${lq(k)}">${img(k, { sizes: '(max-width: 900px) 100vw, 58vw' })}${aiBadge(k)}</div>`).join('\n        ')}
+        ${r.slides.map(([k], i) => `<div class="moments__slide${i === 0 ? ' is-active' : ''}${manifest[k].h > manifest[k].w ? ' moments__slide--portrait' : ''}" style="${lq(k)}">${img(k, { sizes: '(max-width: 900px) 100vw, 58vw' })}${aiBadge(k)}</div>`).join('\n        ')}
       </div>
       <div class="room-slides__bar">
         <div class="moments__caps" aria-live="polite">${r.slides.map(([, v], i) => `<p class="moments__cap room-slides__cap${i === 0 ? ' is-active' : ''}"><span class="moments__count">${pad(i + 1)} / ${pad(r.slides.length)}</span>${variantName[v]}</p>`).join('')}</div>
@@ -497,7 +501,7 @@ ${closingCta()}`,
     title: t(`Apartments & Suites — ${site.name}, ${site.city}`, `Appartamenti & Suite — ${site.name}, ${site.city}`),
     description: t(`Apartments and suites at ${site.name}, ${site.city}: studios, one-bedroom and family apartments, and suites in the historic centre. Request your stay directly.`, `Appartamenti e suite da ${site.name}, ${site.city}: monolocali, bilocali, trilocali e suite nel centro storico. Richiedi il tuo soggiorno direttamente.`),
     body: `
-${pageHero({ key: 'biVerde1', framed: true, eyebrowText: t('Apartments &amp; suites', 'Appartamenti &amp; suite'), title: t(['The comfort of home,', '<em>the luxury of an Aparthotel.</em>'], ['Il comfort di casa,', '<em>il lusso di un Aparthotel.</em>']), lede: t('Stay solutions for every need.', 'Soluzioni di soggiorno per tutte le esigenze.') })}
+${pageHero({ key: 'chatG13', framed: true, eyebrowText: t('Apartments &amp; suites', 'Appartamenti &amp; suite'), title: t(['The comfort of home,', '<em>the luxury of an Aparthotel.</em>'], ['Il comfort di casa,', '<em>il lusso di un Aparthotel.</em>']), lede: t('Stay solutions for every need.', 'Soluzioni di soggiorno per tutte le esigenze.') })}
 <section class="section" aria-label="${t('Introduction', 'Introduzione')}">
   <div class="container grid"><div class="statement" data-reveal><p class="lead">${t('Every space tells a story of <em>elegance, light and harmony</em>.', 'Ogni ambiente racconta una storia fatta di <em>eleganza, luce e armonia</em>.')}</p><p class="body" style="margin-top:2rem">${t('Recently renovated, from 32 to 60 m²: studios, one-bedroom and family apartments, and suites.', 'Appena ristrutturati, da 32 a 60 m²: monolocali, bilocali, trilocali e suite.')}</p></div></div>
 </section>
@@ -604,7 +608,7 @@ ${closingCta(t(['Book your apartment', '<em>and get ready for a luxury stay.</em
     title: t(`About us — ${site.name}, ${site.city}`, `Chi siamo — ${site.name}, ${site.city}`),
     description: t(`The story and the spirit of ${site.name}, apartments and suites in the historic centre of ${site.city}.`, `La storia e lo spirito di ${site.name}, appartamenti e suite nel centro storico di ${site.city}.`),
     body: `
-${pageHero({ key: 'chatAboutReception', eyebrowText: t('About us', 'Chi siamo'), title: t(['A house', '<em>made of light.</em>'], ['Una casa', '<em>fatta di luce.</em>']), lede: t('Living in luxury. Bright spaces, quality materials and a welcoming atmosphere make Eccelso the perfect setting for your stay.', 'Dimorare nel lusso. Ambienti luminosi, materiali di qualità e un’atmosfera accogliente rendono Eccelso la cornice perfetta per il tuo soggiorno.') })}
+${pageHero({ key: 'chatAboutReception', eyebrowText: t('About us', 'Chi siamo'), title: t(['Elegant', '<em>Apartments.</em>'], ['Eleganti', '<em>Appartamenti.</em>']), lede: t('Living in luxury. Bright spaces, quality materials and a welcoming atmosphere make Eccelso the perfect setting for your stay.', 'Dimorare nel lusso. Ambienti luminosi, materiali di qualità e un’atmosfera accogliente rendono Eccelso la cornice perfetta per il tuo soggiorno.') })}
 <section class="section" aria-label="${t('Our philosophy', 'La nostra filosofia')}">
   <div class="container grid"><div class="statement" data-reveal><p class="lead">${t('Every space has been designed to make you <em>feel at home</em>, with the elegance and comforts of a luxury hotel in Palermo’s historic centre.', 'Ogni spazio è stato progettato per farti <em>sentire a casa</em>, con l’eleganza e i comfort di un hotel di lusso nel centro storico di Palermo.')}</p></div></div>
 </section>
@@ -745,7 +749,8 @@ ${pageHero({ key: 'receptionDesk', eyebrowText: t('Contact', 'Contatti'), title:
           ['WhatsApp', waLink('val'), has(site.whatsapp)],
           ['Email', emailLink('val'), has(site.email)],
           ['Reception', `<span class="val">${esc(loc(site.reception))}</span>`, has(site.reception)],
-          [t('Check-in · Check-out', 'Arrivo · Partenza'), `<span class="val">${checkInOut()}</span>`, has(site.checkInTime)],
+          [t('Check-in', 'Arrivo'), `<span class="val">${t(`from ${site.checkInTime}`, `dalle ${site.checkInTime}`)}</span>`, has(site.checkInTime)],
+          [t('Check-out', 'Partenza'), `<span class="val">${t(`by ${site.checkOutTime}`, `entro le ${site.checkOutTime}`)}</span>`, has(site.checkOutTime)],
         ].filter(([, , ok]) => ok).map(([l, v]) => `<li><span class="label">${l}</span>${v}</li>`).join('\n        ')}
       </ul>
       <div style="margin-top:2rem" data-reveal>${link('location.html#find-us', t('Map &amp; directions', 'Mappa e indicazioni'))}</div>

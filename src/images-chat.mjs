@@ -65,7 +65,7 @@ export const chatImages = {
   chatG7: { ai: true, src: "chat/chat-g7.jpg", alt: "A slate-blue conical pendant lamp" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_09_14-7.png
   chatG8: { ai: true, src: "chat/chat-g8.jpg", alt: "Bedroom with a blue headboard, red cushions and folded towels" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_09_15-8.png
   chatG9: { ai: true, src: "chat/chat-g9.jpg", alt: "Blue studio with a ring light and botanical-print bed" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_09_19-9.png
-  chatG10: { ai: true, src: "chat/chat-g10.jpg", alt: "A guest relaxing on a lounger in the wellness area" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_04-1.png
+  chatG10: { ai: true, src: "chat/chat-g10.jpg", alt: "Relaxing on a lounger in the relaxation area" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_04-1.png
   chatG11: { ai: true, src: "chat/chat-g11.jpg", alt: "A guest by the hot tub" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_07-3.png
   chatG12: { ai: true, src: "chat/chat-g12.jpg", alt: "A guest by the hot tub with prosecco" }, // gallery/Immagine ChatGPT 14 ott 2026, 20_55_09-4.png
   chatG13: { ai: true, src: "chat/chat-g13.jpg", alt: "Bedroom with a round mirror and luggage rack" }, // gallery/Immagine ChatGPT 14 ott 2026, 21_10_50-1.png
@@ -188,7 +188,7 @@ export const chatAltsIt = {
   chatG7: "Una lampada a sospensione conica blu ardesia",
   chatG8: "Camera con testiera blu, cuscini rossi e asciugamani piegati",
   chatG9: "Monolocale blu con lampada ad anello e letto a motivi botanici",
-  chatG10: "Un’ospite si rilassa su un lettino nell’area benessere",
+  chatG10: "Relax su un lettino nell’area relax",
   chatG11: "Un’ospite accanto alla vasca idromassaggio",
   chatG12: "Un’ospite accanto alla vasca idromassaggio con il prosecco",
   chatG13: "Camera con specchio tondo e portabagagli",

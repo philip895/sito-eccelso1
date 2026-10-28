@@ -152,7 +152,7 @@ export const rooms = [
     size: '', guests: '', bed: '', maxGuests: null,
   },
   {
-    slug: 'deluxe', name: 'Deluxe', image: 'biBlu1', kind: 'apartment',
+    slug: 'deluxe', name: 'Deluxe', image: 'biVerde1', kind: 'apartment',
     slides: [['biBlu1', 'blue'], ['biBlu2', 'blue'], ['biBlu3', 'blue'], ['biVerde1', 'green'], ['biVerde2', 'green'], ['biVerde3', 'green'], ['biRosso1', 'red'], ['biRosso2', 'red'], ['biRosso3', 'red']],
     cardName: 'Deluxe One-Bedrooms', pageTitle: 'One-Bedroom Apartments in Palermo’s Historic Centre', bookingName: 'Deluxe One-Bedroom',
     line: 'Spacious layouts with a double bedroom and a full living area.',
@@ -160,7 +160,7 @@ export const rooms = [
     size: '', guests: '', bed: '', maxGuests: null,
   },
   {
-    slug: 'junior-suite', name: 'Junior Suite', image: 'triBlu1', kind: 'apartment',
+    slug: 'junior-suite', name: 'Junior Suite', image: 'triMattone1', kind: 'apartment',
     slides: [['triBlu1', 'blue'], ['triBlu2', 'blue'], ['triBlu3', 'blue'], ['triVerde1', 'green'], ['triVerde2', 'green'], ['triVerde3', 'green'], ['triMattone1', 'brick'], ['triMattone2', 'brick'], ['triMattone3', 'brick']],
     cardName: 'Junior Suite Family Apartments', pageTitle: 'Apartments for Families and Groups', bookingName: 'Junior Suite Family Apartment',
     line: 'Generous layouts ideal for families and groups of friends.',
@@ -170,11 +170,11 @@ export const rooms = [
   {
     // One "Suite" category replaces Senior / Deluxe / Grand Suite (client, Oct 2026).
     // Client folder has a blue and a red suite only — NO green variant (ask the client).
-    slug: 'suite', kind: 'suite', name: 'Suite', image: 'suiteBlu1',
+    slug: 'suite', kind: 'suite', name: 'Suite', image: 'suiteRossa1',
     slides: [['suiteBlu1', 'blue'], ['suiteBlu2', 'blue'], ['suiteBlu3', 'blue'], ['suiteRossa1', 'red'], ['suiteRossa2', 'red'], ['suiteRossa3', 'red']],
     cardName: 'Suites', pageTitle: 'Suites', bookingName: 'Suite',
     line: 'A private terrace and sun deck.',
-    text: 'The most spacious of our options will delight you with its airy private terrace, decorated with traditional Sicilian-style tiles, and its sun deck.',
+    text: 'The most spacious of our options will delight you with its airy private terrace, decorated with traditional Sicilian-style tiles, and its sun deck. Or you can enjoy a covered private terrace, to breathe the Sicilian air even in winter.',
     size: '', guests: '', bed: '', maxGuests: null,
   },
 ];
@@ -222,7 +222,7 @@ export const nearby = [
   // Last three: OpenStreetMap foot routing (routing.openstreetmap.de) from the Cathedral end
   // of Via del Celso, at 4.8 km/h — consistent with the listing's Cathedral / Teatro Massimo times.
   ['Palermo Cathedral', 'The Arab-Norman cathedral, around the corner.', 'about 3 min on foot'],
-  ['Fontana Pretoria', 'The great Renaissance fountain of the Piazza Pretoria.', 'about 500 m'],
+  ['Piazza Pretoria', 'The square of the great Renaissance fountain.', 'about 500 m'],
   ['Teatro Massimo', 'Italy\'s largest opera house.', 'about 7 min on foot'],
   ['Mercato del Capo', 'The historic street market that gives the quarter its name.', 'about 5 min on foot'],
   ['Quattro Canti', 'The baroque crossroads at the heart of the old city.', 'about 6 min on foot'],
@@ -287,11 +287,11 @@ export const it = {
     'deluxe': { cardName: 'Bilocali Deluxe', pageTitle: 'Bilocali nel Centro Storico di Palermo', bookingName: 'Bilocale Deluxe', line: 'Soluzioni spaziose con camera matrimoniale e zona living completa.', text: 'Soluzioni spaziose con camera matrimoniale e zona living completa. Perfette per coppie o amici che desiderano vivere Palermo in totale relax.' },
     'junior-suite': { cardName: 'Trilocali Junior Suite', pageTitle: 'Trilocali per Famiglie e Gruppi', bookingName: 'Trilocale Junior Suite', line: 'Ampie soluzioni ideali per famiglie e gruppi di amici.', text: 'Ampie soluzioni ideali per famiglie e gruppi di amici, con una o due camere matrimoniali e zona giorno completamente attrezzata.' },
     // Suite text: client's copy, verbatim (Oct 2026)
-    'suite': { cardName: 'Suite', pageTitle: 'Suite', bookingName: 'Suite', line: 'Terrazzo privato e area solarium.', text: 'La più ampia delle nostre soluzioni ti delizierà con il suo arioso terrazzo privato, decorato con tipiche mattonelle dallo stile siciliano ed area solarium.' },
+    'suite': { cardName: 'Suite', pageTitle: 'Suite', bookingName: 'Suite', line: 'Terrazzo privato e area solarium.', text: 'La più ampia delle nostre soluzioni ti delizierà con il suo arioso terrazzo privato, decorato con tipiche mattonelle dallo stile siciliano ed area solarium. Oppure potrai godere di un terrazzino privato coperto per respirare l’aria Siciliana anche in inverno.' },
   },
   nearby: [
     ['Cattedrale di Palermo', 'La cattedrale arabo-normanna, dietro l’angolo.', 'circa 3 min a piedi'],
-    ['Fontana Pretoria', 'La grande fontana rinascimentale di Piazza Pretoria.', 'circa 500 m'],
+    ['Piazza Pretoria', 'La piazza della grande fontana rinascimentale.', 'circa 500 m'],
     ['Teatro Massimo', 'Il più grande teatro lirico d’Italia.', 'circa 7 min a piedi'],
     ['Mercato del Capo', 'Lo storico mercato di strada che dà il nome al quartiere.', 'circa 5 min a piedi'],
     ['Quattro Canti', 'Il crocevia barocco nel cuore della città antica.', 'circa 6 min a piedi'],
