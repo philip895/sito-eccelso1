@@ -904,7 +904,7 @@ select.input { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
 .reviews__score { grid-column: 1 / span 4; }
 .reviews__feat { grid-column: 6 / span 7; }
 .reviews__num { margin-top: 1.75rem; font-family: var(--ff-serif); line-height: .8; display: flex; align-items: baseline; gap: .4rem; }
-.reviews__num span { font-size: clamp(6rem, 4rem + 8vw, 11rem); letter-spacing: -.04em; }
+.reviews__num span { font-size: clamp(6rem, 4rem + 8vw, 11rem); letter-spacing: -.02em; font-weight: 500; font-variation-settings: 'opsz' 6; } /* small optical size: thicker hairlines, so the 4 doesn't read as a 1 */
 .reviews__num small { font-size: 1.75rem; color: var(--c-ink-2); font-style: italic; }
 .stars { display: flex; gap: .35rem; margin-top: 1.75rem; }
 .stars svg { width: 1.05rem; fill: var(--c-brass); }
