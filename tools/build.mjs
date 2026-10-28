@@ -283,7 +283,8 @@ const closingCta = (title) => `
   </div>
 </section>`;
 
-function pageHero({ key, eyebrowText, title, lede, full = false, framed = false }) {
+// focusX: horizontal crop position for photos whose symmetry axis is off-centre, so the subject lines up with the centred logo
+function pageHero({ key, eyebrowText, title, lede, full = false, framed = false, focusX = '' }) {
   if (full) {
     return `
 <section class="page-hero page-hero--full on-image">
@@ -302,7 +303,7 @@ function pageHero({ key, eyebrowText, title, lede, full = false, framed = false 
     <h1 class="h1 page-hero__title" data-split>${lines(title, 0.15)}</h1>
     <p class="body page-hero__lede" data-reveal style="--d:.55s">${lede}</p>
   </div>
-  <div class="page-hero__media"><div class="media"${framed ? '' : ' data-parallax data-speed="0.14"'} style="${lq(key)}">${img(key, { eager: true, priority: true, sizes: '(max-width: 900px) 100vw, 55vw' })}</div></div>
+  <div class="page-hero__media"><div class="media"${framed ? '' : ' data-parallax data-speed="0.14"'} style="${lq(key)}${focusX ? `;--fx:${focusX}` : ''}">${img(key, { eager: true, priority: true, sizes: '(max-width: 900px) 100vw, 55vw' })}</div></div>
   <span class="page-hero__scroll" aria-hidden="true"></span>
 </section>`;
 }
@@ -657,7 +658,7 @@ ${closingCta()}`,
     title: t(`Gallery — ${site.name}, ${site.city}`, `Galleria — ${site.name}, ${site.city}`),
     description: t(`Photographs of ${site.name}: apartments, suites, wellness, details and ${site.city}.`, `Le foto di ${site.name}: appartamenti, suite, benessere, dettagli e ${site.city}.`),
     body: `
-${pageHero({ key: 'chatG8', eyebrowText: t('Gallery', 'Galleria'), title: t(['Look', '<em>around.</em>'], ['Guardati', '<em>intorno.</em>']), lede: t('Apartments and suites, small details, the wellness area and the city around us.', 'Appartamenti e suite, piccoli dettagli, l’area benessere e la città che ci circonda.') })}
+${pageHero({ key: 'chatG8', focusX: '58%', eyebrowText: t('Gallery', 'Galleria'), title: t(['Look', '<em>around.</em>'], ['Guardati', '<em>intorno.</em>']), lede: t('Apartments and suites, small details, the wellness area and the city around us.', 'Appartamenti e suite, piccoli dettagli, l’area benessere e la città che ci circonda.') })}
 <section class="section" aria-label="${t('Photo gallery', 'Galleria fotografica')}">
   <div class="container">
     <div class="grid gallery-intro"><div class="statement" data-reveal><p class="lead">${t('The gallery will guide you through <em>refined spaces</em>, designed to make you feel special from the very first glance.', 'La gallery ti accompagnerà alla scoperta di <em>spazi raffinati</em>, pensati per farti sentire speciale fin dal primo sguardo.')}</p></div></div>
@@ -738,7 +739,7 @@ ${closingCta()}`,
     title: t(`Contact — ${site.name}, ${site.city}`, `Contatti — ${site.name}, ${site.city}`),
     description: t(`Contact ${site.name} in ${site.city}: phone, mobile, email and address.`, `Contatta ${site.name} a ${site.city}: telefono, cellulare, email e indirizzo.`),
     body: `
-${pageHero({ key: 'receptionDesk', eyebrowText: t('Contact', 'Contatti'), title: t(["We're here", '<em>for you.</em>'], ['Siamo qui', '<em>per te.</em>']), lede: t('Questions before you book, or something to arrange for your stay. Write, call or send us a message.', 'Domande prima di prenotare, o qualcosa da organizzare per il tuo soggiorno. Scrivici, chiamaci o mandaci un messaggio.') })}
+${pageHero({ key: 'receptionDesk', focusX: '57%', eyebrowText: t('Contact', 'Contatti'), title: t(["We're here", '<em>for you.</em>'], ['Siamo qui', '<em>per te.</em>']), lede: t('Questions before you book, or something to arrange for your stay. Write, call or send us a message.', 'Domande prima di prenotare, o qualcosa da organizzare per il tuo soggiorno. Scrivici, chiamaci o mandaci un messaggio.') })}
 <section class="section" aria-labelledby="c-title">
   <div class="container grid contact">
     <div class="contact__info">
