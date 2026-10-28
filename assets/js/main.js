@@ -197,6 +197,7 @@
       if (r.bottom < -100 || r.top > vh + 100) continue;
       const speed = Number(el.dataset.speed || 0.12);
       const target = el.classList.contains('media--parallax') || el.closest('.page-hero__media') ? el.querySelector('img') : el;
+      if (el.closest('.page-hero__media') && innerWidth <= 900) { target.style.transform = ''; continue; } // no zoom headroom on phones
       const isTop = el.closest('.hero, .page-hero');
       const offset = isTop ? -r.top * speed : ((r.top + r.height / 2) - vh / 2) * -speed;
       target.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;

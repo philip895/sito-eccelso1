@@ -437,7 +437,7 @@ function buildPages() {
   </div>
   <div class="track" data-track tabindex="0" aria-label="${t('Apartments and suites', 'Appartamenti e suite')}">
     ${R.map((r, i) => `<a class="room-card" href="rooms.html#${r.slug}" data-reveal style="--d:${Math.min(i, 3) * 0.1}s">
-      <div class="media" style="${lq(r.image)}">${img(r.image, { sizes: '(max-width: 900px) 82vw, 40vw' })}${aiBadge(r.image)}</div>
+      <div class="media${r.slug === 'suite' ? ' media--suite-cover' : ''}" style="${lq(r.image)}">${img(r.image, { sizes: '(max-width: 900px) 82vw, 40vw' })}${aiBadge(r.image)}</div>
       <div class="room-card__meta"><span class="room-card__num">${pad(i + 1)}</span><h3 class="h3">${r.cardName}</h3><span class="room-card__go" aria-hidden="true">${icon.next}</span><p class="room-card__line">${r.line}</p></div>
     </a>`).join('\n    ')}
   </div>
