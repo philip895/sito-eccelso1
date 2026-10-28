@@ -127,7 +127,7 @@ ul, ol { padding: 0; list-style: none; }
   font-family: var(--ff-serif); font-weight: 400; letter-spacing: -.012em;
   font-optical-sizing: auto; text-wrap: balance;
 }
-.display { font-size: var(--fs-display); line-height: .96; letter-spacing: -.025em; }
+.display { font-family: 'Fraunces', var(--ff-serif); font-weight: 650; font-size: var(--fs-display); line-height: .96; letter-spacing: -.025em; } /* home hero only: sturdier strokes over the photos */
 .h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); letter-spacing: -.02em; }
 .h2 { font-size: var(--fs-h2); line-height: var(--lh-head); }
 .h3 { font-size: var(--fs-h3); line-height: 1.15; }
@@ -492,7 +492,7 @@ ul, ol { padding: 0; list-style: none; }
 .page-hero__lede { margin-top: 2rem; max-width: 26rem; }
 .page-hero__media { grid-column: 7 / -1; position: relative; overflow: hidden; margin-top: var(--header-h); }
 .page-hero__media .media { position: absolute; inset: 0; border-radius: 0; }
-.page-hero__media .media img { height: 112%; }
+.page-hero__media .media img { height: 112%; margin-top: -6%; }
 .page-hero__scroll { position: absolute; left: max(var(--gutter), (100vw - var(--max)) / 2); bottom: 0; width: 1px; height: 3.5rem; background: var(--c-stone); overflow: hidden; }
 .page-hero__scroll::after { content: ''; position: absolute; inset: 0; background: var(--c-ink); animation: drip 2.4s var(--ease-io) infinite; }
 @keyframes drip { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
