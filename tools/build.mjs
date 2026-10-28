@@ -5,11 +5,14 @@
 //   node tools/images.mjs   — first time / when photos change
 //   node tools/build.mjs    — whenever content changes
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site, images, rooms, gallery, reviews, nearby, amenities, suitesIntro, it as IT } from '../src/content.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+// ?v=<content hash> so browsers fetch CSS/JS again after every change
+const ver = (p) => `${p}?v=${createHash('md5').update(readFileSync(join(root, p))).digest('hex').slice(0, 8)}`;
 const manifest = JSON.parse(readFileSync(join(root, 'assets/images/manifest.json'), 'utf8'));
 const YEAR = 2026;
 const LANGS = ['it', 'en'];
@@ -241,8 +244,8 @@ function layout({ page, file, title, description, hero = false, body, scripts = 
 <link rel="icon" href="${B}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Fraunces:ital,opsz,wght@0,9..144,600..700;1,9..144,600..700&family=Jost:wght@400;500&display=swap">
-<link rel="stylesheet" href="${B}assets/css/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="${B}${ver('assets/css/styles.css')}">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="page-${page}${hero ? ' has-hero' : ''}">
@@ -254,8 +257,8 @@ ${footer()}
 ${bookBar ? mobileBook() : ''}
 ${clientConfig()}
 ${page === 'home' || page === 'contact' ? jsonLd() : ''}
-<script src="${B}assets/js/main.js" defer></script>
-${scripts.map((s) => `<script src="${B}${s}" defer></script>`).join('\n')}
+<script src="${B}${ver('assets/js/main.js')}" defer></script>
+${scripts.map((s) => `<script src="${B}${ver(s)}" defer></script>`).join('\n')}
 </body>
 </html>
 `;
